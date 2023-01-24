@@ -1,26 +1,85 @@
 <?php
 
-/**
+/** NOTAS 16.01 ----> Preferencia Ele tener un usuario único para que la gente no se tenga que crear el propio. Y en este caso 
+ * el formulario se llenaría cada vez y sería la forma de loguearse.
+ * 
+ * Consultas sobre el site para responderte:
+* Me podrías pasar mas datos sobre la herramienta? 
+* Que requerimientos tiene? Una base de datos?
+* Cuantas personas van a utilizarlo en simultaneo?
+*
+*
+*
  * Preguntar cuáles son los pasos para subir un marcador al mapa. Y para agregar fotos a dicho marcador.
- * Desde que le usuarie inicia el proceso hasta que se visibiliza de manera pública.
+ * Desde que le usuarie inicia el proceso hasta que se visibiliza de manera pública. HAY QUE ESTAR LOGUEADE, SE PUEDE EDITAR
+ * AGREGAR COSAS ETC DESDE WIKIDATA.ORG --> MIS CONTRIBUCIONES ----> tener en cuenta que parece tardar en aparecer la carga
+ * en el mapa, ver tema caché. Pensar para nuestra versión que aparezca algún cartelito...preguntar a Lu...en nuestra versión
+ * como haríamos para editar ?? también desde wikidata?? como sería ese logueo de usuarie?
  * 
- * Consultar a qué fuente (wikidata/wikicommons/wikipedia) se está añadiendo la información.
  * 
- * ¿Esto trae todo lo que está en cada una de las fuentes (si coinciden las coordenadas GPS)?
+ * Consultar a qué fuente (wikidata/wikicommons/wikipedia) se está añadiendo la información. ---- > en principio a wikidata, 
+ * ver si podemos customizar que se suban a otras tmb directo tipo wikicommons
+ *  
+ * ¿Esto trae todo lo que está en cada una de las fuentes (si coinciden las coordenadas GPS)? SI ---> en principio si, dsps podemos
+ * hacer filtros
  * 
  * Para agregar la funcionalidad de cargar marcadores en wikishootme, lo que hay que hacer desde nuestra app
- * sería lo siguiente? :
+ * sería lo siguiente? : SI
  *  - crear un bot en wikidata
  *  - esperar la aprobación
  *  - conectar este bot con wikidata para que envíe la información cargada por les usuaries en nuestra app.
+ * ---> respondió que si pero no mucha mas data
  * 
  * O SEA:
  * une usuarie entra, carga una fotito. la fotito se la enviamos al bot, el bot la manda a wikidata a través
  * de su api, quien a su vez la recibe, la ingresa en la base de datos, y luego wikishoot me la levanta?
  * 
  * https://tools-static.wmflabs.org/tooltranslate/data/wikishootme/en.json
- *  -> las frases de wikishootme en inglés, para traducir.
- */
+ *  -> las frases de wikishootme en inglés, para traducir. Ver si existen los ISO de estos idiomas
+ * 
+ * Angie Cervellera18:29
+* RESPUESTA SI -- Juan pregunta de Angie: el nuevo wikishootme se puede albergar en toolforge (¿qué es?) donde 
+*estan todas las herramientas? conviene o no? yo pensando en la sostenibilidad digamos de  la herramienta "nueva" creada.
+ * claro y en flickr puede estar lo que no tiene licencias libres
+*o del CDI
+*
+*Esta la Propiedad P953: trabajo completo disponible en URL // https://www.wikidata.org/wiki/Q110954084
+
+
+*** notas 12.01 -- Las contribuciones que no son aprobadas quien las autoriza? cuál es el criterio para aceptar una carga? Por ejemplo 
+* si alguien de una comunidad quiere subir algo sencillo como la casa de un intengrante de su comunidad se le aprobaría? porque yo
+*quise hacer una carga de mi casa y no fue aprobada. Tampoco tuve ningún tipo de notificación en relación a porque como o cuando fueron
+*rechazadas, cómo funciona eso?
+*
+*
+* El GPS anda super mal
+*
+*PARA GENERAR LA URL DE LLAMADA PARA CARGAR ALGO -- FUNCIONA SI ESTÁS LOGUEADE A WIKI
+*<!DOCTYPE html>
+*<html lang="en">
+*<head>
+*	<meta charset="UTF-8">
+*	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+*	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+*	<title>Nati hermosa</title>
+*</head>
+*<body>
+*	<form action="https://wikishootme.toolforge.org/api_v3.php" method="get">
+*		<input type="text" name="action" value="new_item">
+*		<input type="text" name="lat" value="-34.63091972363547">
+*		<input type="text" name="lng" value="-60.501471996241904">
+*		<input type="text" name="p131" value="Q1486">
+*		<input type="text" name="p18" value="">
+*		<input type="text" name="label" value="Casa de Luli">
+*		<input type="text" name="lang" value="en">
+*		<button>enviar</button>
+*	</form>
+*</body>
+*</html>
+*
+*
+*PREGUNTAR A WIKI ---> SE PUEDE HACER EL LOGUEO VIA API?
+*/
 
 ?>
 <!DOCTYPE HTML>
