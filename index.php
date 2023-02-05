@@ -1,3 +1,9 @@
+<?php
+
+require_once 'header.php';
+?>
+
+
 <section class="nations">
     <figure>
     <img src="img/mobile/qom-canasto.png" alt="">
@@ -32,3 +38,8 @@
 <img src="img/mobile/logo-lab.png" alt="Logo Laboratorio de innovación cultural y cientifica">
 <img src="img/mobile/logo-fundacionw.png" alt="Logo Fundación Williams">
 </section>
+
+
+<?php
+
+require_once 'footer.php';
