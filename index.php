@@ -25,10 +25,10 @@
     </figure>
 </section>
 <section class="sponsors-logos">
-<img src="" alt="">
-<img src="" alt="">
-<img src="" alt="">
-<img src="" alt="">
-<img src="" alt="">
-<img src="" alt="">
+<img src="img/mobile/logo-wiki.png" alt="Logo wikimedia">
+<img src="img/mobile/logo-centrodoc.png" alt="Logo Centro de documentación indigena">
+<img src="img/mobile/logo-cultura.png" alt="Logo Programa de cultura de los pueblos originarios">
+<img src="img/mobile/logo-potenciar.png" alt="Logo Potenciar">
+<img src="img/mobile/logo-lab.png" alt="Logo Laboratorio de innovación cultural y cientifica">
+<img src="img/mobile/logo-fundacionw.png" alt="Logo Fundación Williams">
 </section>
