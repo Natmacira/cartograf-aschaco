@@ -5,18 +5,10 @@
 // sass main.scss ../style.min.css --style=compressed
 // sass --watch main.scss:../style.min.css --style=compressed
 
-$theme-brown :        rgb(177, 127, 74);
-$theme-brown-light:   #C0986E;
-$theme-brown-orange:  #E07D14;
-$theme-orange :       #F39200;
-$theme-salmon :       #DD8967;
-$theme-gray-one :       rgb(242, 242, 242);
-$theme-gray-two :       #F8F4F4;
-$theme-gray-three :     #E6E6E6;
-$theme-gray-fourht :    #00000029;
-$theme-gray-blue :      #9DABC2;
-$theme-black-eight :    #060000;
-$theme-black-nine :     #1D1D1B;
+$theme-dark-gray :  #333333;
+$theme-purple :     #A40F2C;
+$theme-gray :       #676767;
+
 
 
 
@@ -27,11 +19,7 @@ $breakpoint-hamburger : 768px;
 @import "fonts";
 @import "header";
 @import "footer";
-@import "mixin";
+@import "mixins";
 @import "skeleton";
 @import "burger-menu";
-@import "boxicons";
-@import "swiper-bundle";
-@import "swiper";
-@import "puertas";
 

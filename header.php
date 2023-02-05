@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cartografías abiertas</title>
     <link rel="stylesheet" href="style.min.css">
-    <script src="js/burger-menu.js"></script>
-    <script src="js/swiper-bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/sm_comm.js"></script>
     <!-- <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
@@ -35,9 +34,7 @@
 	<meta property="og:url" content="https://nodo.org.ar/" /> -->
 </head>
 
-<body <?php if (basename($_SERVER['SCRIPT_FILENAME']) !== "index.php") {
-            echo 'class="puerta"';
-        } ?> class="<?php echo $body_class; ?>">
+<body class="<?php echo $body_class; ?>">
     <header>
         <img src="/img/mobile/Banner_of_the_Qulla_Suyu.png" alt="">
         <p>Cartografías abiertas
