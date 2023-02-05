@@ -47,7 +47,7 @@
                     <li><a href="">Qom</a></li>
                     <li><a href="">Wichí</a></li>
                     <li><a href="">Moqoit</a></li>
-                    <li><a href="">Español</a></li>
+                    <li><a href="home.php">Español</a></li>
                 </ul>
             </span>
             <span class="cls"></span>
