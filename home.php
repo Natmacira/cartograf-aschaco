@@ -85,7 +85,27 @@ require_once 'header.php';
         </div>
     </article>
 </section>
-
+<section class="social-media">
+    <h2>Seguinos en nuestras redes</h2>
+    <article class="social-article">
+        <h3>Wikimedia Argentina</h3>
+        <ul>
+            <li> <a href="facebook.com/WikimediaArgentina">facebook.com/WikimediaArgentina</a>
+            </li>
+            <li> <a href="instagram.com/wikimedia_ar">instagram.com/wikimedia_ar</a></li>
+            <li> <a href="twitter.com/wikimedia_ar">twitter.com/wikimedia_ar</a></li>
+        </ul>
+    </article>
+    <article class="social-article">
+        <h3>Centro de Documentación Indígena <br> No’lhametwet</h3>
+        <ul>
+            <li> <a href="facebook.com/centrodedocumentacionindigena">facebook.com/centrodedocumentacionindigena</a>
+            </li>
+            <li> <a href="instagram.com/cdindigena">instagram.com/cdindigena</a>
+            </li>
+        </ul>
+    </article>
+</section>
 <?php
 
 require_once 'footer.php';
