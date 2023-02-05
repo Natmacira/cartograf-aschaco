@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.min.css">
     <script src="js/main.js"></script>
     <script src="js/sm_comm.js"></script>
+    <script src="js/burger-menu.js"></script>
     <!-- <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
@@ -36,14 +37,21 @@
 
 <body class="<?php echo $body_class; ?>">
     <header>
-        <img src="/img/mobile/Banner_of_the_Qulla_Suyu.png" alt="">
+        <img src="img/mobile/Banner_of_the_Qulla_Suyu.png" alt="">
         <p>Cartografías abiertas
             Qom, Wichi y Moqoit</p>
-        <ul>
-            <li><a href="">Qom</a></li>
-            <li><a href="">Wichí</a></li>
-            <li><a href="">Moqoit</a></li>
-            <li><a href="">Español</a></li>
-        </ul>
+        <div id="container" class="open clss">
+            <span class="cls"></span>
+            <span>
+                <ul class="sub-menu">
+                    <li><a href="">Qom</a></li>
+                    <li><a href="">Wichí</a></li>
+                    <li><a href="">Moqoit</a></li>
+                    <li><a href="">Español</a></li>
+                </ul>
+            </span>
+            <span class="cls"></span>
+        </div>
+
     </header>
     <main>

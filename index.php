@@ -7,25 +7,25 @@ require_once 'header.php';
 <section class="nations">
     <figure>
     <img src="img/mobile/qom-canasto.png" alt="">
-        <figcaption>Qom
+        <figcaption>Qom <br>
             <strong>'onaxaic ra carviraxaqui</strong>
         </figcaption>
     </figure>
     <figure>
     <img src="img/mobile/wichi-adorno.png" alt="">
-        <figcaption>Wichí
+        <figcaption>Wichí <br>
             <strong>amtena, is ta lanamhen</strong>
         </figcaption>
     </figure>
     <figure>
     <img src="img/mobile/moqoit-ceramica.png" alt="">
-        <figcaption>Moqoit
+        <figcaption>Moqoit <br>
             <strong>No>uen Roviraxagui>i</strong>
         </figcaption>
     </figure>
     <figure>
         <img src="img/mobile/espanol-mate.png" alt="">
-        <figcaption>Español
+        <figcaption>Español <br>
             <strong>Te damos la bienvenida</strong>
         </figcaption>
     </figure>

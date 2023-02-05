@@ -1,0 +1,21 @@
+header {
+    display: flex;
+    justify-content: start;
+    margin: 0;
+    align-items: flex-start;
+    background-color: $theme-dark-gray;
+    color: white;
+    height: 60px;
+    font-size: 16px;
+    img {
+        width: 60px;
+    }
+    p {
+        width: 160px;
+        margin-left: 35px;
+        margin-top: 10px;
+    }
+    // ul {
+    //     display: none;
+    // }
+}

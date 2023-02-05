@@ -1,0 +1,22 @@
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $theme-dark-gray;
+    color: white;
+    p {
+        font-size: 12px;
+        margin: 14px 18px;
+        text-align: center;
+    }
+}
+
+body.index {
+    footer {
+        justify-content: right;
+        margin-top: 8px;
+        a {
+            display: none;
+        }
+    }
+}

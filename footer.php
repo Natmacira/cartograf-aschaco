@@ -1,7 +1,7 @@
 </main>
 <footer>
     <a href="">Volver</a>
-    <p>Powered by
+    <p>Powered by <br>
         ALT - 2023</p>
 </footer>
 

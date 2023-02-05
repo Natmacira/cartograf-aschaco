@@ -8,6 +8,7 @@
 $theme-dark-gray :  #333333;
 $theme-purple :     #A40F2C;
 $theme-gray :       #676767;
+$theme-light-gray : #E0E0E0;
 
 
 
@@ -22,4 +23,6 @@ $breakpoint-hamburger : 768px;
 @import "mixins";
 @import "skeleton";
 @import "burger-menu";
+@import "index";
+
 
