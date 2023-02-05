@@ -1,5 +1,5 @@
 <?php
-
+$body_class = "home";
 require_once 'header.php';
 ?>
 
@@ -106,6 +106,8 @@ require_once 'header.php';
         </ul>
     </article>
 </section>
+<section class="final-section">
+    <img src="img/mobile/Banner_redondo.png" alt="">
+</section>
 <?php
-
 require_once 'footer.php';
