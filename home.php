@@ -7,7 +7,7 @@ require_once 'header.php';
     <p class="highlighted-text">En esta plataforma encontrarás un mapa que permite visualizar, cargar y editar contenido relativo a la historia y cultura de los pueblos indígenas del Chaco:
         Qom, Wichi y Moqoit.</p>
     <embed src="" type="">
-    <a href="form.php">Subí tu foto / audio / video</a>
+    <a href="form.php"><strong>+</strong><p>Subí tu foto / audio / video</p></a>
     <p class="highlighted-text">Mirá el video para aprender cómo subir contenido</p>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/9e_d4DNJmZk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     <p>El contenido puede tratarse de fotos, videos, audio, documentos escritos (antiguos y actuales). Tené en cuenta que puede ser contenido sensible para los comunidades indígenas.</p>
@@ -48,9 +48,11 @@ require_once 'header.php';
     </article>
     <article class="who-colaborates">
         <h2>¿Quiénes pueden cargar contenido en la plataforma?</h2>
+        <p>
         Pueden cargar contenido personas vinculadas a los tres pueblos/naciones indígenas que habitan el territorio chaqueño: qom, wichí y moqoit.
         <br>
         También pueden cargar personas no indígenas, que deseen compartir respetuosamente material vinculado a la cultura de alguno de estos tres pueblos. En cualquier caso, necesitarán un usuario y contraseña que los habilitará a modificar y cargar contenido, e indicar con qué pueblo/nación se identifican.
+        </p>
         <figure>
             <img src="img/mobile/Mujer_trabajando.png" alt="Mujer trabajando en el campo de Pampa Aguará en el año 1955.">
             <figcaption>
@@ -90,18 +92,18 @@ require_once 'header.php';
     <article class="social-article">
         <h3>Wikimedia Argentina</h3>
         <ul>
-            <li> <a href="facebook.com/WikimediaArgentina"><img src="img/mobile/facebook.png" alt="Facebook logo link"> facebook.com/WikimediaArgentina</a>
+            <li> <a href="facebook.com/WikimediaArgentina"> facebook.com/WikimediaArgentina</a>
             </li>
-            <li> <a href="instagram.com/wikimedia_ar"><img src="img/mobile/instagram.png" alt="Instagram logo link"> instagram.com/wikimedia_ar</a></li>
-            <li> <a href="twitter.com/wikimedia_ar"><img src="img/mobile/twitter.png" alt="Twitter logo link"> twitter.com/wikimedia_ar</a></li>
+            <li> <a href="instagram.com/wikimedia_ar"> instagram.com/wikimedia_ar</a></li>
+            <li> <a href="twitter.com/wikimedia_ar"> twitter.com/wikimedia_ar</a></li>
         </ul>
     </article>
     <article class="social-article">
         <h3>Centro de Documentación Indígena <br> No’lhametwet</h3>
         <ul>
-            <li> <a href="facebook.com/centrodedocumentacionindigena"><img src="img/mobile/facebook.png" alt="Facebook logo link"> facebook.com/centrodedocumentacionindigena</a>
+            <li> <a href="facebook.com/centrodedocumentacionindigena"> facebook.com/centrodedocumentacionindigena</a>
             </li>
-            <li> <a href="instagram.com/cdindigena"><img src="img/mobile/instagram.png" alt="Instagram logo link"> instagram.com/cdindigena</a>
+            <li> <a href="instagram.com/cdindigena"> instagram.com/cdindigena</a>
             </li>
         </ul>
     </article>
