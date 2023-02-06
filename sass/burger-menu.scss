@@ -79,6 +79,10 @@
             &:hover {
                 color: black;
             }
+
+            &.go-back-link {
+                @include go-back;
+            }
         }
     }
 }

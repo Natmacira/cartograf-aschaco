@@ -11,9 +11,7 @@ body {
             text-align: center;
         }
         a.go-back-link {
-            font-size: 18px;
-            text-transform: uppercase;
-            padding-left: 24px;
+            @include go-back;
         }
     }
 
