@@ -1,22 +1,29 @@
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: $theme-dark-gray;
-    color: white;
-    p {
-        font-size: 12px;
-        margin: 14px 18px;
-        text-align: center;
-    }
-}
-
-body.index {
+body {
     footer {
-        justify-content: right;
-        margin-top: 8px;
-        a {
-            display: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $theme-dark-gray;
+        color: white;
+        p.footer-text {
+            font-size: 12px;
+            margin: 14px 18px;
+            text-align: center;
+        }
+        a.go-back-link {
+            font-size: 18px;
+            text-transform: uppercase;
+            padding-left: 24px;
+        }
+    }
+
+    body.index {
+        footer {
+            justify-content: right;
+            margin-top: 8px;
+            a {
+                display: none;
+            }
         }
     }
 }
