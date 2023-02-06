@@ -38,7 +38,7 @@
 <body class="<?php echo $body_class; ?>">
     <header>
         <img src="img/mobile/Banner_of_the_Qulla_Suyu.png" alt="">
-        <p>Cartografías abiertas
+        <p class="header-text">Cartografías abiertas
             Qom, Wichi y Moqoit</p>
         <div id="container" class="open clss">
             <span class="cls"></span>

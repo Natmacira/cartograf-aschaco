@@ -59,7 +59,7 @@ require_once 'header.php';
         </figure>
     </article>
     <article class="collaborators">
-        <h2>collaborators</h2>
+        <h2>¿Qué instituciones colaboran con el proyecto?</h2>
         <p>Este proyecto es posible gracias a la colaboración de las siguientes instituciones culturales y educativas:</p>
         <div class="sponsors-logos">
             <img src="img/mobile/logo-wiki.png" alt="Logo wikimedia">
@@ -90,18 +90,18 @@ require_once 'header.php';
     <article class="social-article">
         <h3>Wikimedia Argentina</h3>
         <ul>
-            <li> <a href="facebook.com/WikimediaArgentina">facebook.com/WikimediaArgentina</a>
+            <li> <a href="facebook.com/WikimediaArgentina"><img src="img/mobile/facebook.png" alt="Facebook logo link"> facebook.com/WikimediaArgentina</a>
             </li>
-            <li> <a href="instagram.com/wikimedia_ar">instagram.com/wikimedia_ar</a></li>
-            <li> <a href="twitter.com/wikimedia_ar">twitter.com/wikimedia_ar</a></li>
+            <li> <a href="instagram.com/wikimedia_ar"><img src="img/mobile/instagram.png" alt="Instagram logo link"> instagram.com/wikimedia_ar</a></li>
+            <li> <a href="twitter.com/wikimedia_ar"><img src="img/mobile/twitter.png" alt="Twitter logo link"> twitter.com/wikimedia_ar</a></li>
         </ul>
     </article>
     <article class="social-article">
         <h3>Centro de Documentación Indígena <br> No’lhametwet</h3>
         <ul>
-            <li> <a href="facebook.com/centrodedocumentacionindigena">facebook.com/centrodedocumentacionindigena</a>
+            <li> <a href="facebook.com/centrodedocumentacionindigena"><img src="img/mobile/facebook.png" alt="Facebook logo link"> facebook.com/centrodedocumentacionindigena</a>
             </li>
-            <li> <a href="instagram.com/cdindigena">instagram.com/cdindigena</a>
+            <li> <a href="instagram.com/cdindigena"><img src="img/mobile/instagram.png" alt="Instagram logo link"> instagram.com/cdindigena</a>
             </li>
         </ul>
     </article>

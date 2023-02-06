@@ -1,4 +1,4 @@
-header {
+body header {
     display: flex;
     justify-content: start;
     margin: 0;
@@ -10,7 +10,7 @@ header {
     img {
         width: 60px;
     }
-    p {
+    p.header-text {
         width: 160px;
         margin-left: 35px;
         margin-top: 10px;
