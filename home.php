@@ -7,10 +7,14 @@ require_once 'header.php';
     <p class="highlighted-text">En esta plataforma encontrarás un mapa que permite visualizar, cargar y editar contenido relativo a la historia y cultura de los pueblos indígenas del Chaco:
         Qom, Wichi y Moqoit.</p>
     <embed src="" type="">
-    <a href="form.php"><strong>+</strong><p>Subí tu foto / audio / video</p></a>
-    <p class="highlighted-text">Mirá el video para aprender cómo subir contenido</p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/9e_d4DNJmZk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    <p>El contenido puede tratarse de fotos, videos, audio, documentos escritos (antiguos y actuales). Tené en cuenta que puede ser contenido sensible para los comunidades indígenas.</p>
+    <div class="charge-items">
+        <a href="form.php"><strong>+</strong>
+            <p>Subí tu foto / audio / video</p>
+        </a>
+        <p class="highlighted-text">Mirá el video para aprender cómo subir contenido</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/9e_d4DNJmZk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <p class="content-text">El contenido puede tratarse de fotos, videos, audio, documentos escritos (antiguos y actuales). Tené en cuenta que puede ser contenido sensible para los comunidades indígenas.</p>
 </section>
 <section class="divider">
     <img src="img/mobile/separador-colores.png" alt="Separador de secciones en la pantalla">
@@ -19,20 +23,22 @@ require_once 'header.php';
 <section class="who-we-are">
     <article class="what-is">
         <h1>¿Qué es Cartografías Abiertas: Qom, Wichí, Moqoit?</h1>
-        <p>Esta plataforma colaborativa, multimedia y plurilingüe es
-            resultado de un proyecto conjunto entre el Centro de
-            Documentación Indígena No’lhametwet del Chaco y la Asociación
-            Civil Wikimedia Argentina. Su objetivo es poner en circulación
-            los conocimientos y la cultura de las identidades indígenas de
-            la provincia chaqueña desde sus propias voces y visiones.
-            La iniciativa fue ejecutada tras salir ganador de la
-            convocatoria “Cultura, Ciencia y Territorio 2022” impulsada
-            por Fundación Williams y Potenciar.
-        </p>
-        <figure>
-            <img src="img/mobile/Artesana_Cestera.png" alt="">
-            <figcaption>Artesana Cestera (Esteban Zugasti, 1960). Colección de fotografía de Esteban Zugasti. Centro de documentación indígena No'lhametwet.</figcaption>
-        </figure>
+        <div>
+            <p>Esta plataforma colaborativa, multimedia y plurilingüe es
+                resultado de un proyecto conjunto entre el Centro de
+                Documentación Indígena No’lhametwet del Chaco y la Asociación
+                Civil Wikimedia Argentina. Su objetivo es poner en circulación
+                los conocimientos y la cultura de las identidades indígenas de
+                la provincia chaqueña desde sus propias voces y visiones.
+                La iniciativa fue ejecutada tras salir ganador de la
+                convocatoria “Cultura, Ciencia y Territorio 2022” impulsada
+                por Fundación Williams y Potenciar.
+            </p>
+            <figure>
+                <img src="img/mobile/Artesana_Cestera.png" alt="">
+                <figcaption>Artesana Cestera (Esteban Zugasti, 1960). Colección de fotografía de Esteban Zugasti. Centro de documentación indígena No'lhametwet.</figcaption>
+            </figure>
+        </div>
     </article>
     <article class="how-work">
         <h2>¿En qué consiste la plataforma?</h2>
@@ -49,9 +55,9 @@ require_once 'header.php';
     <article class="who-colaborates">
         <h2>¿Quiénes pueden cargar contenido en la plataforma?</h2>
         <p>
-        Pueden cargar contenido personas vinculadas a los tres pueblos/naciones indígenas que habitan el territorio chaqueño: qom, wichí y moqoit.
-        <br>
-        También pueden cargar personas no indígenas, que deseen compartir respetuosamente material vinculado a la cultura de alguno de estos tres pueblos. En cualquier caso, necesitarán un usuario y contraseña que los habilitará a modificar y cargar contenido, e indicar con qué pueblo/nación se identifican.
+            Pueden cargar contenido personas vinculadas a los tres pueblos/naciones indígenas que habitan el territorio chaqueño: qom, wichí y moqoit.
+            <br>
+            También pueden cargar personas no indígenas, que deseen compartir respetuosamente material vinculado a la cultura de alguno de estos tres pueblos. En cualquier caso, necesitarán un usuario y contraseña que los habilitará a modificar y cargar contenido, e indicar con qué pueblo/nación se identifican.
         </p>
         <figure>
             <img src="img/mobile/Mujer_trabajando.png" alt="Mujer trabajando en el campo de Pampa Aguará en el año 1955.">
