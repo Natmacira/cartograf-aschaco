@@ -2,12 +2,10 @@ body.home {
     main {
         margin: 0 auto;
         max-width: 600px;
+        margin-top: 83px;
     }
     img {
         max-width: 360px;
-    }
-    a {
-        font-size: 12px;
     }
 
     embed {
@@ -146,6 +144,7 @@ body.home {
                 position: relative;
                 a {
                     padding-left: 30px;
+                    font-size: 12px;
                     &::before {
                         content: " ";
                         width: 24px;

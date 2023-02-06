@@ -48,7 +48,7 @@
                     <li><a href="">Wichí</a></li>
                     <li><a href="">Moqoit</a></li>
                     <li><a href="home.php">Español</a></li>
-                    <li><a href="home.php" class="go-back-link">< Volver</a></li>
+                    <li><a href="javascript:history.back()" class="go-back-link">< Volver</a></li>
                 </ul>
             </span>
             <span class="cls"></span>
