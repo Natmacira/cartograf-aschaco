@@ -52,6 +52,13 @@
             </span>
             <span class="cls"></span>
         </div>
-
+    <section>
+    <ul class="desktop-menu">
+                    <li><a href="">Qom</a></li>
+                    <li><a href="">Wichí</a></li>
+                    <li><a href="">Moqoit</a></li>
+                    <li><a href="home.php">Español</a></li>
+                </ul>
+    </section>
     </header>
     <main>

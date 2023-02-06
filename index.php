@@ -7,7 +7,12 @@ require_once 'header.php';
 <section class="nations">
     <a href="">
         <figure>
-            <img src="img/mobile/qom-canasto.png" alt="">
+            <picture>
+                <!-- Desktop -->
+                <source media="(min-width:980px)" srcset="img/desktop/qom.png" alt="">
+                <!-- Mobile  -->
+                <img src="img/mobile/qom-canasto.png" alt="">
+            </picture>
             <figcaption>Qom <br>
                 <strong>'onaxaic ra carviraxaqui</strong>
             </figcaption>
@@ -15,7 +20,12 @@ require_once 'header.php';
     </a>
     <a href="">
         <figure>
-            <img src="img/mobile/wichi-adorno.png" alt="">
+            <picture>
+                <!-- Desktop -->
+                <source media="(min-width:980px)" srcset="img/desktop/wichi.png" alt="">
+                <!-- Mobile  -->
+                <img src="img/mobile/wichi-adorno.png" alt="">
+            </picture>
             <figcaption>Wichí <br>
                 <strong>amtena, is ta lanamhen</strong>
             </figcaption>
@@ -23,7 +33,12 @@ require_once 'header.php';
     </a>
     <a href="">
         <figure>
-            <img src="img/mobile/moqoit-ceramica.png" alt="">
+            <picture>
+                <!-- Desktop -->
+                <source media="(min-width:980px)" srcset="img/desktop/moqoit.png" alt="">
+                <!-- Mobile  -->
+                <img src="img/mobile/moqoit-ceramica.png" alt="">
+            </picture>
             <figcaption>Moqoit <br>
                 <strong>No>uen Roviraxagui>i</strong>
             </figcaption>
@@ -31,7 +46,12 @@ require_once 'header.php';
     </a>
     <a href="home.php">
         <figure>
-            <img src="img/mobile/espanol-mate.png" alt="">
+            <picture>
+                <!-- Desktop -->
+                <source media="(min-width:980px)" srcset="img/desktop/espanol.png" alt="">
+                <!-- Mobile  -->
+                <img src="img/mobile/espanol-mate.png" alt="">
+            </picture>
             <figcaption>Español <br>
                 <strong>Te damos la bienvenida</strong>
             </figcaption>
