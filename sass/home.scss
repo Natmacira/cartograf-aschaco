@@ -77,4 +77,40 @@ body.home {
             display: block;
         }
     }
+
+    div.sponsors-logos {
+        @include logos;
+    }
+    div.collaborators {
+        @include logos;
+        margin-top: 32px;
+        &.second {
+            img {
+                &:nth-child(1) {
+                    width: 162px;
+                }
+                &:nth-child(2) {
+                    width: 96px;
+                }
+                &:nth-child(3) {
+                    width: 206px;
+                }
+            }
+        }
+        &.third {
+            img {
+                width: 120px;
+                margin-bottom: 12px;
+                &:nth-child(5) {
+                    width: 110px;
+                }
+                &:nth-child(6) {
+                    width: 80px;
+                }
+                &:nth-child(7) {
+                    width: 100px;
+                }
+            }
+        }
+    }
 }

@@ -21,3 +21,22 @@
 //         font-size: 25px;
 //     }
 // }
+
+@mixin logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 360px;
+    margin: 0 auto;
+    margin-top: 7px;
+    @media (min-width: 980px) {
+        max-width: 1000px;
+    }
+    img {
+        width: 90px;
+        margin-top: 1px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}

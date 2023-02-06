@@ -69,12 +69,12 @@ require_once 'header.php';
             <img src="img/mobile/logo-lab.png" alt="Logo Laboratorio de innovación cultural y cientifica">
             <img src="img/mobile/logo-fundacionw.png" alt="Logo Fundación Williams">
         </div>
-        <div class="collaborators">
+        <div class="collaborators second">
             <img src="img/mobile/logo-subsecretariapluri.png" alt="Logo subsecretaria plurilingÜismo">
             <img src="img/mobile/logo-fadycc-UNNE.png" alt="Logo Facultad de Artes, Diseño y Ciencias de la cultura">
             <img src="img/mobile/Logo-ICCH_.png" alt="Logo Instituto de cultura.">
         </div>
-        <div class="collaborators">
+        <div class="collaborators third">
             <img src="img/mobile/logo-museo-hombre-chaq.png" alt="Logo museo del hombre chaqueño">
             <img src="img/mobile/logo-museo-historico-reg.png" alt="Logo Museo histórico regional.">
             <img src="img/mobile/logo-museo-medios.png" alt="Logo Museo de medios de comunicación.">
