@@ -122,6 +122,16 @@ require_once 'header.php';
         </ul>
     </article>
 </section>
+<section class="contact-us">
+    <h2>Si tenés dudas o sugerencias, escribinos</h2>
+    <form action="">
+        <strong>Dejanos tu consulta</strong>
+        <label for="">Nombre <input type="text"></label>
+        <label for="">Mail <input type="mail"></label>
+        <label for="">Consulta<textarea name="" id="" cols="30" rows="10"></textarea></label>
+        <button>Enviar</button>
+    </form>
+</section>
 <section class="final-section">
     <img src="img/mobile/Banner_redondo.png" alt="">
 </section>
