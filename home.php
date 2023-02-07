@@ -44,43 +44,51 @@ require_once 'header.php';
         <h2>¿En qué consiste la plataforma?</h2>
         <p>A través de la plataforma, el patrimonio indígena custodiado por diferentes instituciones del Chaco integra un mapa interactivo vinculado a los Proyectos Wikimedia. Esto permite que cualquier persona pueda acceder, editar y usar el contenido libremente, según las pautas de las licencias que lo rigen.
             <br>
+            <br>
             De la misma forma, personas indígenas pueden visualizar, cargar y modificar el contenido volcado en el mapa para que sea verdaderamente representativo de su cultura.
+            <br>
             <br>
             La interfaz de la plataforma está traducida al qom, wichí, moqoit y español.
         </p>
     </article>
     <article class="who-participates">
+        <h2>¿Qué pueblos/naciones indígenas participan en el proyecto?</h2>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/9e_d4DNJmZk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </article>
     <article class="who-colaborates">
         <h2>¿Quiénes pueden cargar contenido en la plataforma?</h2>
-        <p>
-            Pueden cargar contenido personas vinculadas a los tres pueblos/naciones indígenas que habitan el territorio chaqueño: qom, wichí y moqoit.
-            <br>
-            También pueden cargar personas no indígenas, que deseen compartir respetuosamente material vinculado a la cultura de alguno de estos tres pueblos. En cualquier caso, necesitarán un usuario y contraseña que los habilitará a modificar y cargar contenido, e indicar con qué pueblo/nación se identifican.
-        </p>
-        <figure>
-            <img src="img/mobile/Mujer_trabajando.png" alt="Mujer trabajando en el campo de Pampa Aguará en el año 1955.">
-            <figcaption>
-                Mujer trabajando en el campo de Pampa Aguará en el año 1955.
-            </figcaption>
-        </figure>
+        <div>
+            <p>
+                Pueden cargar contenido personas vinculadas a los tres pueblos/naciones indígenas que habitan el territorio chaqueño: qom, wichí y moqoit.
+                <br>
+                <br>
+                También pueden cargar personas no indígenas, que deseen compartir respetuosamente material vinculado a la cultura de alguno de estos tres pueblos. En cualquier caso, necesitarán un usuario y contraseña que los habilitará a modificar y cargar contenido, e indicar con qué pueblo/nación se identifican.
+            </p>
+            <figure>
+                <img src="img/mobile/Mujer_trabajando.png" alt="Mujer trabajando en el campo de Pampa Aguará en el año 1955.">
+                <figcaption>
+                    Mujer trabajando en el campo de Pampa Aguará en el año 1955.
+                </figcaption>
+            </figure>
+        </div>
     </article>
     <article class="collaborators">
         <h2>¿Qué instituciones colaboran con el proyecto?</h2>
         <p>Este proyecto es posible gracias a la colaboración de las siguientes instituciones culturales y educativas:</p>
-        <div class="sponsors-logos">
-            <img src="img/mobile/logo-wiki.png" alt="Logo wikimedia">
-            <img src="img/mobile/logo-centrodoc.png" alt="Logo Centro de documentación indigena">
-            <img src="img/mobile/logo-cultura.png" alt="Logo Programa de cultura de los pueblos originarios">
-            <img src="img/mobile/logo-potenciar.png" alt="Logo Potenciar">
-            <img src="img/mobile/logo-lab.png" alt="Logo Laboratorio de innovación cultural y cientifica">
-            <img src="img/mobile/logo-fundacionw.png" alt="Logo Fundación Williams">
-        </div>
-        <div class="collaborators second">
-            <img src="img/mobile/logo-subsecretariapluri.png" alt="Logo subsecretaria plurilingÜismo">
-            <img src="img/mobile/logo-fadycc-UNNE.png" alt="Logo Facultad de Artes, Diseño y Ciencias de la cultura">
-            <img src="img/mobile/Logo-ICCH_.png" alt="Logo Instituto de cultura.">
+        <div class="inner-container-logos">
+            <div class="sponsors-logos">
+                <img src="img/mobile/logo-wiki.png" alt="Logo wikimedia">
+                <img src="img/mobile/logo-centrodoc.png" alt="Logo Centro de documentación indigena">
+                <img src="img/mobile/logo-cultura.png" alt="Logo Programa de cultura de los pueblos originarios">
+                <img src="img/mobile/logo-potenciar.png" alt="Logo Potenciar">
+                <img src="img/mobile/logo-lab.png" alt="Logo Laboratorio de innovación cultural y cientifica">
+                <img src="img/mobile/logo-fundacionw.png" alt="Logo Fundación Williams">
+            </div>
+            <div class="collaborators second">
+                <img src="img/mobile/logo-subsecretariapluri.png" alt="Logo subsecretaria plurilingÜismo">
+                <img src="img/mobile/logo-fadycc-UNNE.png" alt="Logo Facultad de Artes, Diseño y Ciencias de la cultura">
+                <img src="img/mobile/Logo-ICCH_.png" alt="Logo Instituto de cultura.">
+            </div>
         </div>
         <div class="collaborators third">
             <img src="img/mobile/logo-museo-hombre-chaq.png" alt="Logo museo del hombre chaqueño">
