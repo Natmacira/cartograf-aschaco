@@ -10,7 +10,14 @@ if ($mysqli->connect_errno) {
 }
 ?>
 
-<p>Completá el siguiente formulario con tus datos</p>
+
+<?php
+$body_class = "form";
+require_once 'header.php';
+?>
+
+
+<p><strong>Completá el siguiente formulario con tus datos</strong></p>
 <form action="validation-form.php">
 
     <label for="name">Nombre<input type="text" id="name" name="nombre"  value="name" required> </label><br>
@@ -27,3 +34,7 @@ if ($mysqli->connect_errno) {
     <button>Siguiente</button>
 
 </form>
+
+<?php
+require_once 'footer.php';
+?>

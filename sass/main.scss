@@ -17,11 +17,12 @@ $theme-light-gray : #E0E0E0;
 $breakpoint-hamburger : 768px;
 
 @import "mixins"; 
+@import "skeleton";
 @import "normalize";
+@import "forms";
 @import "fonts";
 @import "header";
 @import "footer";
-@import "skeleton";
 @import "burger-menu";
 @import "index";
 @import "home";

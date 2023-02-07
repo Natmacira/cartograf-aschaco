@@ -48,9 +48,12 @@ body.home {
     figure {
         margin: 0;
         img {
-            max-width: 360px;
+            max-width: 320px;
             display: block;
             margin: 0 auto;
+            @media (min-width: 360px) {
+                max-width: 360px;
+            }
         }
         figcaption {
             font-size: 12px;
@@ -304,6 +307,16 @@ body.home {
         }
     }
 
+    section.contact-us {
+        padding-top: 2px;
+        h2 {
+            text-transform: uppercase;
+        }
+        @media (min-width: 980px) {
+            clear: left;
+        }
+    }
+
     section.final-section {
         text-align: center;
         display: flex;
@@ -314,7 +327,7 @@ body.home {
             display: block;
             margin: 24px 130px 20px;
             @media (min-width: 980px) {
-                margin: 240px 0 80px;
+                margin: 80px 0 80px;
             }
         }
     }
