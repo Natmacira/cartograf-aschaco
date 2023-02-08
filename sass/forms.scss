@@ -69,15 +69,32 @@ body {
                         width: 24px;
                         height: 24px;
                         margin: 0 16px 0 0;
+                        &#otro {
+                            width: 30px;
+                        }
                     }
                     input.other-nation-input {
+                        color: black;
                         border: none;
                         margin: 0;
+                        height: 24px;
+                        padding: 0;
+                        margin-left: 5px;
                     }
                 }
                 sup {
                     color: $theme-purple;
                     font-weight: bold;
+                }
+                input[type="checkbox"] {
+                    width: 24px;
+                    height: 24px;
+                    margin: 0;
+                }
+
+                &#terms-label {
+                    display: flex;
+                    align-items: center;
                 }
             }
         }
