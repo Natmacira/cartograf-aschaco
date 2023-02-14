@@ -12,9 +12,7 @@ require_once 'header.php';
             <p>Subí tu foto / audio / video</p>
         </a>
         <p class="highlighted-text">Mirá el video para aprender cómo subir contenido</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/9e_d4DNJmZk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
-    <p class="content-text">El contenido puede tratarse de fotos, videos, audio, documentos escritos (antiguos y actuales). Tené en cuenta que puede ser contenido sensible para los comunidades indígenas.</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/8wExCb_MuKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    <p class="content-text">El contenido puede tratarse de fotos, videos, audio, documentos escritos (antiguos y actuales). Tené en cuenta que puede ser contenido sensible para los comunidades indígenas.</p>
 </section>
 <section class="divider">
     <img src="img/mobile/separador-colores.png" alt="Separador de secciones en la pantalla">
@@ -53,8 +51,7 @@ require_once 'header.php';
     </article>
     <article class="who-participates">
         <h2>¿Qué pueblos/naciones indígenas participan en el proyecto?</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/9e_d4DNJmZk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </article>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/8wExCb_MuKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    </article>
     <article class="who-colaborates">
         <h2>¿Quiénes pueden cargar contenido en la plataforma?</h2>
         <div>

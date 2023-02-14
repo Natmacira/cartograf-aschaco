@@ -1,0 +1,31 @@
+body.terms {
+    main {
+        margin: 0 auto;
+        margin-top: 85px;
+        padding: 0 10px 20px;
+        max-width: 600px;
+        @media (min-width: 980px) {
+            margin-top: 105px;
+        }
+        h1 {
+            font-size: 18px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            @media (min-width: 980px) {
+                margin-bottom: 40px;
+                margin-top: 40px;
+            }
+        }
+
+        img {
+            width: 160px;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}
