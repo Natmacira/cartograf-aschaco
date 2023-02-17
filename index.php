@@ -44,7 +44,7 @@ require_once 'header.php';
                 <img src="img/mobile/moqoit-ceramica.png" alt="Jarra cerámica del pueblo moqoit de color rojizo y superficie alisada brillante.">
             </picture>
         </a>
-        <a href="">
+        <a href="home-Moqoit.php">
             <figcaption>Moqoit <br>
                 <strong>No>uen Roviraxagui>i</strong>
             </figcaption>

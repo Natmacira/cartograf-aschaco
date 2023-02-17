@@ -7,7 +7,7 @@ require_once 'header-Moqoit.php';
     <p class="highlighted-text">Nataxare> plataforma ñachiita óna >laua lomalate quiyi >ishit ajñi, naqairishiguim chaqai dalaxachi> na>ma hueetaugui na>qaataxanaxac chaqai na>ma no>ueenataxac na> moqoit chaqai nahua liỹaripi quena> senqatalec Chaco: Qom, Wichi, Moqoit.</p>
     <embed src="" type="">
     <div class="charge-items">
-        <a href="form.php"><strong>+</strong>
+        <a href="form-Moqoit.php"><strong>+</strong>
             <p>Naqairishiguim rqui>i/>xaỹaxanaxac/na>ajhnec </p>
         </a>
         <p class="highlighted-text">Mirá el video para aprender cómo subir contenido</p>
@@ -115,9 +115,9 @@ require_once 'header-Moqoit.php';
     <h2>No>m >ue repeetaxanaxahi lqo>m ne>palaxañiira>a, ca> >vité qayirquí> </h2>
     <form action="">
         <strong>Deenaxanaxañitegue da renataxanaxaqui></strong>
-        <label for="">Ỹichiriñi qadeenaxachi>   <input type="text" placeholder="Escribí tu nombre"></label>
-        <label for="">Ỹichiriñi ca> mail  <input type="mail" placeholder="Escribí tu mail"></label>
-        <label for="">Ỹichiriñi da renataxanaxaqui> <textarea name="" id="" cols="30" rows="10" placeholder="Escribí tu consulta"></textarea></label>
+        <label for="">Neenaxat <input type="text" placeholder="Ỹichiriñi qadeenaxachi>"></label>
+        <label for="">Mail <input type="mail" placeholder="Ỹichiriñi ca> mail "></label>
+        <label for="">Renataxanaxaqui> <textarea name="" id="" cols="30" rows="10" placeholder="Ỹichiriñi da renataxanaxaqui>"></textarea></label>
         <button>Qaila>a</button>
     </form>
 </section>
