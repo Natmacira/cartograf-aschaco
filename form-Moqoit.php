@@ -39,5 +39,5 @@ require_once 'header.php';
 </form>
 
 <?php
-require_once 'footer.php';
+require_once 'footer-Moqoit.php';
 ?>
