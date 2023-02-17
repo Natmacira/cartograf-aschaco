@@ -1,18 +1,18 @@
 <?php
 $body_class = "home";
-require_once 'header.php';
+require_once 'header-Moqoit.php';
 ?>
 
 <section class="map-section">
-    <p class="highlighted-text">En esta plataforma encontrarás un mapa que permite visualizar, cargar y editar contenido relativo a la historia y cultura de los pueblos indígenas del Chaco:
-        Qom, Wichi y Moqoit.</p>
+    <p class="highlighted-text">Nataxare> plataforma ñachiita óna >laua lomalate quiyi >ishit ajñi, naqairishiguim chaqai dalaxachi> na>ma hueetaugui na>qaataxanaxac chaqai na>ma no>ueenataxac na> moqoit chaqai nahua liỹaripi quena> senqatalec Chaco: Qom, Wichi, Moqoit.</p>
     <embed src="" type="">
     <div class="charge-items">
         <a href="form.php"><strong>+</strong>
-            <p>Subí tu foto / audio / video</p>
+            <p>Naqairishiguim rqui>i/>xaỹaxanaxac/na>ajhnec </p>
         </a>
         <p class="highlighted-text">Mirá el video para aprender cómo subir contenido</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/8wExCb_MuKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    <p class="content-text">El contenido puede tratarse de fotos, videos, audio, documentos escritos (antiguos y actuales). Tené en cuenta que puede ser contenido sensible para los comunidades indígenas.</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/8wExCb_MuKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <p class="content-text">Na>maq contenido shichite> naqairishiguim nqui>i, na>ajhnec, >xaỹaxanaxac, nerqaipi naneresañi (>auaxaic chaqai dalaxaic), no>uiñisa>qo> qa>nem shichite> naqairishiguim na>maq ichoxot chaqai> na> >ueenataxac, qara>ỹoxoc na> moqoit chaqai nahua liỹaripi qomyipi.</p>
 </section>
 <section class="divider">
     <img src="img/mobile/separador-colores.png" alt="Separador de secciones en la pantalla">
@@ -20,46 +20,38 @@ require_once 'header.php';
 
 <section class="who-we-are">
     <article class="what-is">
-        <h1>¿Qué es Cartografías Abiertas: Qom, Wichí, Moqoit?</h1>
+        <h1>¿Ñigue⁷ na⁷maq Cartografía abierta: Qom, Wichi, Moqoit?</h1>
         <div>
-            <p>Esta plataforma colaborativa, multimedia y plurilingüe es
-                resultado de un proyecto conjunto entre el Centro de
-                Documentación Indígena No’lhametwet del Chaco y la Asociación
-                Civil Wikimedia Argentina. Su objetivo es poner en circulación
-                los conocimientos y la cultura de las identidades indígenas de
-                la provincia chaqueña desde sus propias voces y visiones.
-                La iniciativa fue ejecutada tras salir ganador de la
-                convocatoria “Cultura, Ciencia y Territorio 2022” impulsada
-                por Fundación Williams y Potenciar.
+            <p>Nataxare> plataforma no>ueenataxanaxaua, chaqai ỹoreta>oguit qomyipi la>qaatqa, chicqaugui so>maq proyecto mishi imiguí notoanta>guit aso>maq “Centro de Documentación Indígena No’lhametwet del Chaco” chaqai la Asociación Civil Wikipedia Argentina. Vichiguiño huotaque >inaxashiguim na>maq la>deenaxanaxa chaqai> na> >ueenataxac na> moqoit chaqai nahua liỹaripi quena> senqatalec provincia chaqueña quiyim huootae ana>maq lalamaxaret laviyaxac chaqai lauanaxanaxac. Nataxare> no>ueenatec chicqaugui na> rauegaxan queso noỹaxanaxac “Cultura, Ciencia y territorio 2022” lo>ueenatec saua fundación Williams chaqai Potenciar.
             </p>
             <figure>
                 <img src="img/mobile/Artesana_Cestera.png" alt="">
-                <figcaption>Artesana Cestera (Esteban Zugasti, 1960). Colección de fotografía de Esteban Zugasti. Centro de documentación indígena No'lhametwet.</figcaption>
+                <figcaption>No>xonaxanaq (Esteban Zugasti, 1960). nqui>illipi lapoonecse so>maxare Esteban  Zugasti. Centro de documentación indígena No'lhametwet </figcaption>
             </figure>
         </div>
     </article>
     <article class="how-work">
-        <h2>¿En qué consiste la plataforma?</h2>
-        <p>A través de la plataforma, el patrimonio indígena custodiado por diferentes instituciones del Chaco integra un mapa interactivo vinculado a los Proyectos Wikimedia. Esto permite que cualquier persona pueda acceder, editar y usar el contenido libremente, según las pautas de las licencias que lo rigen.
+        <h2>¿Ñigue> reloqo>tegue na>maq plataforma? </h2>
+        <p>Najho plataforma, na>ogue nataxare> qano>ueenaxatot na>maq Moqoit chaqai na> liỹaripi qomyipi qareloqota>a quena> ỹoreta>oguit no>ueenataxanaxaqui quena> Chaco >ue >laua lomalatrepi inoqueta>guita aso>maq Proyecto Wikimedia. Najho >ishiteta quiyim canchaqaica Qom ỹacona, ỹadalaxat chaqai ỹouen na>maq hueetaugui.
             <br>
             <br>
-            De la misma forma, personas indígenas pueden visualizar, cargar y modificar el contenido volcado en el mapa para que sea verdaderamente representativo de su cultura.
+            Wikimedia. Najho >ishiteta quiyim canchaqaica Qom ỹacona, ỹadalaxat chaqai ỹouen na>maq hueetaugui. <br>
             <br>
-            <br>
-            La interfaz de la plataforma está traducida al qom, wichí, moqoit y español.
+            Neconta>guit ana plataforma mashiguere> qana>qalgoxoshiguim quena Qom, Wichi, Moqoit chaqai doqoshi la>qaatqa.
         </p>
     </article>
     <article class="who-participates">
-        <h2>¿Qué pueblos/naciones indígenas participan en el proyecto?</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/8wExCb_MuKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    </article>
+        <h2>¿Ñigue> ca>maxare moqoit chaqai nahua liỹaripi lauo> ỹalequetauguiló ana>maq  proyecto.? </h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/8wExCb_MuKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </article>
     <article class="who-colaborates">
-        <h2>¿Quiénes pueden cargar contenido en la plataforma?</h2>
+        <h2>¿Ñigue> cá>maq >ishit inaxanshiguim ana>maq no>ueenatec quena plataforma? </h2>
         <div>
             <p>
-                Pueden cargar contenido personas vinculadas a los tres pueblos/naciones indígenas que habitan el territorio chaqueño: qom, wichí y moqoit.
+            >Ishiteta inaxashiguim lo>ueenatec na>maq qom hueetauguiló na> moqoit chaqai  nahua liỹaripi lauo> hueetalec na>maq >laua chaqueña: Qom, Wichi chaqai  Moqoit.
                 <br>
                 <br>
-                También pueden cargar personas no indígenas, que deseen compartir respetuosamente material vinculado a la cultura de alguno de estos tres pueblos. En cualquier caso, necesitarán un usuario y contraseña que los habilitará a modificar y cargar contenido, e indicar con qué pueblo/nación se identifican.
+                Chaqai>neta na>maq doqoshi >ishiteta inaxanshiguim lo>ueenatec da  ỹahotaque rotauanaxague qalaq ỹa>maxate>tegue da >ichoxot naua  no>ueenataxac na>maq moqoit chaqai nahua liỹaripi qarqaỹaripi. 
             </p>
             <figure>
                 <img src="img/mobile/Mujer_trabajando.png" alt="Mujer trabajando en el campo de Pampa Aguará en el año 1955.">
@@ -70,8 +62,8 @@ require_once 'header.php';
         </div>
     </article>
     <article class="collaborators">
-        <h2>¿Qué instituciones colaboran con el proyecto?</h2>
-        <p>Este proyecto es posible gracias a la colaboración de las siguientes instituciones culturales y educativas:</p>
+        <h2>¿Ñica> no>ueenataxanaxaqui rotaanaxanegue na>maq proyecto?</h2>
+        <p>Najho proyecto >ishit imigui ma> notoanta>guit najho ỹoreta>oguit no>ueenataxanaxaqui culturales chaqai paxaguinataxanaxaqui:</p>
         <div class="inner-container-logos">
             <div class="sponsors-logos">
                 <img src="img/mobile/logo-wiki.png" alt="Logo wikimedia">
@@ -99,7 +91,7 @@ require_once 'header.php';
     </article>
 </section>
 <section class="social-media">
-    <h2>Seguinos en nuestras redes</h2>
+    <h2>Ajñi quena> qana redes:</h2>
     <article class="social-article">
         <h3>Wikimedia Argentina</h3>
         <ul>
@@ -120,13 +112,13 @@ require_once 'header.php';
     </article>
 </section>
 <section class="contact-us">
-    <h2>Si tenés dudas o sugerencias, escribinos</h2>
+    <h2>No>m >ue repeetaxanaxahi lqo>m ne>palaxañiira>a, ca> >vité qayirquí> </h2>
     <form action="">
-        <strong>Dejanos tu consulta</strong>
-        <label for="">Nombre <input type="text" placeholder="Escribí tu nombre"></label>
-        <label for="">Mail <input type="mail" placeholder="Escribí tu mail"></label>
-        <label for="">Consulta<textarea name="" id="" cols="30" rows="10" placeholder="Escribí tu consulta"></textarea></label>
-        <button>Enviar</button>
+        <strong>Deenaxanaxañitegue da renataxanaxaqui></strong>
+        <label for="">Ỹichiriñi qadeenaxachi>   <input type="text" placeholder="Escribí tu nombre"></label>
+        <label for="">Ỹichiriñi ca> mail  <input type="mail" placeholder="Escribí tu mail"></label>
+        <label for="">Ỹichiriñi da renataxanaxaqui> <textarea name="" id="" cols="30" rows="10" placeholder="Escribí tu consulta"></textarea></label>
+        <button>Qaila>a</button>
     </form>
 </section>
 <section class="final-section">
