@@ -36,9 +36,9 @@ require_once 'header-Moqoit.php';
         <input type="text" id="parcialidad" name="parcialidad" value="" placeholder="choxochi ca>chicqoraugui"> </label><br>
     <label for="comunidad">Na>areaxahua (da> vi>saque): 
         <input type="text" id="comunidad" name="comunidad" value="" placeholder="Choxochi na>maq ra>areaxahuai"> </label><br>
-    <label for="institucion">No>om ca> no>ueenataxanaxaqui loqo>m paxaguinataxanaxaqui> ro’ueenataxanqa>chi, choxochi ca> leenaxat.<input type="text" id="institucion" name="institucion" value="" placeholder="nombre de la institución"> </label><br>
-    <label for="terminos" id="terms-label"><input type="checkbox" id="terminos" name="terminos" value="" required>Acepto los <strong> <a href="terminos.php"> términos y condiciones</a></strong></label><br>
-    <button>Siguiente</button>
+    <label for="institucion">No>om ca> no>ueenataxanaxaqui loqo>m paxaguinataxanaxaqui> ro’ueenataxanqa>chi, choxochi ca> leenaxat.<input type="text" id="institucion" name="institucion" value="" placeholder="leenaxat na> no>ueenataxanaxaqui"> </label><br>
+    <label for="terminos" id="terms-label"><input type="checkbox" id="terminos" name="terminos" value="" required>Sacoñiguit na>maq <strong> <a href="terminos.php"> Términos chaqai nelaataxaset </a></strong></label><br>
+    <button>>neetasa></button>
 
 </form>
 

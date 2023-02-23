@@ -10,7 +10,7 @@ require_once 'header-Moqoit.php';
         <a href="form-Moqoit.php"><strong>+</strong>
             <p>Naqairishiguim rqui>i/>xaỹaxanaxac/na>ajhnec </p>
         </a>
-        <p class="highlighted-text">Mirá el video para aprender cómo subir contenido</p>
+        <p class="highlighted-text">Ajñi nataxare na>ajhnec da co>vinetegue da qai>naashiguim naua  no’ueenatec</p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/8wExCb_MuKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <p class="content-text">Na>maq contenido shichite> naqairishiguim nqui>i, na>ajhnec, >xaỹaxanaxac, nerqaipi naneresañi (>auaxaic chaqai dalaxaic), no>uiñisa>qo> qa>nem shichite> naqairishiguim na>maq ichoxot chaqai> na> >ueenataxac, qara>ỹoxoc na> moqoit chaqai nahua liỹaripi qomyipi.</p>
 </section>

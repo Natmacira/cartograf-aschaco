@@ -14,7 +14,7 @@ require_once 'header.php';
                 <img src="img/mobile/qom-canasto.png" alt="Canasta tejida del pueblo qom. Con tres compartimentos para ser usada como matera. La trama combina colores claros y oscuros, propios de la fibra de totora y de la palma con que está hecha">
             </picture>
         </a>
-        <a href="">
+        <a href="home-Qom.php">
             <figcaption>Qom <br>
                 <strong>'onaxaic ra carviraxaqui</strong>
             </figcaption>
