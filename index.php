@@ -29,7 +29,7 @@ require_once 'header.php';
                 <img src="img/mobile/wichi-adorno.png" alt="Figura tallada en madera del pueblo wichí, con la forma de un tucán agarrado a una rama. Hecha con maderas de distintas tonalidades. ">
             </picture>
         </a>
-        <a href="">
+        <a href="home-Wichi.php">
             <figcaption>Wichí <br>
                 <strong>amtena, is ta lanamhen</strong>
             </figcaption>

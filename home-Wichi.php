@@ -1,6 +1,6 @@
 <?php
 $body_class = "home";
-require_once 'header-Qom.php';
+require_once 'header-Wichi.php';
 ?>
 
 <section class="map-section">
@@ -8,7 +8,7 @@ require_once 'header-Qom.php';
         Qom, Wichi y Moqoit.</p>
     <embed src="" type="">
     <div class="charge-items">
-        <a href="form-Qom.php"><strong>+</strong>
+        <a href="form.php"><strong>+</strong>
             <p>Subí tu foto / audio / video</p>
         </a>
         <p class="highlighted-text">Mirá el video para aprender cómo subir contenido</p>
@@ -133,4 +133,4 @@ require_once 'header-Qom.php';
     <img src="img/mobile/Banner_redondo.png" alt="">
 </section>
 <?php
-require_once 'footer-Qom.php';
+require_once 'footer-Wichi.php';

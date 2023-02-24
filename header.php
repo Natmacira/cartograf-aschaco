@@ -38,28 +38,30 @@
 <body class="<?php echo $body_class; ?>">
     <header>
         <img src="img/mobile/Banner_of_the_Qulla_Suyu.png" alt="">
-        <p class="header-text">Cartografías abiertas
-            Qom, Wichi y Moqoit</p>
+        <p class="header-text"><a href="index.php"> Cartografías abiertas
+                Qom, Wichi y Moqoit</a></p>
         <div id="container" class="open clss">
             <span class="cls"></span>
             <span>
                 <ul class="sub-menu">
-                    <li><a href="">Qom</a></li>
-                    <li><a href="">Wichí</a></li>
-                    <li><a href="">Moqoit</a></li>
+                    <li><a href="home-Qom.php">Qom</a></li>
+                    <li><a href="home-Wichi.php">Wichí</a></li>
+                    <li><a href="home-Moqoit.php">Moqoit</a></li>
                     <li><a href="home.php">Español</a></li>
-                    <li><a href="javascript:history.back()" class="go-back-link">< Volver</a></li>
+                    <li><a href="javascript:history.back()" class="go-back-link">
+                            < Volver</a>
+                    </li>
                 </ul>
             </span>
             <span class="cls"></span>
         </div>
-    <section>
-    <ul class="desktop-menu">
-                    <li><a href="">Qom</a></li>
-                    <li><a href="">Wichí</a></li>
-                    <li><a href="">Moqoit</a></li>
-                    <li><a href="home.php">Español</a></li>
-                </ul>
-    </section>
+        <section>
+            <ul class="desktop-menu">
+                <li><a href="home-Qom.php">Qom</a></li>
+                <li><a href="home-Wichi.php">Wichí</a></li>
+                <li><a href="home-Moqoit.php">Moqoit</a></li>
+                <li><a href="home.php">Español</a></li>
+            </ul>
+        </section>
     </header>
     <main>
