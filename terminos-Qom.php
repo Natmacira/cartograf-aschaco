@@ -5,17 +5,14 @@ require_once 'header-Qom.php';
 
 <section class="terms-and-conditions">
 <h1>Términos y condiciones</h1>
-<p>ʼ ʼo W K D ( W K D S W K D W K PWD ) ʼ  ỹ maxat- ʼ ʼo ỹasaxasheguemec Anam lainternet digital maye  iỹ o . ʼ ʼo o ʼo  
- o o W K D . </p>
+<p>ʼana qar ʼonata ihuetac na WIKIMEDIA ( WIKIMEDIA COMMONS,WIKIDATA,WIKIPWDIA) cha ʼayi  ỹa̕yamaxat-ta ʼaguet nam qar ʼonatac maye qaỹasaxasheguemec Anam lainternet digital maye iỹaxat nam huaigui nam qarhuo̕. Ana ʼ na qar ʼonata huo ʼo yim mashe am ahuasateguet ram usuario ra ilotegue̕ WIKIMEDIA. </p>
 <img src="img/mobile/CC_BY.png" alt="Logo Creative Commons BY 4.0 Internacional">
-<p>Am qoỹami ra ishet ra ancompartir, ancopian, ʼ ʼ   ʼo o ʼo ʼo ʼo  
- o ʼ o ʼo . 
+<p>CreativeCommons BY 4.0 Internacional:Am qoỹami ra ishet ra ancompartir, ancopian, alagaxatec , ʼahualequena ʼt , nam huetalec nam qar ʼonatac, ram huotaique au ʼot cam ar ʼonatac, qalaxaye  ʼonaxaic ra ahualemaxata cam huotaique ʼau huo ʼot.
 </p>
 <img src="img/mobile/CC_BY-SA.png" alt="Logo Creative Commons BY SA 4.0 Internacional">
-<p>Anam am qoỹami anlicenci ihuen ʼ ỹ o p ʼ  
- BY .0 p ʼ o ʼ o o ʼo   ʼ qaỹasateguet nache ishet ra qailagaxatec qo qaỹasaxasheguem. 
+<p>CreativeCommons BY SA 4.0 Internacional: Anam am qoỹami anlicenci  ihuen ra ʼahuaỹateeteguet som pa ʼashiguem arasataxac ram  ahualaxaguet ram lataxaguesat  añe CC BY 4.0 Nam pa ʼaguelo aleuʼ, ram huo̕o cam ar ʼonatac hua ʼañi qaimeten nache ra am qaỹasateguet nache ishet ra qailagaxatec qo qaỹasaxasheguem.
 </p>
-<p>Cam ahuahuotaique ahuasaxasheguem ihuen ra ỹo ʼ ‘  ʼo o ʼo -lla mashe nanet-talec nache am qan ñe ʼ op. R o ʼo   ʼ ỹ ʼ @ .o . .</p>
+<p>Cam ahuahuotaique ahuasaxasheguem ihuen ra ỹoqta aralamaxat, cha ʼaye  ram saishet ra ‘ar ʼonatac ishet ra huo ʼo ca l-lla  mashe nanet-talec nache am qan ñe ʼeguesop. Ra huo ʼo ca saishet ra ʼahuaỹateteguet nache ʼahuamaq aca eriguishe añe cultura@wikimedia.org.ar.</p>
 
 </section>
 

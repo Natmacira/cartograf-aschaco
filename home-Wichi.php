@@ -62,9 +62,9 @@ require_once 'header-Wichi.php';
                 También pueden cargar personas no indígenas, que deseen compartir respetuosamente material vinculado a la cultura de alguno de estos tres pueblos. En cualquier caso, necesitarán un usuario y contraseña que los habilitará a modificar y cargar contenido, e indicar con qué pueblo/nación se identifican.
             </p>
             <figure>
-                <img src="img/mobile/Mujer_trabajando.png" alt="Mujer trabajando en el campo de Pampa Aguará en el año 1955.">
+                <img src="img/mobile/Docentes_bilingües_qom.jpg" alt="Docentes bilingües qom (Ashazam, 2019). CC BY SA 4.0 internacional.">
                 <figcaption>
-                    Mujer trabajando en el campo de Pampa Aguará en el año 1955.
+                    Docentes bilingües qom (Ashazam, 2019). CC BY SA 4.0 internacional.
                 </figcaption>
             </figure>
         </div>

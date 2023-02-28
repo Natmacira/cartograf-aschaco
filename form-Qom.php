@@ -20,13 +20,13 @@ require_once 'header-Qom.php';
 
 <!-- <form action="validation-form.php"> -->
 <form action="">
-    <p><strong>Completá el siguiente formulario con tus datos</strong></p>
+    <p><strong>Erelec nam aralamaxat </strong></p>
 
-    <label for="name">Nombre <sup>*</sup><input type="text" id="name" name="nombre" value="" required placeholder="escribí tu nombre"> </label><br>
-    <label for="nation">Pueblo/Nación <sup>*</sup></label> <br>
-    <label for="qom" class="nation-option-label"><input type="radio" id="qom" name="nation" value="1" required>Qom </label><br>
-    <label for="wichi" class="nation-option-label"><input type="radio" id="wichi" name="nation" value="2">Wichi </label><br>
-    <label for="moqoit" class="nation-option-label"><input type="radio" id="moqoit" name="nation" value="3">Moqoit </label><br>
+    <label for="name">Nombre <sup>*</sup><input type="text" id="name" name="nombre" value="" required placeholder="Eriñi  ca ʼar ʼenaxat"> </label><br>
+    <label for="nation">Yi noỹic/ na lauo’<sup>*</sup></label> <br>
+    <label for="qom" class="nation-option-label"><input type="radio" id="qom" name="nation" value="1" required>QOM </label><br>
+    <label for="wichi" class="nation-option-label"><input type="radio" id="wichi" name="nation" value="2">LQAXAIC </label><br>
+    <label for="moqoit" class="nation-option-label"><input type="radio" id="moqoit" name="nation" value="3">MOQOIT </label><br>
     <label for="otro" class="nation-option-label"><input type="radio" id="otro" name="nation" value="4">
         Otro:<input type="text" name="nation" class="other-nation-input" placeholder="ej. Argentina">
     </label><br>

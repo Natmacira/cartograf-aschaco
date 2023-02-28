@@ -54,9 +54,9 @@ require_once 'header-Moqoit.php';
                 Chaqai>neta na>maq doqoshi >ishiteta inaxanshiguim lo>ueenatec da  ỹahotaque rotauanaxague qalaq ỹa>maxate>tegue da >ichoxot naua  no>ueenataxac na>maq moqoit chaqai nahua liỹaripi qarqaỹaripi. 
             </p>
             <figure>
-                <img src="img/mobile/Mujer_trabajando.png" alt="Mujer trabajando en el campo de Pampa Aguará en el año 1955.">
+                <img src="img/mobile/Docentes_bilingües_qom.jpg" alt="Docentes bilingües qom (Ashazam, 2019). CC BY SA 4.0 internacional.">
                 <figcaption>
-                    Mujer trabajando en el campo de Pampa Aguará en el año 1955.
+                    Docentes bilingües qom (Ashazam, 2019). CC BY SA 4.0 internacional.
                 </figcaption>
             </figure>
         </div>

@@ -45,7 +45,7 @@
             <span>
                 <ul class="sub-menu">
                     <li><a href="home-Qom.php">Qom</a></li>
-                    <li><a href="home-Wichi.php">Wichí</a></li>
+                    <li><a href="home-Wichi.php">Lqaxaic</a></li>
                     <li><a href="home-Moqoit.php">Moqoit</a></li>
                     <li><a href="home.php">Español</a></li>
                     <li><a href="javascript:history.back()" class="go-back-link">
@@ -58,7 +58,7 @@
         <section>
             <ul class="desktop-menu">
                 <li><a href="home-Qom.php">Qom</a></li>
-                <li><a href="home-Wichi.php">Wichí</a></li>
+                <li><a href="home-Wichi.php">Lqaxaic</a></li>
                 <li><a href="home-Moqoit.php">Moqoit</a></li>
                 <li><a href="home.php">Español</a></li>
             </ul>
