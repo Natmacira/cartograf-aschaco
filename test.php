@@ -7,7 +7,6 @@ use MediaWiki\OAuthClient\Token;
 use MediaWiki\OAuthClient\Request;
 use MediaWiki\OAuthClient\SignatureMethod\HmacSha1;
 
-
 require_once 'credentials.php';
 
 $apiParams = array();
