@@ -14,6 +14,12 @@ require_once 'header.php';
                 <img src="img/mobile/qom-canasto.png" alt="Canasta tejida del pueblo qom. Con tres compartimentos para ser usada como matera. La trama combina colores claros y oscuros, propios de la fibra de totora y de la palma con que está hecha">
             </picture>
         </a>
+        <div>
+        <a href="" class="hide-link">
+        Ver foto en Wikipedia
+        </a>
+        <button>X</button>
+        </div>
         <a href="home-Qom.php">
             <figcaption>Qom <br>
                 <strong>'onaxaic ra <br> carviraxaqui</strong>
@@ -29,6 +35,12 @@ require_once 'header.php';
                 <img src="img/mobile/wichi-adorno.png" alt="Figura tallada en madera del pueblo wichí, con la forma de un tucán agarrado a una rama. Hecha con maderas de distintas tonalidades. ">
             </picture>
         </a>
+        <div>
+        <a href="" class="hide-link">
+        Ver foto en Wikipedia
+        </a>
+        <button>X</button>
+        </div>
         <a href="home-Wichi.php">
             <figcaption>Wichí <br>
                 <strong>amtena, <br> is ta lanamhen</strong>
@@ -44,6 +56,12 @@ require_once 'header.php';
                 <img src="img/mobile/moqoit-ceramica.png" alt="Jarra cerámica del pueblo moqoit de color rojizo y superficie alisada brillante.">
             </picture>
         </a>
+        <div>
+        <a href="" class="hide-link">
+        Ver foto en Wikipedia
+        </a>
+        <button>X</button>
+        </div>
         <a href="home-Moqoit.php">
             <figcaption>Moqoit <br>
                 <strong>No>uen <br> Roviraxagui>i</strong>
@@ -59,6 +77,12 @@ require_once 'header.php';
                 <img src="img/mobile/Mate.png" class="mate-element" alt="Mate tradicional de calabaza con bordes de plata tallada y bombilla de plata tallada">
             </picture>
         </a>
+        <div>
+        <a href="" class="hide-link">
+        Ver foto en Wikipedia
+        </a>
+        <button>X</button>
+        </div>
         <a href="home.php">
             <figcaption>Español <br>
                 <strong>Te damos <br> la bienvenida</strong>
