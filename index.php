@@ -16,7 +16,7 @@ require_once 'header.php';
         </a>
         <a href="home-Qom.php">
             <figcaption>Qom <br>
-                <strong>'onaxaic ra carviraxaqui</strong>
+                <strong>'onaxaic ra <br> carviraxaqui</strong>
             </figcaption>
         </a>
     </figure>
@@ -31,7 +31,7 @@ require_once 'header.php';
         </a>
         <a href="home-Wichi.php">
             <figcaption>Wichí <br>
-                <strong>amtena, is ta lanamhen</strong>
+                <strong>amtena, <br> is ta lanamhen</strong>
             </figcaption>
         </a>
     </figure>
@@ -46,23 +46,25 @@ require_once 'header.php';
         </a>
         <a href="home-Moqoit.php">
             <figcaption>Moqoit <br>
-                <strong>No>uen Roviraxagui>i</strong>
+                <strong>No>uen <br> Roviraxagui>i</strong>
             </figcaption>
         </a>
     </figure>
-    <a href="home.php">
-        <figure>
+    <figure>
+        <a href="https://commons.m.wikimedia.org/wiki/File:Mate_containing_terer%C3%A9.JPG" target="_blank">
             <picture>
                 <!-- Desktop -->
-                <source media="(min-width:980px)" srcset="img/desktop/espanol.png" alt="Mate tradicional de calabaza con bordes de plata tallada y bombilla de plata tallada">
+                <source media="(min-width:980px)" srcset="img/mobile/Mate.png" alt="Mate tradicional de calabaza con bordes de plata tallada y bombilla de plata tallada">
                 <!-- Mobile  -->
-                <img src="img/mobile/espanol-mate.png" alt="Mate tradicional de calabaza con bordes de plata tallada y bombilla de plata tallada">
+                <img src="img/mobile/Mate.png" class="mate-element" alt="Mate tradicional de calabaza con bordes de plata tallada y bombilla de plata tallada">
             </picture>
+        </a>
+        <a href="home.php">
             <figcaption>Español <br>
-                <strong>Te damos la bienvenida</strong>
+                <strong>Te damos <br> la bienvenida</strong>
             </figcaption>
-        </figure>
-    </a>
+        </a>
+    </figure>
 </section>
 <section class="sponsors-logos">
     <img src="img/mobile/logo-wiki.png" alt="Logo wikimedia">
