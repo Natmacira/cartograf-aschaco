@@ -161,6 +161,21 @@ body {
                         }
                 }
             }
+
+            .show-after-submission {
+                font-size: 18px;
+                text-align: center;
+                color: #A40F2C;
+                border: solid 1px;
+                border-color: #A40F2C;
+                padding: 22px 0;
+                border-radius: 5px;
+                margin: 0 auto;
+                max-width: 310px;
+                margin-bottom: 40px;
+                box-shadow: 6px 8px 14px 0px grey;
+                display: none;
+            }
         }
     }
 }

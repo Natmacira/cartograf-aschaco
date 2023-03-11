@@ -36,8 +36,13 @@ require_once 'header.php';
     <label for="terminos" id="terms-label"><input type="checkbox" id="terminos" name="terminos" value="" required>Acepto los <strong> <a href="terminos.php"> términos y condiciones</a></strong></label><br>
     <button>Siguiente</button>
 
-
 </form>
+<article class="show-after-submission">
+    <p>¡Muchas gracias
+        <br>
+        por tu aporte!
+    </p>
+</article>
 
 <section class="contact-us">
     <h2>Si tenés dudas o sugerencias, escribinos</h2>
@@ -48,7 +53,15 @@ require_once 'header.php';
         <label for="">Consulta<textarea name="" id="" cols="30" rows="10" placeholder="Escribí tu consulta"></textarea></label>
         <button>Enviar</button>
     </form>
+    <article class="show-after-submission">
+        <p>¡Muchas gracias
+            <br>
+            por tu aporte!
+        </p>
+    </article>
 </section>
+
+
 
 <?php
 require_once 'footer.php';
