@@ -20,7 +20,9 @@ require_once 'header.php';
         </div>
         <a href="home-Qom.php">
             <figcaption>Qom <br>
-                <strong>'onaxaic ra <br> carviraxaqui</strong>
+                <strong>'Onaxaic
+                    Ra <br> Qarviraxaqui
+                </strong>
             </figcaption>
         </a>
     </figure>

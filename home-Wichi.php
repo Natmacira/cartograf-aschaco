@@ -4,15 +4,15 @@ require_once 'header-Wichi.php';
 ?>
 
 <section class="map-section">
-    <p class="highlighted-text">En esta plataforma encontrarás un mapa que permite visualizar, cargar y editar contenido relativo a la historia y cultura de los pueblos indígenas del Chaco:
-        Qom, Wichi y Moqoit.</p>
+    <p class="highlighted-text">Che layahin plataformana law'enla mapa, tojha iwunlasey che am lathatsi mañhey tojh pajhchhehen, hotewuye , tokeyis, toka historias tojh wichi, Moqoit wit Qom kamayek.</p>
     <embed src="" type="">
     <div class="charge-items">
-        <a href="form.php"><strong>+</strong>
-            <p>Subí tu foto / audio / video</p>
+        <a href="form-Wichi.php"><strong>+</strong>
+            <p>Thattsi apeyak /apak / video</p>
         </a>
         <p class="highlighted-text">Mirá el video para aprender cómo subir contenido</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/8wExCb_MuKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    <p class="content-text">El contenido puede tratarse de fotos, videos, audio, documentos escritos (antiguos y actuales). Tené en cuenta que puede ser contenido sensible para los comunidades indígenas.</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/8wExCb_MuKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <p class="content-text">Tojha wusey che tukhope tattsi lapak, lapeyak,videos,hotewuye tolesainek tojh pajhche wit athana.yahin che is wuiche kha.</p>
 </section>
 <section class="divider">
     <img src="img/mobile/separador-colores.png" alt="Separador de secciones en la pantalla">
@@ -20,17 +20,9 @@ require_once 'header-Wichi.php';
 
 <section class="who-we-are">
     <article class="what-is">
-        <h1>¿Qué es Cartografías Abiertas: Qom, Wichí, Moqoit?</h1>
+        <h1> ¿Athe cartografías abiertas: Qom, wichi ,Moqoit?</h1>
         <div>
-            <p>Esta plataforma colaborativa, multimedia y plurilingüe es
-                resultado de un proyecto conjunto entre el Centro de
-                Documentación Indígena No’lhametwet del Chaco y la Asociación
-                Civil Wikimedia Argentina. Su objetivo es poner en circulación
-                los conocimientos y la cultura de las identidades indígenas de
-                la provincia chaqueña desde sus propias voces y visiones.
-                La iniciativa fue ejecutada tras salir ganador de la
-                convocatoria “Cultura, Ciencia y Territorio 2022” impulsada
-                por Fundación Williams y Potenciar.
+            <p> N’olhametw’et tojh ihi Chaco wit asociación civil wikimedia Argentina, lhamil tojh yakalhi proyecto, tojh tach’uta tojha hop cultura, ciencia, Territorio 2022 wit fundación Williams y Potenciar. Athana thek ichemyenlhi mak tojh hana, hopkilak nufwu tojh yahaneypahote indígenas keyis tojh ihi Chaco
             </p>
             <figure>
                 <img src="img/mobile/Artesana_Cestera.png" alt="">
@@ -39,7 +31,7 @@ require_once 'header-Wichi.php';
         </div>
     </article>
     <article class="how-work">
-        <h2>¿En qué consiste la plataforma?</h2>
+        <h2>¿Athe tojh ihinla plataformana?</h2>
         <p>A través de la plataforma, el patrimonio indígena custodiado por diferentes instituciones del Chaco integra un mapa interactivo vinculado a los Proyectos Wikimedia. Esto permite que cualquier persona pueda acceder, editar y usar el contenido libremente, según las pautas de las licencias que lo rigen.
             <br>
             <br>
@@ -50,28 +42,24 @@ require_once 'header-Wichi.php';
         </p>
     </article>
     <article class="who-participates">
-        <h2>¿Qué pueblos/naciones indígenas participan en el proyecto?</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/8wExCb_MuKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    </article>
+        <h2>¿Ep hop pueblo/nación indígenas wunlasey tojh tach’uta proyectona?</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/8wExCb_MuKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </article>
     <article class="who-colaborates">
-        <h2>¿Quiénes pueden cargar contenido en la plataforma?</h2>
+        <h2>¿ Athe tojh wunlasey che ithattsi lahanyajh tojh ihinla plataformana?</h2>
         <div>
-            <p>
-                Pueden cargar contenido personas vinculadas a los tres pueblos/naciones indígenas que habitan el territorio chaqueño: qom, wichí y moqoit.
-                <br>
-                <br>
-                También pueden cargar personas no indígenas, que deseen compartir respetuosamente material vinculado a la cultura de alguno de estos tres pueblos. En cualquier caso, necesitarán un usuario y contraseña que los habilitará a modificar y cargar contenido, e indicar con qué pueblo/nación se identifican.
-            </p>
+            <p>ojh wunlasey che ithathu latichenhayajh plataformana hope, Qom, Wichí, Moqoit wit ahotoy (suwele) tojh ihi tow’etes Chaco.</p>
             <figure>
                 <img src="img/mobile/Docentes_bilingües_qom.jpg" alt="Docentes bilingües qom (Ashazam, 2019). CC BY SA 4.0 internacional.">
                 <figcaption>
                     Docentes bilingües qom (Ashazam, 2019). CC BY SA 4.0 internacional.
-                </figcaption>
+                 </figcaption>
             </figure>
         </div>
     </article>
     <article class="collaborators">
-        <h2>¿Qué instituciones colaboran con el proyecto?</h2>
-        <p>Este proyecto es posible gracias a la colaboración de las siguientes instituciones culturales y educativas:</p>
+        <h2>¿E’p hop tochefwenyajh w’etes tojh wunlasey che tach’uta proyectona?</h2>
+        <p>Kachiseshi tochefwenyajh w’etes tojh tach’uta tojha hope culturales wit Educativos:</p>
         <div class="inner-container-logos">
             <div class="sponsors-logos">
                 <img src="img/mobile/logo-wiki.png" alt="Logo wikimedia">
@@ -99,7 +87,7 @@ require_once 'header-Wichi.php';
     </article>
 </section>
 <section class="social-media">
-    <h2>Seguinos en nuestras redes</h2>
+    <h2>Yahinch’uya tojh ihi internet:</h2>
     <article class="social-article">
         <h3>Wikimedia Argentina</h3>
         <ul>
@@ -120,13 +108,13 @@ require_once 'header-Wichi.php';
     </article>
 </section>
 <section class="contact-us">
-    <h2>Si tenés dudas o sugerencias, escribinos</h2>
+    <h2>Che atha-amhu mañhey tojh hana wusey che lawu atshonhaya.</h2>
     <form action="">
-        <strong>Dejanos tu consulta</strong>
-        <label for="">Nombre <input type="text" placeholder="Escribí tu nombre"></label>
-        <label for="">Mail <input type="mail" placeholder="Escribí tu mail"></label>
-        <label for="">Consulta<textarea name="" id="" cols="30" rows="10" placeholder="Escribí tu consulta"></textarea></label>
-        <button>Enviar</button>
+        <strong>wumnamej añhi, mak tojh lathek lahanej</strong>
+        <label for="">Ey <input type="text" placeholder="Thathu Ey"></label>
+        <label for="">Mail <input type="mail" placeholder="Thathu aka mail"></label>
+        <label for="">Mak tojh latay’otnej<textarea name="" id="" cols="30" rows="10" placeholder="Thathu mak tojh latay’otnej"></textarea></label>
+        <button>Thattshi</button>
     </form>
 </section>
 <section class="final-section">

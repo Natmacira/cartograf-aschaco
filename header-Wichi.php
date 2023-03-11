@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cartografías abiertas</title>
+    <title>Athe makpahope cartografías abiertas</title>
     <link rel="stylesheet" href="style.min.css">
     <script src="js/main.js"></script>
     <script src="js/sm_comm.js"></script>
@@ -39,8 +39,7 @@
 <body class="<?php echo $body_class; ?>">
     <header>
         <img src="img/mobile/Banner_of_the_Qulla_Suyu.png" alt="">
-        <p class="header-text"><a href="index.php"> Cartografías abiertas
-                Qom, Wichi y Moqoit</a></p>
+        <p class="header-text"><a href="index.php"> Athe makpahope cartografías abiertas: Qom, Wichí, Moqoit</a></p>
         <div id="container" class="open clss">
             <span class="cls"></span>
             <span>
@@ -50,7 +49,7 @@
                     <li><a href="home-Moqoit.php">Moqoit</a></li>
                     <li><a href="home.php">Español</a></li>
                     <li><a href="javascript:history.back()" class="go-back-link">
-                            < Volver</a>
+                            < Akhey</a>
                     </li>
                 </ul>
             </span>

@@ -4,13 +4,13 @@ require_once 'header-Wichi.php';
 ?>
 
 <section class="terms-and-conditions">
-<h1>Términos y condiciones</h1>
-<p>Esta plataforma utiliza proyectos wikimedia (Wikimedia Commons, Wikidata, Wikipedia) como soporte para almacenar y vincular contenidos digitales relacionados a los pueblos indígenas. Esto implica que los usuarios y usuarias de este sitio aceptan publicar contenido bajo los términos de las licencias permitidas en el marco de los proyectos wikimedia.</p>
+<h1>Mak tojh watlok lahanej</h1>
+<p>Plataformana yahona proyectos tojh hope wikimedia (wickimedia Commons,wikidata, wikipedia)tojha wunlasey che tukhope ithattshi lahanyajh tojh hope pueblos indígenas. Tuk hope taw’ache tiw’enhumla laka usuario wit laka contraseña, che lathatsi wtalok layihin che hope proyectos tojh ihi wikimedia.</p>
 <img src="img/mobile/CC_BY.png" alt="Logo Creative Commons BY 4.0 Internacional">
-<p>CreativeCommons BY 4.0 Internacional: La licencia permite a las personas compartir, copiar y redistribuir libremente el material en cualquier medio o formato y adaptar, remezclar, transformar y construir a partir del material con cualquier propósito, incluso comercial. Las condiciones son dar crédito de manera adecuada, brindar un enlace a la licencia, e indicar si se han realizado cambios.</p>
+<p>CreativeCommosBY 4.0 internacional: Tojha wusey che tukhope thek comparti lahanyajh watlok ithathu tojha, che lhenlhin’e wuiche latey hahanyajh tojh ihi tojha watlok lafwel.</p>
 <img src="img/mobile/CC_BY-SA.png" alt="Logo Creative Commons BY SA 4.0 Internacional">
-<p>CreativeCommons BY SA 4.0 Internacional: La presente licencia implica los mismos derechos y obligaciones que la CC BY 4.0 internacional previamente descrita. Adicionalmente, si se remezcla, transforma o crea a partir del material, se debe distribuir su contribución bajo la misma licencia del original.</p>
-<p>En caso de no ser los autores o autoras del contenido, éstos tendrán que estar en dominio público (no poseer derechos de autor vigentes) o bien ser publicados con las licencias mencionadas por quienes dispongan de la explotación de dichos derechos. Si tenés alguna duda con esto, escribinos a cultura@wikimedia.org.ar.</p>
+<p>CreativeCommons BY SA 4.0 Internacional: w’aylhatcho nufwu tojh ihi tojha, hotewuye CC BY 4.0, tuk thek compartí lahanyajh watlok lawewk lhanhi.</p>
+<p>Mak che lathattshi watlok lawewk lhanhi , che law’en licencias tojh hope tojh ichemyenlhi tojha wunlasey apublica. Che nikalelhojha tojha wusey che lhenlhi atshonhay lathathey tojha cultura@wikimedia.org.ar.</p>
 
 </section>
 

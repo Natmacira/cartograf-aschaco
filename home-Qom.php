@@ -4,10 +4,13 @@ require_once 'header-Qom.php';
 ?>
 
 <section class="map-section">
-    <p class="highlighted-text">ʼana’na so’otaqtac lamap ishet ra am itahuan ra huo’o cam  huotaique avaỹaten nam lataxac qataq nam lamoxoñe maye chixoqta̕ague nam QOM,LQAXAIC qataq nam MOQOIT, nataqaen ram huo̕o cam ahuaỹaten ra ñaq saxanaxa ra huetalec Anam qarʼonata ishet ra anehuo chaq-ne̕esa ishet ra qai-ỹoxolec Anam qarʼonata. </p>
+    <p class="highlighted-text">ʼana’ana so’otaqtac nalloqte ishet ra 'am itahuan ra huo’o ca
+         huotaique ahuaỹaten na lataxac qataq na lamoxoñe maye chexoqta̕ague na QOM, LQAXAIC qataq
+           MOQOIT, taqaen ram huo̕o ca ahuaỹaten ra ñaq saxanaxa ra huetalec 'ana qaroʼonata ishet ra 
+           anehuo chaq-ne̕esa ishet ra qaỹo'oxolec 'ana qaroʼonata. </p>
     <embed src="" type="">
     <div class="charge-items">
-        <a href="form.php"><strong>+</strong>
+        <a href="form-Qom.php"><strong>+</strong>
             <p>ishet ra ahuasaxashiguem nam ʼarmejnec nqui ʼi/ ʼangravan  ʼarʼaqtac / qataq ishet ra ʼahuo ʼot ra am qaỹallihuigui.</p>
         </a>
         <p class="highlighted-text">Mirá el video para aprender cómo subir contenido</p>
@@ -22,7 +25,11 @@ require_once 'header-Qom.php';
     <article class="what-is">
         <h1>¿neguet’ ca cartografías abietas: QOM, LQAXAIC, qataq MOQOIT?</h1>
         <div>
-            <p>ʼana ʼana qar ʼonata  ntaunaqte  qaỹahuota ʼa nahua tresolqa na ʼaqtaqa maye qaralamqa ʼte, QOM,MOQOIT,QATAQ LQAXAIC, qar ʼonataxanxahua  añi maye ỹaỹamaxt-ta ʼaguet ʼana nmalatepi  nam  qarhuo̕  lenaxat  “No ʼlhametwet del chaco y la asociaci̕on civil wikimedia argentina.”  Nam so ʼotaqtac saho ʼqtaique ra sachaxanaq nam laỹajnec qataq lataxaguesat nam qarhuo̕ maye lma̕ nam CHACO qataq nam maiche qarloxoc. Ena qar ʼonatac chegoxohua ʼa cha ʼayi   qarahueque  aso ñalletactapigui CULTURA, CIENCIAS Y TERRITORIOS 2022 maye lo ʼonata añe FUNDACION WILLIAM Y POTENCIAR. 
+            <p>ʼana qaroʼonata n-taunaqte qaỹahuotaʼa na'ahua tresolqa naʼaqtaqa maye qaralamqaʼte, QOM, MOQOIT, QATAQ LQAXAIC, 
+                qaroʼonataxanxahua 'añe maye ỹaỹemaxat-taʼaguet ʼana n-malatepi na qarhuo̕ le'enaxat “No ʼlhametwet del chaco y
+                 la asociaci̕on civil wikimedia argentina.” Na soʼotaqtac sahuoqtaique ra sachaxanaq na laỹajnec qataq lataxaguesat
+                  na qarhuo̕ maye lma̕ nam CHACO qataq maiche qarloxoc. 'Ena noʼonatac chegoxohuaʼ chaʼaye qarahueque
+                   'aso ñalletactapigui CULTURA, CIENCIAS Y TERRITORIOS 2022 maye loʼonata 'añe FUNDACION WILLIAM Y POTENCIAR. 
             </p>
             <figure>
                 <img src="img/mobile/Artesana_Cestera.png" alt="">
