@@ -16,7 +16,7 @@ $theme-light-gray : #E0E0E0;
 
 $breakpoint-hamburger : 768px;
 
-@import "mixins"; 
+@import "mixins";
 @import "skeleton";
 @import "normalize";
 @import "forms";
@@ -27,5 +27,6 @@ $breakpoint-hamburger : 768px;
 @import "index";
 @import "home";
 @import "terms";
+@import "map";
 
 

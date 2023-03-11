@@ -1,4 +1,4 @@
-var wikishootme = {
+var cartografiaschaco = {
 
 	sparql_url : 'https://query.wikidata.org/bigdata/namespace/wdq/sparql' ,
 	check_reason_no_image : false ,
@@ -78,7 +78,7 @@ var wikishootme = {
 	escapeHTML : function ( s ) {
 		return escattr(s) ;
 	} ,
-	
+
 	getHashVars : function () {
 		var vars = {} ;
 		var hashes = window.location.href.slice(window.location.href.indexOf('#') + 1).split('&');
@@ -89,7 +89,7 @@ var wikishootme = {
 		} ) ;
 		return vars;
 	} ,
-	
+
 	updatePermalink : function () {
 		var me = this ;
 		var h = [] ;
@@ -111,22 +111,22 @@ var wikishootme = {
 			$('#is_using_filter').show() ;
 		}
 		if ( me.worldwide ) h.push ( 'worldwide=1' ) ;
-		
+
 		wsm_comm.storeCurrentView ( h ) ;
-		
+
 		h = '#' + h.join('&') ;
 		location.hash = h ;
 		me.updateSearchLinks() ;
 	} ,
-	
+
 	updateSearchLinks : function () {
 		var me = this ;
-		
+
 		// Get area
 		var b = me.map.getBounds() ;
 		var ne = b.getNorthEast() ;
 		var sw = b.getSouthWest() ;
-		
+
 		// Update WD-FIST link
 		var sparql = '' ;
 		sparql += 'SELECT ?q {' ;
@@ -140,7 +140,7 @@ var wikishootme = {
 		url += encodeURIComponent ( sparql ) ;
 		url += '&no_images_only=1&search_by_coordinates=1&remove_multiple=1&prefilled=1' ;
 		$('#wdfist').show().attr ( { href : url } ) ;
-		
+
 		var distance = ne.distanceTo(sw) ;
 		var radius_km = Math.round ( (distance/2) / 1000 ) ;
 		if ( radius_km <= 0 ) radius_km = 1 ;
@@ -160,7 +160,7 @@ var wikishootme = {
 			$('#busy').show() ;
 		}
 	} ,
-	
+
 	cleanLayers : function () {
 		var me = this ;
 		$.each ( me.layers , function ( k , v ) {
@@ -170,7 +170,7 @@ var wikishootme = {
 			me.entries[mode] = {} ;
 		} ) ;
 	} ,
-	
+
 	createImageThumbnail : function ( image ) {
 		var me = this ;
 		var url = 'https://commons.wikimedia.org/wiki/Special:Redirect/file/'+escattr(encodeURIComponent(image))+'?width='+me.thumb_size+'px&height='+me.thumb_size+'px' ;
@@ -182,9 +182,9 @@ var wikishootme = {
 		h += "<div class='smallimgname'>" + me.escapeHTML(image) + "</div>" ;
 		return h ;
 	} ,
-	
+
 	createItemFromImage : function ( a ) {
-		var me = wikishootme ;
+		var me = cartografiaschaco ;
 		var image = $(a).attr ( 'image' ) ;
 		var image_pos = { lat:$(a).attr('lat') , lng:$(a).attr('lng') } ;
 
@@ -196,7 +196,7 @@ var wikishootme = {
 
 		return false ;
 	} ,
-	
+
 	createPopup : function ( entry ) {
 		var me = this ;
 		var h = '' ;
@@ -214,7 +214,7 @@ var wikishootme = {
 		if ( typeof entry.street != 'undefined' ) {
 			h += "<div>&#127968; <i>" + me.escapeHTML(entry.street) + "</i></div>" ;
 		}
-		
+
 		if ( typeof entry.mixnmatch != 'undefined' ) {
 			if ( entry.mixnmatch.q != null ) {
 				var q = entry.mixnmatch.q ;
@@ -225,7 +225,7 @@ var wikishootme = {
 				h += "<div><i>Not matched to Wikidata</i></div>" ;
 			}
 		}
-		
+
 		if ( entry.mode == 'flickr' ) {
 			h += "<div class='popup_section' style='text-align:center'>" ;
 			h += "<a href='"+entry.url+"' target='_blank'><img src='" + entry.thumburl + "' border=0 style='max-width:100%' /></a>" ;
@@ -245,26 +245,26 @@ var wikishootme = {
 //			h += "</div>" ;
 		} else if ( typeof entry.image != 'undefined' ) {
 			h += me.createImageThumbnail ( entry.image ) ;
-			
+
 			if ( entry.mode == 'commons' ) {
 				h += "<div class='popup_section'>" ;
-				h += "<a href='#' image='"+escattr(entry.image)+"' lat='"+entry.pos[0]+"' lng='"+entry.pos[1]+"' class='create_item_from_image' onclick='return wikishootme.createItemFromImage($(this));return false'>" + me.tt.t('create_wd_from_image') + "</a>" ;
+				h += "<a href='#' image='"+escattr(entry.image)+"' lat='"+entry.pos[0]+"' lng='"+entry.pos[1]+"' class='create_item_from_image' onclick='return cartografiaschaco.createItemFromImage($(this));return false'>" + me.tt.t('create_wd_from_image') + "</a>" ;
 				h += "</div>" ;
 			}
-			
+
 		} else if ( entry.mode == 'wikidata' ) { // Wikidata, no image
-		
+
 			h += "<div>" + entry.page + "</div>" ;
-		
+
 			if ( entry.no_image ) {
 			} else if ( wsm_comm.isLoggedIn() ) {
 				var desc = "== {{int:filedesc}} ==\n{{Information\n|Description=[[d:" + entry.page + "|" + entry.label + "]]\n|Source={{own}}\n|Date=\n|Author=[[User:"+wsm_comm.userinfo.name+"|]]\n|Permission=\n|other_versions=\n}}\n" ;
 				desc += "{{Object location|"+entry.pos[0]+"|"+entry.pos[1]+"}}\n<!--LOC-->\n\n" ;
 				desc += "== {{int:license-header}} ==\n{{self|cc-by-sa-3.0}}" ;
-		
+
 				h += "<div style='margin-top:15px'>" ;
 				h += "<form method='post' enctype='multipart/form-data' action='"+wsm_comm.api_v3+"' class='form form-inline' target='_blank'>" ;
-				h += '<label class="btn btn-primary btn-file">' + me.tt.t('upload_file') + ' <input name="file" type="file" accept="image/*;capture=camera" onchange="wikishootme.uploadFileHandler(this)" style="display: none;"></label>' ;
+				h += '<label class="btn btn-primary btn-file">' + me.tt.t('upload_file') + ' <input name="file" type="file" accept="image/*;capture=camera" onchange="cartografiaschaco.uploadFileHandler(this)" style="display: none;"></label>' ;
 				h += "<input type='hidden' name='action' value='"+me.upload_mode+"' />" ;
 				h += "<input type='hidden' name='q' value='"+entry.page+"' />" ;
 				h += "<input type='hidden' name='wpDestFile' value='" + escattr(entry.label) + ".jpg' />" ;
@@ -272,16 +272,16 @@ var wikishootme = {
 				h += "<input type='submit' style='display:none' name='wpUpload' value='" + me.tt.t('upload_file') + "' />" ;
 				h += "</form>" ;
 				h += "</div>" ;
-				
+
 				h += "<div class='add_image2item'>" ;
-				h += "<form class='form form-inline' onSubmit='return wikishootme.addImageToItemHandler($(this))'>" ;
+				h += "<form class='form form-inline' onSubmit='return cartografiaschaco.addImageToItemHandler($(this))'>" ;
 				h += "<input type='hidden' name='q' value='"+escattr(entry.page)+"' />" ;
 				h += "<input type='text' name='filename' placeholder='"+escattr(me.tt.t('commons_file_name'))+"' />" ;
 				h += "<input type='submit' value='"+escattr(me.tt.t('add2item'))+"' />" ;
 				h += "</div>" ;
-				
+
 			} else {
-			
+
 				if ( wsm_comm.is_app ) {
 					h += "<div><button class='btn btn-primary' onclick='wsm_comm.appLogin();return false'>Log in!</button></div>" ;
 				} else {
@@ -293,49 +293,49 @@ var wikishootme = {
 					h += "</div>" ;
 				}
 			}
-			
+
 		} else if ( entry.mode == 'wikipedia' && typeof entry.server != 'undefined' ) {
-			
+
 			h += "<div class='pageimage_toload' server='" + entry.server + "' page='" + escattr(entry.page) + "'></div>" ;
-			
+
 		}
-		
+
 		if ( typeof entry.commonscat != 'undefined' ) {
 			h += "<div class='popup_section'>" ;
 			h += "<a href='//commons.wikimedia.org/wiki/Category:"+escattr(encodeURIComponent(entry.commonscat.replace(/ /g,'_')))+"' target='_blank' title='"+escattr(''+me.tt.t('commons_category'))+"'>"+me.escapeHTML(entry.commonscat)+"</a>" ;
 			h += " | " ;
 			//if ( entry.commonscat == me.main_commons_category ) {
 			// THIS DOESN"T WORK CORRECTLY
-			//	h += "<a href='#' onclick='wikishootme.clear_commons_main_category()'>"+me.tt.t('remove_image_highlight')+"</a>" ;
+			//	h += "<a href='#' onclick='cartografiaschaco.clear_commons_main_category()'>"+me.tt.t('remove_image_highlight')+"</a>" ;
 			//} else {
-				h += "<a href='#' onclick='wikishootme.set_commons_main_category(\""+escattr(entry.commonscat)+"\")'>"+me.tt.t('highlight_images_from_category')+"</a>" ;
+				h += "<a href='#' onclick='cartografiaschaco.set_commons_main_category(\""+escattr(entry.commonscat)+"\")'>"+me.tt.t('highlight_images_from_category')+"</a>" ;
 			//}
 			h += "</div>" ;
 		}
-		
+
 		h += "<div class='popup_coords'><span class='coordinates'>" + entry.pos[0] + ", " + entry.pos[1] + "</span>" ;
 		h += " <a style='user-select:none' href='http://www.instantstreetview.com/@"+entry.pos[0]+","+entry.pos[1]+",0h,0p,1z' tt_title='streetview' target='_blank'>&#127968;</a>" ;
 		if ( wsm_comm.isLoggedIn() && typeof entry.mixnmatch == 'undefined' ) {
-			h += " [<a href='#' style='user-select:none' onclick='wikishootme.editCoordinates(this,\""+entry.page+"\","+entry.pos[0]+","+entry.pos[1]+");return false' title='edit coordinates'>e</a>]" ;
+			h += " [<a href='#' style='user-select:none' onclick='cartografiaschaco.editCoordinates(this,\""+entry.page+"\","+entry.pos[0]+","+entry.pos[1]+");return false' title='edit coordinates'>e</a>]" ;
 		}
 		h += "</div>" ;
-		
+
 		if ( typeof me.marker_me != 'undefined' ) {
 			var pos = me.marker_me.getLatLng() ;
 			h += "<div style='font-size:10pt'>" ;
 			h += "<a target='_blank' href='https://maps.google.co.uk/maps?dirflg=w&saddr="+pos.lat+","+pos.lng+"&daddr="+entry.pos[0]+","+entry.pos[1]+"'>"+me.tt.t('route')+"</a>" ;
 			h += "</div>" ;
 		}
-		
+
 		h += "</div>" ; // center
 		h += "</div>" ;
-		
+
 		var ret = L.popup().setContent ( h ) ;
 		return ret ;
 	} ,
 
 	editCoordinates : function ( a , q , lat , lon ) {
-		var me = wikishootme ;
+		var me = cartografiaschaco ;
 		var ret = prompt ( "Edit coordinates" , lat+'/'+lon ) ;
 		if ( ret == null ) return false ; // Cancel
 		if ( !ret.match ( /^\s*-?[0-9.]+\s*\/\s*-?[0-9.]+\s*$/ ) ) {
@@ -346,7 +346,7 @@ var wikishootme = {
 			alert ( "New coordinates are the same as the old ones, not changed" ) ;
 			return false ;
 		}
-		
+
 		wsm_comm.getWSM ( {
 			action:'changeCoordinates',
 			coordinates:ret,
@@ -363,15 +363,15 @@ var wikishootme = {
 	} ,
 
 	uploadFileHandler : function ( o ) {
-		var me = wikishootme ;
+		var me = cartografiaschaco ;
 		var form = $(o).parents('form').get(0) ;
-		
+
 		// Upload as separate tab; fallback for older browsers
 		if ( me.upload_mode == 'upload' ) {
 			$(form).submit() ;
 			return false ;
 		}
-		
+
 		// Upload in background
 		$($(form).parent()).append ( me.tt.t('uploading') ) ;
 		var o = {
@@ -382,22 +382,22 @@ var wikishootme = {
 		me.upload_queue.push ( o ) ;
 		me.uploadNext() ;
 	} ,
-	
+
 	clearUploads : function () {
 		var me = this ;
 		me.upload_queue = [] ;
 		$('#dropdownUploadsLi').hide() ;
 		return false ;
 	} ,
-	
+
 	showUploadStatus : function () {
 		var me = this ;
-		
+
 		var cnt_uploaded = 0 ;
 		$.each ( me.upload_queue , function ( k , v ) {
 			if ( v.is_uploaded ) cnt_uploaded++ ;
 		} ) ;
-		
+
 		var h = '' ;
 		if ( cnt_uploaded == me.upload_queue.length ) {
 			h += "<a class='dropdown-item clear_uploads' href='#' style='color:blue' tt='clear_upload_list'>clear</a>" ;
@@ -416,19 +416,19 @@ var wikishootme = {
 		$('#upload_list a.clear_uploads').click ( function () {
 			me.clearUploads() ;
 		} ) ;
-		
+
 		h = cnt_uploaded + '/' + me.upload_queue.length ;
 		$('#dropdownUploads').html(h) ;
 //		me.tt.updateInterface($('#dropdownUploadsLi')) ;
 		$('#dropdownUploadsLi').show() ;
 	} ,
-	
+
 	uploadNext : function () {
 		var me = this ;
 		if ( me.upload_queue.length == 0 ) return ;
 
 		me.showUploadStatus() ;
-		
+
 		// Check if already uploading
 		var i ;
 		var is_uploading = false ;
@@ -438,12 +438,12 @@ var wikishootme = {
 		} ) ;
 		if ( is_uploading ) return ;
 		if ( typeof i == 'undefined' ) return ; // All done
-		
+
 		// Prepare upload
 		var o = me.upload_queue[i] ;
 		o.is_uploading = true ;
 
-		
+
 		// Uploading new file
 		var opts = {
 			url: wsm_comm.api_v3,
@@ -474,25 +474,25 @@ var wikishootme = {
 			opts.contentType = "multipart/form-data; boundary="+o.data.boundary;
 			opts.data = o.data.toString();
 		}
-		
+
 		$.ajax(opts)
 		.then ( function () {
 			setTimeout ( function () { me.uploadNext() } , me.upload_delay ) ;
 
 			// Logging
-			$.getJSON ( 'https://tools.wmflabs.org/magnustools/logger.php?tool=wikishootme&method=file uploaded&callback=?' , function(j){} ) ;
+			$.getJSON ( 'https://tools.wmflabs.org/magnustools/logger.php?tool=cartografiaschaco&method=file uploaded&callback=?' , function(j){} ) ;
 		} ) ;
 
 		me.showUploadStatus() ;
 	} ,
-	
+
 	pingLayer : function ( key ) {
 		var me = this ;
 		if ( -1 == $.inArray ( key , me.show_layers ) ) return ;
 		me.map.removeLayer ( me.layers[key] ) ;
 		me.map.addLayer ( me.layers[key] ) ;
 	} ,
-	
+
 	switchItemToImageLayer : function ( q , image , form ) {
 		var me = this ;
 		var i = me.entries.wikidata[q] ;
@@ -516,7 +516,7 @@ var wikishootme = {
 		marker.bindPopup ( me.createPopup ( i ) ) ;
 		if ( was_open ) marker.openPopup() ;
 	} ,
-	
+
 	addImageToItemHandler : function ( form ) {
 		var me = this ;
 		var q = form.find('input[name="q"]').val() ;
@@ -534,7 +534,7 @@ var wikishootme = {
 		} ) ;
 		return false ;
 	} ,
-	
+
 	// Required properties of v:
 	// lat, lon, title, ns, pageid
 	addWikimediaEntry : function ( mode , server , v ) {
@@ -548,7 +548,7 @@ var wikishootme = {
 			server : server ,
 			ns : v.ns
 		} ;
-		
+
 		if ( mode == 'commons' ) i.image = v.title.replace(/^File:/,'') ;
 
 		var bgcol = me.colors[mode] ;
@@ -561,7 +561,7 @@ var wikishootme = {
 		me.entries[mode][''+v.pageid] = i ;
 		return i ;
 	} ,
-	
+
 	loadWikimediaLayer : function ( server , mode ) {
 		var me = this ;
 		var api = 'https://' + server + '/w/api.php' ;
@@ -588,18 +588,18 @@ var wikishootme = {
 		} ) ;
 
 	} ,
-	
+
 	loadCachedJSON : function ( url , params , callback_success , callback_always ) {
 		var me = this ;
 		me.setBusy(1) ;
-		
+
 		if ( typeof callback_always == 'undefined' ) callback_always = function() { me.setBusy(-1) } ;
-		
+
 		var do_cache = true ;
 		var use_callback = false ; //url.match(/flickr/) ? true : false ;
-		
+
 		var key = JSON.stringify(params) ;
-		
+
 		if ( typeof me.json_cache[url] != 'undefined' ) {
 			if ( me.json_cache[url].key == key ) {
 				callback_success ( me.json_cache[url].result ) ;
@@ -621,7 +621,7 @@ var wikishootme = {
 			} , 'json' ) . always ( callback_always() ) ;
 		}
 	} ,
-	
+
 
 	uploadURL2Commons : function ( url , title , desc , comment , pic ) {
 		var me = this ;
@@ -633,11 +633,11 @@ var wikishootme = {
 			comment:comment,
 			botmode:1
 		} ;
-	
-	
+
+
 		$.post ( '/magnustools/oauth_uploader.php?rand='+Math.random() , params , function ( d ) {
 			$('#pleaseWaitDialog').modal('hide') ;
-			
+
 			if ( d.error == 'OK' ) {
 
 				// Remove marker from original layer
@@ -666,7 +666,7 @@ var wikishootme = {
 					}
 				} ) ;
 				if ( typeof (((d.res||{}).error||{}).info) != 'undefined' ) s.push ( d.res.error.info ) ;
-				
+
 				alert ( "Transfer failed: " + s.join('; ') ) ;
 				console.log ( s ) ;
 			}
@@ -676,8 +676,8 @@ var wikishootme = {
 		.fail(function(x) {
 			alert ( "Transfer failed" ) ;
 			console.log ( x ) ;
-		});		
-	
+		});
+
 	} ,
 
 	transferFlickr2Commons : function ( popup , flickr_id ) {
@@ -693,13 +693,13 @@ var wikishootme = {
 			return false ;
 		}
 		var pic = me.flickr_pics[pic_num] ;
-	
+
 		var params = {
 			id : flickr_id ,
 			raw : 'on' ,
 			format : 'json'
 		} ;
-	
+
 		params.categories = ' ' ; // No auto categories
 
 		$('#pleaseWaitDialog').modal() ;
@@ -713,7 +713,7 @@ var wikishootme = {
 			}
 
 			var final_desc = ( d.wiki.info.desc || '' ) ;
-		
+
 			var w = "== {{int:filedesc}} ==\n" ;
 			w += "{{Information\n" ;
 			w += "| Description = " + final_desc + "\n" ;
@@ -723,34 +723,34 @@ var wikishootme = {
 			w += "| Permission  = " + ( d.wiki.info.permission || '' ) + "\n" ;
 			w += "| other_versions=\n" ;
 			w += "}}\n" ;
-		
+
 			if ( undefined !== d.wiki.geolocation && undefined !== d.wiki.geolocation.latitude ) {
 				w += "{{Location dec|" + d.wiki.geolocation.latitude + "|" + d.wiki.geolocation.longitude + "|source:" + d.wiki.geolocation.source + "}}\n" ;
 			} else {
 				w += "{{Location dec|" + pic.pos[0] + "|" + pic.pos[1] + "|source:Flickr}}\n" ;
 			}
-		
+
 			w += "\n=={{int:license-header}}==\n" ;
 			$.each ( ( d.wiki.licenses || [] ) , function ( k , v ) {
 				w += "{{" + v + "}}\n" ;
 			} ) ;
-		
+
 			w += "\n" ;
 			$.each ( ( d.wiki.categories || [] ) , function ( k , v ) {
 				w += "[[" + v + "]]\n" ;
 			} ) ;
-		
+
 			w = $.trim ( w ) ;
-			
+
 			var title = $.trim(pic.label) ;
 			if ( title == '' || title.match(/^(IMG|DSC){0,1}[0-9 _]*$/) ) title = 'Flickr image' ;
 			title += ' ' + flickr_id ;
 			title += '.jpg' ;
-			
-			var comment = 'Transferred from Flickr via [https://wikishootme.toolforge.org WikiShootMe] #wikishootme' ;
-		
+
+			var comment = 'Transferred from Flickr via [https://cartografiaschaco.toolforge.org WikiShootMe] #cartografiaschaco' ;
+
 			me.uploadURL2Commons ( pic.url_best , title , w , comment , pic ) ;
-		
+
 		} , 'json' ) ;
 
 		return false ;
@@ -805,7 +805,7 @@ var wikishootme = {
 			} ) ;
 		} ) ;
 	} ,
-	
+
 	loadFlickrLayer : function () {
 		var me = this ;
 
@@ -820,7 +820,7 @@ var wikishootme = {
 		}
 
 	} ,
-	
+
 	loadMixNMatchLayer : function () {
 		var me = this ;
 
@@ -902,7 +902,7 @@ var wikishootme = {
 			} ) ;
 		} ) ;
 	} ,
-		
+
 	loadWikidataLayer : function () {
 		var me = this ;
 		var b = me.map.getBounds() ;
@@ -922,7 +922,7 @@ var wikishootme = {
 		sparql += ' OPTIONAL { ?q wdt:P373 ?commonscat } ' ;
 		sparql += ' OPTIONAL { ?q wdt:P969 ?street } ' ;
 		if ( me.check_reason_no_image ) sparql += 'OPTIONAL { ?q p:P18 ?statement . ?statement pq:P828 ?reason } ' ;
-		
+
 		if ( me.worldwide ) {
 			sparql += ' OPTIONAL { ?q rdfs:label ?qLabel . FILTER(LANG(?qLabel) = "'+me.language+'") } OPTIONAL { ?q schema:description ?desc . FILTER(LANG(?desc) = "'+me.language+'") } ' ;
 		} else {
@@ -939,10 +939,10 @@ var wikishootme = {
 				if ( item.q.type != 'uri' ) return ;
 				var q = item.q.value.replace ( /^.+\// , '' ) ;
 				if ( typeof me.entries.wikidata[q] != 'undefined' ) return ; // Multiple locations/images; use first one only
-				
+
 				var col ;
 				var opacity = me.opacity ;
-				
+
 				var i = {
 					page:q ,
 					label:q ,
@@ -950,7 +950,7 @@ var wikishootme = {
 					url:'https://www.wikidata.org/wiki/' + q ,
 					ns:0
 				} ;
-			
+
 				if ( typeof item.image != 'undefined' ) {
 					if ( item.image.type == 'uri' ) {
 						i.image = decodeURIComponent ( item.image.value.replace(/^.+\//,'') ) ;
@@ -975,9 +975,9 @@ var wikishootme = {
 					var m = item.location.value.match ( /^Point\((.+?)\s(.+?)\)$/ ) ;
 					if ( m != null ) i.pos = [ m[2]*1 , m[1]*1 ] ;
 				}
-			
+
 				if ( typeof i.pos == 'undefined' ) return ;
-			
+
 				var has_image = ( typeof i.image != 'undefined' ) ;
 				if ( typeof col == 'undefined' ) col = has_image ? me.colors.wikidata_image : me.colors.wikidata_no_image ;
 				var marker = L.circleMarker ( i.pos , {  stroke:true,color:col,weight:1,fill:true,fillColor:col,fillOpacity:opacity } ) ;
@@ -988,7 +988,7 @@ var wikishootme = {
 				i.marker = marker ;
 				me.entries.wikidata[q] = i ;
 			} ) ;
-		
+
 		} ) ;
 	} ,
 
@@ -1004,7 +1004,7 @@ var wikishootme = {
 		}
 		me.marker_me.setLatLng ( [ p.lat , p.lng ] ) ;
 	} ,
-	
+
 	loadLayer : function ( key ) {
 		var me = this ;
 		var is_visible = (-1 != $.inArray ( key , me.show_layers )) ;
@@ -1014,9 +1014,9 @@ var wikishootme = {
 			setTimeout ( function () { me.setBusy(-1) } , 10 ) ;
 			return ;
 		}
-		
+
 		if ( key.match(/^wikidata_/) ) key = 'wikidata' ;
-		
+
 		if ( key == 'wikidata' ) me.loadWikidataLayer() ;
 		if ( key == 'commons' ) me.loadWikimediaLayer ( 'commons.wikimedia.org' , 'commons' ) ;
 		if ( key == 'wikipedia' ) me.loadWikimediaLayer ( me.language+'.wikipedia.org' , 'wikipedia' ) ;
@@ -1025,35 +1025,35 @@ var wikishootme = {
 		if ( key == 'mnm_lc' ) me.loadMixNMatchLCLayer () ;
 		me.updatePermalink() ;
 	} ,
-	
+
 	updateLayers : function () {
 		var me = this ;
 		$('#update').hide() ;
 		me.cleanLayers() ;
-		
+
 		$.each ( ['commons','wikipedia','wikidata','flickr','mixnmatch','mnm_lc'] , function ( k , v ) {
 			me.loadLayer ( v ) ;
 		} ) ;
 	} ,
-	
+
 	updateToCurrent : function () {
 		var me = this ;
 		var b = me.map.getBounds() ;
 		me.pos = b.getCenter() ;
 		me.updateLayers() ;
 	} ,
-	
+
 	updateMaybe : function () {
 		var me = this ;
 		var z = me.map.getZoom() ;
 		if ( z > 12 ) me.updateToCurrent() ;
 		else $('#update').show() ;
 	} ,
-	
+
 	gps2leaflet : function ( gps ) {
 		return { lat:gps.latitude , lng:gps.longitude } ;
 	} ,
-	
+
 	addMarkerMe : function () {
 		var me = this ;
 		if ( navigator.geolocation ) {
@@ -1061,7 +1061,7 @@ var wikishootme = {
 			navigator.geolocation.watchPosition(function(position) { me.updateMarkerMe ( me.gps2leaflet(position.coords) ) } ) ;
 		}
 	} ,
-	
+
 	addNewWikidataItem : function ( q , label , pos , image ) {
 		var me = this ;
 		var i = {
@@ -1072,7 +1072,7 @@ var wikishootme = {
 			pos:[pos.lat,pos.lng],
 			ns:0
 		} ;
-		
+
 		var layer = 'wikidata_no_image' ;
 		if ( typeof image != 'undefined' && image != '' ) {
 			layer = 'wikidata_image' ;
@@ -1090,11 +1090,11 @@ var wikishootme = {
 		// me.pingLayer ( layer ) ;
 		return marker ;
 	} ,
-	
+
 	createMap : function () {
 		var me = this ;
 		if ( me.map_is_set ) return false ; // No map created
-		
+
 		// Create the map
 		me.map_is_set = true ;
 		me.map = L.map('map', {
@@ -1108,7 +1108,7 @@ var wikishootme = {
 				callback: function ( ev ) { alert(ev.latlng); }
 			}]
 		}).setView ( [ me.pos.lat , me.pos.lng ] , me.zoom_level ) ;
-		
+
 		var tl = me.tile_layers[me.current_tile_layer] ;
 		if ( typeof tl == 'undefined' ) tl = me.tile_layers['osm'] ; // Default fallback
 		var tlo = {attribution: tl.attribution} ;
@@ -1128,18 +1128,18 @@ var wikishootme = {
 			}
 		} ) ;
 		me.map.on ( 'dragend' , function () { me.updateToCurrent() } ) ;
-		
-		
+
+
 		// Pop-up open handler, loads pageimage for Wikipedia
 		me.map.on ( 'popupopen' , function ( pe ) {
 			var popup = pe.popup ;
 			var c = popup.getContent() ;
 			if ( c == me.tt.t('we_know') ) return ;
 			c = $(c) ;
-			
+
 			c.find('div.transfer2flickr').each ( function () { // Flickr transfer function
 				var div = $(this) ;
-				var html_do_upload = "<a href='#' onclick='wikishootme.transferFlickr2Commons(this,\""+div.attr('flickr_id')+"\");return false'>Transfer from Flickr to Commons</a>" ;
+				var html_do_upload = "<a href='#' onclick='cartografiaschaco.transferFlickr2Commons(this,\""+div.attr('flickr_id')+"\");return false'>Transfer from Flickr to Commons</a>" ;
 				if ( wsm_comm.oauth_uploader_login ) {
 					div.html ( html_do_upload ) ;
 					h = c.html() ;
@@ -1158,7 +1158,7 @@ var wikishootme = {
 				}
 			} ) ;
 
-			
+
 			c.find('div.pageimage_toload').each ( function () { // Lazy-load Commons image
 				var div = $(this) ;
 				var server = div.attr ( 'server' ) ;
@@ -1179,7 +1179,7 @@ var wikishootme = {
 				} ) ;
 			} ) ;
 		} ) ;
-		
+
 
 		// Create layers
 		$.each ( me.layer_info.key2name , function ( key , name ) {
@@ -1193,14 +1193,14 @@ var wikishootme = {
 			}
 		} ) ;
 		me.layer_control = L.control.layers(null, me.overlays).addTo(me.map);
-		
+
 		me.map.on('overlayadd', function(e){me.onOverlayAdd(e)});
 		me.map.on('overlayremove', function(e){me.onOverlayRemove(e)});
 
 		me.addMarkerMe() ;
 		return true ;
 	} ,
-	
+
 	createNewItem : function ( o ) {
 		var me = this ;
 		if ( typeof o.label_default == 'undefined' ) o.label_default = '' ;
@@ -1209,7 +1209,7 @@ var wikishootme = {
 		var rlng = Math.round ( o.pos.lng * 10000 ) / 10000 ;
 		var label = prompt ( me.tt.t ( 'create_new_item' , {params:[rlat,rlng]} ) , o.label_default ) ;
 		if ( label == null || label == '' ) return ;
-		
+
 		me.getAdminUnit ( o.pos.lat , o.pos.lng , function ( p131 ) {
 			wsm_comm.getWSM ( {
 				action:'new_item',
@@ -1229,7 +1229,7 @@ var wikishootme = {
 			} ) ;
 		} ) ;
 	} ,
-	
+
 	onOverlayAdd : function ( ev ) {
 		var me = this ;
 		var key = me.layer_info.name2key[ev.name] ;
@@ -1238,7 +1238,7 @@ var wikishootme = {
 		me.updatePermalink() ;
 		me.loadLayer ( key ) ;
 	} ,
-	
+
 	onOverlayRemove : function ( ev ) {
 		var me = this ;
 		var key = me.layer_info.name2key[ev.name] ;
@@ -1246,7 +1246,7 @@ var wikishootme = {
 		me.show_layers = me.show_layers.sort() ;
 		me.updatePermalink() ;
 	} ,
-	
+
 
 	setMap : function () {
 		var me = this ;
@@ -1255,7 +1255,7 @@ var wikishootme = {
 		}
 		me.updateLayers() ;
 	} ,
-	
+
 	setPositionFromQ : function ( q ) {
 		var me = this ;
 		var sparql = "#TOOL: WikiShootMe\n" ;
@@ -1284,7 +1284,7 @@ var wikishootme = {
 		me.pos = me.marker_me.getLatLng() ;
 		me.setMap() ;
 	} ,
-	
+
 	setPositionFromCurrentLocation : function () {
 		var me = this ;
 		if (navigator.geolocation) {
@@ -1313,7 +1313,7 @@ var wikishootme = {
 			me.setMap() ;
 		}
 	} ,
-	
+
 	doSearch : function () {
 		var me = this ;
 		var query = $('#search_query').val() ;
@@ -1329,7 +1329,7 @@ var wikishootme = {
 		} , function ( d ) {
 			var qs_all = [] ;
 			$.each ( d.query.search , function ( k , v ) { qs_all.push ( v.title ) } ) ;
-			
+
 			me.wd.getItemBatch ( qs_all , function () {
 				var qs = [] ;
 				$.each ( qs_all , function ( dummy , q ) {
@@ -1340,7 +1340,7 @@ var wikishootme = {
 					if ( -1 != $.inArray ( 'Q13406463' , p31 ) ) return ; // Bad instance
 					qs.push ( q ) ;
 				} ) ;
-				
+
 				var h = '' ;
 				$.each ( qs , function ( dummy , q ) {
 					h += '<li class="list-group-item sr_result" q="'+q+'" id="sr_'+q+'">' ;
@@ -1349,17 +1349,17 @@ var wikishootme = {
 					h += "<div class='sr_manual'></div>" ;
 					h += '</li>' ;
 				} ) ;
-			
+
 				$('#search_results_list').html(h) ;
 				$('#search_results').show() ;
-			
+
 				$('#search_results_list li.sr_result').click ( function () {
 					var q = $(this).attr ( 'q' ) ;
 					$('#search_dialog').modal ( 'hide' ) ;
 					me.setPositionFromQ ( q ) ;
 					return false ;
 				} ) ;
-			
+
 				$.each ( qs , function ( dummy , q ) {
 					wsm_comm.getAutodesc ( {
 						q:q,
@@ -1376,13 +1376,13 @@ var wikishootme = {
 							$('#'+id+' div.sr_manual').text ( d.manual_description ) ;
 							$('#'+id+' div.sr_auto').text ( d.result ) ;
 						}
-					} , 'json' ) ;				
+					} , 'json' ) ;
 				} ) ;
 			} ) ;
-			
+
 		} ) ;
 	} ,
-	
+
 	// Checks the administrative unit of the surrounding items, calls back with the first one (ordered by distance) that reaches 5, or ''
 	getAdminUnit : function ( lat , lng , callback ) {
 		var me = this ;
@@ -1463,11 +1463,11 @@ var wikishootme = {
 	init : function () {
 		var me = this ;
 		me.wd = new WikiData ;
-		
+
 		if( window.FormData !== undefined ) me.upload_mode = 'upload_background' ;
 
 		// Logging
-		$.getJSON ( 'https://tools.wmflabs.org/magnustools/logger.php?tool=wikishootme&method=loaded&callback=?' , function(j){} ) ;
+		$.getJSON ( 'https://tools.wmflabs.org/magnustools/logger.php?tool=cartografiaschaco&method=loaded&callback=?' , function(j){} ) ;
 
 		var params = me.getHashVars() ;
 		if ( params.worldwide == '1' ) me.worldwide = true ;
@@ -1477,23 +1477,23 @@ var wikishootme = {
 			running-- ;
 			if ( running > 0 ) return ;
 			me.tt.addILdropdown ( $('#interface_language_wrapper') ) ;
-			
+
 			if ( isMobile() ) {
 				// Larger markers for fat thumbs
 				$.each ( me.marker_radius , function ( k , v ) {
 					me.marker_radius[k] = v * 3 / 2 ;
 				} )
 			}
-			
+
 			if (navigator.geolocation) {
 				$('#center_on_me').click ( function() { me.setPositionToMyLocation() } ) ;
 			} else {
 				$('#center_on_me').hide() ;
 			}
-			
+
 			$('#update').click ( function () { me.updateLayers() ; } ) ;
-			
-			
+
+
 			// Search dialog things
 			$('#search').click ( function () {
 				$('#search_dialog').modal ( {
@@ -1521,8 +1521,8 @@ var wikishootme = {
 			}
 			me.show_layers = me.show_layers.sort() ;
 			me.full_layers = me.show_layers.join(',') ;
-			
-			
+
+
 			// Check URL parameters
 			var rewrite_v2_parameters = { // old:new
 				lon:'lng',
@@ -1549,13 +1549,13 @@ var wikishootme = {
 				$('#tiles').change ( function () {
 					me.current_tile_layer = $(this).val() ;
 					me.updatePermalink() ;
-					location.reload(); 
+					location.reload();
 					return false ;
 				} ) ;
 			} ;
 
 			me.set_commons_main_category(params.main_commons_category||'');
-			
+
 			if ( typeof params.layers != 'undefined' ) {
 				me.show_layers = params.layers.replace(/ /g,'_').split(',') ;
 				if ( me.show_layers.length == 1 && me.show_layers[0] == '' ) me.show_layers = [] ;
@@ -1575,7 +1575,7 @@ var wikishootme = {
 				me.setPositionFromCurrentLocation() ;
 			}
 		}
-		
+
 		// SPARQL filter
 		$('#sparql_filter_button').click ( function () {
 			$('#sparql_filter_dialog').modal ( 'show' ) ;
@@ -1606,15 +1606,15 @@ var wikishootme = {
 			$('#sparql_filter_dialog').modal ( 'hide' ) ;
 			me.updateLayers() ;
 		} ) ;
-		
+
 		// Load user status
 		wsm_comm.checkUserStatus ( function () {
 			if ( !wsm_comm.isLoggedIn() ) $('#li_authorize').show() ;
 			fin() ;
 		} ) ;
-		
+
 		// Load translation
-		me.tt = new ToolTranslation ( { tool: 'wikishootme' , fallback:'en' , callback : function () {
+		me.tt = new ToolTranslation ( { tool: 'cartografiaschaco' , fallback:'en' , callback : function () {
 			fin() ;
 		} , onLanguageChange : function ( new_language ) {
 			me.language = new_language ;
