@@ -10,6 +10,7 @@
     <script src="js/main.js"></script>
     <script src="js/sm_comm.js"></script>
     <script src="js/burger-menu.js"></script>
+    <script src="js/pop-photos-link.js"></script>
     <!-- <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">

@@ -39,6 +39,17 @@ require_once 'header.php';
 
 </form>
 
+<section class="contact-us">
+    <h2>Si tenés dudas o sugerencias, escribinos</h2>
+    <form action="">
+        <strong>Dejanos tu consulta</strong>
+        <label for="">Nombre <input type="text" placeholder="Escribí tu nombre"></label>
+        <label for="">Mail <input type="mail" placeholder="Escribí tu mail"></label>
+        <label for="">Consulta<textarea name="" id="" cols="30" rows="10" placeholder="Escribí tu consulta"></textarea></label>
+        <button>Enviar</button>
+    </form>
+</section>
+
 <?php
 require_once 'footer.php';
 ?>

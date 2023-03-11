@@ -42,6 +42,17 @@ require_once 'header-Moqoit.php';
 
 </form>
 
+<section class="contact-us">
+    <h2>No>m >ue repeetaxanaxahi lqo>m ne>palaxañiira>a, ca> >vité qayirquí> </h2>
+    <form action="">
+        <strong>Deenaxanaxañitegue da renataxanaxaqui></strong>
+        <label for="">Neenaxat <input type="text" placeholder="Ỹichiriñi qadeenaxachi>"></label>
+        <label for="">Mail <input type="mail" placeholder="Ỹichiriñi ca> mail "></label>
+        <label for="">Renataxanaxaqui> <textarea name="" id="" cols="30" rows="10" placeholder="Ỹichiriñi da renataxanaxaqui>"></textarea></label>
+        <button>Qaila>a</button>
+    </form>
+</section>
+
 <?php
 require_once 'footer-Moqoit.php';
 ?>

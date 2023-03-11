@@ -40,20 +40,16 @@ body {
         padding: 4px;
     }
     main {
+
         form {
+            margin: 0 auto;
             border: solid 1px;
             border-color: $theme-purple;
             border-radius: 4px;
             font-size: 16px;
             padding: 16px 16px 24px;
             max-width: 600px;
-            margin: 0 auto;
-            margin-left: 10px;
-            margin-right: 10px;
             box-shadow: 6px 8px 14px 0px grey;
-            @media (min-width: 980px) {
-                margin: 0 auto;
-            }
             strong {
                 color: $theme-purple;
                 margin-bottom: 20px;
@@ -97,11 +93,25 @@ body {
     &.form {
         main {
             margin-top: 65px;
+            padding: 0 10px;
+            @media (min-width: 980px) {
+                margin-top: 160px;
+            }
+            h2 {
+                font-size: 18px;
+                font-weight: bold;
+                text-align: center;
+                text-transform: uppercase;
+
+            }
             form {
                 margin-bottom: 80px;
             }
             strong {
                 width: 308px;
+                @media (min-width: 980px) {
+                    width: 100%;
+                }
             }
 
             label {

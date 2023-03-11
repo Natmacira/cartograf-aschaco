@@ -24,6 +24,7 @@ body.index {
                 border-color: $theme-light-gray;
                 margin: 3px;
                 border-radius: 4px;
+                position: relative;
                 @media (min-width: 980px) {
                     width: 207px;
                     height: 414px;
@@ -36,6 +37,7 @@ body.index {
                     margin: 0 auto;
                     padding-top: 4px;
                     padding-bottom: 4px;
+                    cursor: pointer;
                     &.mate-element {
                         height: 130px;
                         width: auto;
@@ -80,6 +82,32 @@ body.index {
         }
         section.sponsors-logos {
             @include logos;
+        }
+
+        .link-container {
+            display: none;
+
+            a {
+                color: $theme-purple;
+            }
+            button {
+                background: none;
+                border: none;
+                font-weight: bold;
+            }
+            &.oppenned {
+                display: block;
+                font-size: 12px;
+                position: absolute;
+                background-color: white;
+                position: absolute;
+                top: 11px;
+                left: 7px;
+                border: solid 1px;
+                border-color: #e0e0e0;
+                padding: 4px 5px;
+                border-radius: 5px;
+            }
         }
     }
 }

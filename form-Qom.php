@@ -39,6 +39,17 @@ require_once 'header-Qom.php';
 
 </form>
 
+<section class="contact-us">
+    <h2>Ram huo ʼo cam saq ʼahuaỹateeteguet, qomi anamaxa ca erec.</h2>
+    <form action="">
+        <strong>ʼan   ʼonaxatañi ca ʼarnataxanxac</strong>
+        <label for="">Nombre <input type="text" placeholder="Eriñi cam ʼar ʼenaxat"></label>
+        <label for="">Mail <input type="mail" placeholder="Eriñi ca an, mail"></label>
+        <label for="">Consulta<textarea name="" id="" cols="30" rows="10" placeholder="Eriñi aca  ʼancontraseñ"></textarea></label>
+        <button>ʼahuamaq</button>
+    </form>
+</section>
+
 <?php
 require_once 'footer-Qom.php';
 ?>
