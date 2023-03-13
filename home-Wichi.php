@@ -24,17 +24,30 @@ require_once 'header-Wichi.php';
         <div>
             <p> N’olhametw’et tojh ihi Chaco wit asociación civil wikimedia Argentina, lhamil tojh yakalhi proyecto, tojh tach’uta tojha hop cultura, ciencia, Territorio 2022 wit fundación Williams y Potenciar. Athana thek ichemyenlhi mak tojh hana, hopkilak nufwu tojh yahaneypahote indígenas keyis tojh ihi Chaco
             </p>
-            <figure>
-                <img src="img/mobile/Artesana_Cestera.png" alt="">
-                <figcaption>Tojh ipotsin tojha (Esteban Zugasti,1960). Tojh yenlhi topeikas
+            <div class="figure-container">
+                <figure>
+                    <img src="img/mobile/Artesana_Cestera.png" alt="Tojh ipotsin tojha (Esteban Zugasti,1960). Tojh yenlhi topeikas
+                        lhey Esteban Zugasti. Tochefwenyajhw’et tojh lhey No'lhametwet
+                        lachemet tojha" class="nation-img">
+                    <figcaption>Tojh ipotsin tojha (Esteban Zugasti,1960). Tojh yenlhi topeikas
                         lhey Esteban Zugasti. Tochefwenyajhw’et tojh lhey No'lhametwet
                         lachemet tojha.</figcaption>
-            </figure>
+                </figure>
+                <div class="link-mega-container">
+                    <div class="link-container">
+                        <a href="https://commons.wikimedia.org/wiki/File:Artesana_Cestera.jpg" target="_blank" class="hide-link">
+                            Yahin topeikas <br> tojh ihi Wikipedia
+                        </a>
+                        <button class="close-btn">X</button>
+                    </div>
+                </div>
+            </div>
         </div>
+
     </article>
     <article class="how-work">
         <h2>¿Athe tojh ihinla plataformana?</h2>
-        <p>Plataformana wunlasey che tuk hope thek yahin , hote wunlasey lawu-atshonhayahi, proyectona lhey wikimedia, tojha ihi: Qom,Moqoit ,Wichi, Ahotoy (suwele). 
+        <p>Plataformana wunlasey che tuk hope thek yahin , hote wunlasey lawu-atshonhayahi, proyectona lhey wikimedia, tojha ihi: Qom,Moqoit ,Wichi, Ahotoy (suwele).
         </p>
     </article>
     <article class="who-participates">
@@ -44,12 +57,25 @@ require_once 'header-Wichi.php';
     <article class="who-colaborates">
         <h2>¿ Athe tojh wunlasey che ithattsi lahanyajh tojh ihinla plataformana?</h2>
         <div>
-            <p>ojh wunlasey che ithathu latichenhayajh plataformana hope, Qom, Wichí, Moqoit wit ahotoy (suwele) tojh ihi tow’etes Chaco.</p>
-            <figure>
-                <img src="img/mobile/Docentes_bilingües_qom.jpg" alt="Docentes bilingües qom (Ashazam, 2019). CC BY SA 4.0 internacional.">
-                <figcaption>
-                     Tochefwenyawus Bilingües Qom (Ashazam, 2019). CC BY SA 4.0 internacional.                 </figcaption>
-            </figure>
+            <p>ojh wunlasey che ithathu latichenhayajh plataformana hope, Qom, Wichí, Moqoit wit ahotoy (suwele) tojh ihi tow’etes Chaco.
+            </p>
+            <div class="figure-container">
+                <figure>
+                    <img src="img/mobile/Docentes_bilingües_qom.jpg" class="nation-img" alt="Docentes bilingües qom (Ashazam, 2019). CC BY SA 4.0 internacional.">
+                    <figcaption>
+                        Tochefwenyawus Bilingües Qom (Ashazam, 2019). CC BY SA 4.0 internacional. 
+                    </figcaption>
+                </figure>
+                <div class="link-mega-container">
+                    <div class="link-container">
+                        <a href="https://commons.wikimedia.org/wiki/File:Docentes_biling%C3%BCes_qom.jpg" class="hide-link" target="_blank">
+                        Yahin topeikas <br> tojh ihi Wikipedia
+                        </a>
+                        <button class="close-btn">X</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     </article>
     <article class="collaborators">

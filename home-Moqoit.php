@@ -10,7 +10,7 @@ require_once 'header-Moqoit.php';
         <a href="form-Moqoit.php"><strong>+</strong>
             <p>Naqairishiguim rqui>i/>xaỹaxanaxac/na>ajhnec </p>
         </a>
-        <p class="highlighted-text">Ajñi nataxare na>ajhnec da co>vinetegue da qai>naashiguim naua  no’ueenatec</p>
+        <p class="highlighted-text">Ajñi nataxare na>ajhnec da co>vinetegue da qai>naashiguim naua no’ueenatec</p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/8wExCb_MuKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <p class="content-text">Na>maq contenido shichite> naqairishiguim nqui>i, na>ajhnec, >xaỹaxanaxac, nerqaipi naneresañi (>auaxaic chaqai dalaxaic), no>uiñisa>qo> qa>nem shichite> naqairishiguim na>maq ichoxot chaqai> na> >ueenataxac, qara>ỹoxoc na> moqoit chaqai nahua liỹaripi qomyipi.</p>
 </section>
@@ -25,9 +25,18 @@ require_once 'header-Moqoit.php';
             <p>Nataxare> plataforma no>ueenataxanaxaua, chaqai ỹoreta>oguit qomyipi la>qaatqa, chicqaugui so>maq proyecto mishi imiguí notoanta>guit aso>maq “Centro de Documentación Indígena No’lhametwet del Chaco” chaqai la Asociación Civil Wikipedia Argentina. Vichiguiño huotaque >inaxashiguim na>maq la>deenaxanaxa chaqai> na> >ueenataxac na> moqoit chaqai nahua liỹaripi quena> senqatalec provincia chaqueña quiyim huootae ana>maq lalamaxaret laviyaxac chaqai lauanaxanaxac. Nataxare> no>ueenatec chicqaugui na> rauegaxan queso noỹaxanaxac “Cultura, Ciencia y territorio 2022” lo>ueenatec saua fundación Williams chaqai Potenciar.
             </p>
             <figure>
-                <img src="img/mobile/Artesana_Cestera.png" alt="">
-                <figcaption>No>xonaxanaq (Esteban Zugasti, 1960). nqui>illipi lapoonecse so>maxare Esteban  Zugasti. Centro de documentación indígena No'lhametwet </figcaption>
+                <img src="img/mobile/Artesana_Cestera.png" alt="No>xonaxanaq (Esteban Zugasti, 1960)" class="nation-img">
+                <figcaption>No>xonaxanaq (Esteban Zugasti, 1960). nqui>illipi lapoonecse so>maxare Esteban Zugasti.
+                    Centro de documentación indígena No'lhametwet </figcaption>
             </figure>
+            <div class="link-mega-container">
+                <div class="link-container">
+                    <a href="https://commons.wikimedia.org/wiki/File:Artesana_Cestera.jpg" class="hide-link" target="_blank">
+                        Ver foto en Wikipedia
+                    </a>
+                    <button class="close-btn">X</button>
+                </div>
+            </div>
         </div>
     </article>
     <article class="how-work">
@@ -41,17 +50,17 @@ require_once 'header-Moqoit.php';
         </p>
     </article>
     <article class="who-participates">
-        <h2>¿Ñigue> ca>maxare moqoit chaqai nahua liỹaripi lauo> ỹalequetauguiló ana>maq  proyecto.? </h2>
+        <h2>¿Ñigue> ca>maxare moqoit chaqai nahua liỹaripi lauo> ỹalequetauguiló ana>maq proyecto.? </h2>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/8wExCb_MuKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </article>
     <article class="who-colaborates">
         <h2>¿Ñigue> cá>maq >ishit inaxanshiguim ana>maq no>ueenatec quena plataforma? </h2>
         <div>
             <p>
-            >Ishiteta inaxashiguim lo>ueenatec na>maq qom hueetauguiló na> moqoit chaqai  nahua liỹaripi lauo> hueetalec na>maq >laua chaqueña: Qom, Wichi chaqai  Moqoit.
+                >Ishiteta inaxashiguim lo>ueenatec na>maq qom hueetauguiló na> moqoit chaqai nahua liỹaripi lauo> hueetalec na>maq >laua chaqueña: Qom, Wichi chaqai Moqoit.
                 <br>
                 <br>
-                Chaqai>neta na>maq doqoshi >ishiteta inaxanshiguim lo>ueenatec da  ỹahotaque rotauanaxague qalaq ỹa>maxate>tegue da >ichoxot naua  no>ueenataxac na>maq moqoit chaqai nahua liỹaripi qarqaỹaripi. 
+                Chaqai>neta na>maq doqoshi >ishiteta inaxanshiguim lo>ueenatec da ỹahotaque rotauanaxague qalaq ỹa>maxate>tegue da >ichoxot naua no>ueenataxac na>maq moqoit chaqai nahua liỹaripi qarqaỹaripi.
             </p>
             <figure>
                 <img src="img/mobile/Docentes_bilingües_qom.jpg" alt="Docentes bilingües qom (Ashazam, 2019). CC BY SA 4.0 internacional.">

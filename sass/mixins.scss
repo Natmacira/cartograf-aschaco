@@ -22,3 +22,17 @@
         margin-right: 10px;
     }
 }
+
+@mixin link-to-wikimedia-opened {
+    display: flex;
+    font-size: 12px;
+    position: absolute;
+    background-color: white;
+    position: absolute;
+    top: 11px;
+    left: 7px;
+    border: solid 1px;
+    border-color: #e0e0e0;
+    padding: 4px 5px;
+    border-radius: 5px;
+}

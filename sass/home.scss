@@ -136,19 +136,74 @@ body.home {
 
     section.who-we-are {
         article.what-is {
-            h1 {
-                @media (min-width: 980px) {
-                    margin-bottom: 24px;
-                }
-            }
-            div {
+            // @media (min-width: 980px) {
+            //     position: relative;
+            // }
+
+            // h1 {
+            //     @media (min-width: 980px) {
+            //         margin-bottom: 24px;
+            //     }
+            // }
+            // div {
+            //     @media (min-width: 980px) {
+            //         display: flex;
+            //         flex-direction: row-reverse;
+            //         margin-bottom: 80px;
+            //         p {
+            //             max-width: 516px;
+            //         }
+            //     }
+            // }
+
+            > div {
+                text-align: center;
                 @media (min-width: 980px) {
                     display: flex;
-                    flex-direction: row-reverse;
-                    margin-bottom: 80px;
-                    p {
-                        max-width: 516px;
+                    flex-direction: row-reverse;                }
+            }
+            div.figure-container {
+                display: inline-block;
+                position: relative;
+
+                div.link-mega-container {
+                    position: absolute;
+                    display: block;
+                    top: 2px;
+                    left: 2px;
+
+                    div.link-container {
+                        display: none;
+
+                        a {
+                            color: $theme-purple;
+                        }
+                        button {
+                            background: none;
+                            border: none;
+                            font-weight: bold;
+                        }
+                        &.oppenned {
+                            @include link-to-wikimedia-opened;
+
+                            position: static;
+
+                            // top: -247px;
+                            // right: 170px;
+                            // @media (min-width: 980px) {
+                            //     top: 15px;
+                            //     right: -164px;
+                            // }
+                        }
                     }
+                }
+            }
+            figure {
+                cursor: pointer;
+                padding-bottom: 50px;
+
+                figcaption {
+                    position: absolute;
                 }
             }
         }
@@ -167,12 +222,61 @@ body.home {
             }
         }
         article.who-colaborates {
+            text-align: center;
             @media (min-width: 980px) {
-                div {
+                > div {
                     display: flex;
-                    p {
+
+                    > p {
+                        text-align: left;
                         max-width: 493px;
                     }
+                }
+            }
+
+            div.figure-container {
+                display: inline-block;
+                position: relative;
+
+                div.link-mega-container {
+                    position: absolute;
+                    display: block;
+                    top: 2px;
+                    left: 2px;
+
+                    div.link-container {
+                        display: none;
+
+                        a {
+                            color: $theme-purple;
+                        }
+                        button {
+                            background: none;
+                            border: none;
+                            font-weight: bold;
+                        }
+                        &.oppenned {
+                            @include link-to-wikimedia-opened;
+
+                            position: static;
+
+                            // top: -247px;
+                            // right: 170px;
+                            // @media (min-width: 980px) {
+                            //     top: 15px;
+                            //     right: -164px;
+                            // }
+                        }
+                    }
+                }
+            }
+
+            figure {
+                cursor: pointer;
+                padding-bottom: 50px;
+
+                figcaption {
+                    position: absolute;
                 }
             }
         }
