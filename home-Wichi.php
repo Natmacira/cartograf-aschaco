@@ -10,7 +10,7 @@ require_once 'header-Wichi.php';
         <a href="form-Wichi.php"><strong>+</strong>
             <p>Thattsi apeyak /apak / video</p>
         </a>
-        <p class="highlighted-text">Mirá el video para aprender cómo subir contenido</p>
+        <p class="highlighted-text">Yahin video ichefwena-am e&#39;p tiwuye tojh tithatsi mayek.</p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/8wExCb_MuKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <p class="content-text">Tojha wusey che tukhope tattsi lapak, lapeyak,videos,hotewuye tolesainek tojh pajhche wit athana.yahin che is wuiche kha.</p>
 </section>
@@ -26,19 +26,15 @@ require_once 'header-Wichi.php';
             </p>
             <figure>
                 <img src="img/mobile/Artesana_Cestera.png" alt="">
-                <figcaption>Artesana Cestera (Esteban Zugasti, 1960). Colección de fotografía de Esteban Zugasti. Centro de documentación indígena No'lhametwet.</figcaption>
+                <figcaption>Tojh ipotsin tojha (Esteban Zugasti,1960). Tojh yenlhi topeikas
+                        lhey Esteban Zugasti. Tochefwenyajhw’et tojh lhey No'lhametwet
+                        lachemet tojha.</figcaption>
             </figure>
         </div>
     </article>
     <article class="how-work">
         <h2>¿Athe tojh ihinla plataformana?</h2>
-        <p>A través de la plataforma, el patrimonio indígena custodiado por diferentes instituciones del Chaco integra un mapa interactivo vinculado a los Proyectos Wikimedia. Esto permite que cualquier persona pueda acceder, editar y usar el contenido libremente, según las pautas de las licencias que lo rigen.
-            <br>
-            <br>
-            De la misma forma, personas indígenas pueden visualizar, cargar y modificar el contenido volcado en el mapa para que sea verdaderamente representativo de su cultura.
-            <br>
-            <br>
-            La interfaz de la plataforma está traducida al qom, wichí, moqoit y español.
+        <p>Plataformana wunlasey che tuk hope thek yahin , hote wunlasey lawu-atshonhayahi, proyectona lhey wikimedia, tojha ihi: Qom,Moqoit ,Wichi, Ahotoy (suwele). 
         </p>
     </article>
     <article class="who-participates">
@@ -52,8 +48,7 @@ require_once 'header-Wichi.php';
             <figure>
                 <img src="img/mobile/Docentes_bilingües_qom.jpg" alt="Docentes bilingües qom (Ashazam, 2019). CC BY SA 4.0 internacional.">
                 <figcaption>
-                    Docentes bilingües qom (Ashazam, 2019). CC BY SA 4.0 internacional.
-                 </figcaption>
+                     Tochefwenyawus Bilingües Qom (Ashazam, 2019). CC BY SA 4.0 internacional.                 </figcaption>
             </figure>
         </div>
     </article>

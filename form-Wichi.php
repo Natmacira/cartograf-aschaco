@@ -30,14 +30,19 @@ require_once 'header-Wichi.php';
     <label for="otro" class="nation-option-label"><input type="radio" id="otro" name="nation" value="4">
         Otro:<input type="text" name="nation" class="other-nation-input" placeholder="ej. Argentina">
     </label><br>
-    <label for="parcialidad">Parcialidad (opcional)<input type="text" id="parcialidad" name="parcialidad" value="" placeholder="indicá tu parcialidad"> </label><br>
-    <label for="comunidad">Comunidad (opcional)<input type="text" id="comunidad" name="comunidad" value="" placeholder="indicá tu comunidad"> </label><br>
-    <label for="institucion">Si pertenecés a una institución indicá su nombre (opcional)<input type="text" id="institucion" name="institucion" value="" placeholder="nombre de la institución"> </label><br>
+    <label for="parcialidad">Enlhi tojh lahane (yahin ):<input type="text" id="parcialidad" name="parcialidad" value="" placeholder="Om kalelhojh"> </label><br>
+    <label for="comunidad">Aw'etes (yahin)<input type="text" id="comunidad" name="comunidad" value="" placeholder="Om kalelhojh aw’etes"> </label><br>
+    <label for="institucion">Che latolhey tochefwenyajhw’et, fwel Lhey (yahin):<input type="text" id="institucion" name="institucion" value="" placeholder="Thathu tochefwenyajhw’et lhey"> </label><br>
     <label for="terminos" id="terms-label"><input type="checkbox" id="terminos" name="terminos" value="" required><strong> <a href="terminos-Wichi.php">watlok nñhanej mak tojh tothalhn’uya tojh ihi plataformana</a></strong></label><br>
     <button>Athana</button>
 
 
 </form>
+<article class="show-after-submission">
+    <p>Nkachiseshi-am         <br>
+            tojh latach'uta.
+    </p>
+</article>
 
 <section class="contact-us">
     <h2>Che atha-amhu mañhey tojh hana wusey che lawu atshonhaya.</h2>

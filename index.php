@@ -35,7 +35,7 @@ require_once 'header.php';
         </picture>
         <div class="link-container">
             <a href="https://commons.wikimedia.org/wiki/File:Talla_madera_wich%C3%AD.png" target="_blank" class="hide-link">
-                Ver foto en Wikipedia
+            Yahin topeikas tojh ihi Wikipedia
             </a>
             <button class="close-btn">X</button>
         </div>
