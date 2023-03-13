@@ -5,7 +5,7 @@ require_once 'header-Wichi.php';
 
 <section class="map-section">
     <p class="highlighted-text">Che layahin plataformana law'enla mapa, tojha iwunlasey che am lathatsi mañhey tojh pajhchhehen, hotewuye , tokeyis, toka historias tojh wichi, Moqoit wit Qom kamayek.</p>
-    <embed src="" type="">
+    <embed src="https://wikishootme.toolforge.org/#lat=-27.451389658914252&lng=-58.98666858673096&zoom=16" type="">
     <div class="charge-items">
         <a href="form-Wichi.php"><strong>+</strong>
             <p>Thattsi apeyak /apak / video</p>

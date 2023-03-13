@@ -19,7 +19,7 @@ body.home {
         @media (min-width: 980px) {
             width: 59%;
             display: inline;
-            height: 409px;
+            height: 433px;
         }
     }
 
@@ -160,7 +160,8 @@ body.home {
                 text-align: center;
                 @media (min-width: 980px) {
                     display: flex;
-                    flex-direction: row-reverse;                }
+                    flex-direction: row-reverse;
+                }
             }
             div.figure-container {
                 display: inline-block;

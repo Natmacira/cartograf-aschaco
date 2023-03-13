@@ -5,7 +5,7 @@ require_once 'header-Moqoit.php';
 
 <section class="map-section">
     <p class="highlighted-text">Nataxare> plataforma ñachiita óna >laua lomalate quiyi >ishit ajñi, naqairishiguim chaqai dalaxachi> na>ma hueetaugui na>qaataxanaxac chaqai na>ma no>ueenataxac na> moqoit chaqai nahua liỹaripi quena> senqatalec Chaco: Qom, Wichi, Moqoit.</p>
-    <embed src="" type="">
+    <embed src="https://wikishootme.toolforge.org/#lat=-27.451389658914252&lng=-58.98666858673096&zoom=16" type="">
     <div class="charge-items">
         <a href="form-Moqoit.php"><strong>+</strong>
             <p>Naqairishiguim rqui>i/>xaỹaxanaxac/na>ajhnec </p>
