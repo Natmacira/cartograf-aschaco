@@ -31,17 +31,18 @@ require_once 'header-Qom.php';
                 na qarhuo̕ maye lma̕ nam CHACO qataq maiche qarloxoc. 'Ena noʼonatac chegoxohuaʼ chaʼaye qarahueque
                 'aso ñalletactapigui CULTURA, CIENCIAS Y TERRITORIOS 2022 maye loʼonata 'añe FUNDACION WILLIAM Y POTENCIAR.
             </p>
-            <figure>
-                <img src="img/mobile/Artesana_Cestera.png" alt="Nam ro ʼoxonxatacpi ( ESTEBAN ZUGASTI 1960)" class="nation-img">
-                <figcaption>Nam ro ʼoxonxatacpi ( ESTEBAN ZUGASTI 1960).Laỹonecpi nam mejnec nqui ʼipi, ESTEBAN ZUGASTI. Laỹe añi lmalatepi nam QOM,MOQIT qataq LQAXAIC “ NO ʼLHAMETWET.</figcaption>
-            </figure>
-            <div class="link-mega-container">
-
-                <div class="link-container">
-                    <a href="https://commons.wikimedia.org/wiki/File:Artesana_Cestera.jpg" class="hide-link" target="_blank">
-                        Ver foto en Wikipedia
-                    </a>
-                    <button class="close-btn">X</button>
+            <div class="figure-container">
+                <figure>
+                    <img src="img/mobile/Artesana_Cestera.png" class="nation-img" alt="Nam ro ʼoxonxatacpi ( ESTEBAN ZUGASTI 1960)" class="nation-img">
+                    <figcaption>Nam ro ʼoxonxatacpi ( ESTEBAN ZUGASTI 1960).Laỹonecpi nam mejnec nqui ʼipi, ESTEBAN ZUGASTI. Laỹe añi lmalatepi nam QOM,MOQIT qataq LQAXAIC “ NO ʼLHAMETWET.</figcaption>
+                </figure>
+                <div class="link-mega-container">
+                    <div class="link-container">
+                        <a href="https://commons.wikimedia.org/wiki/File:Artesana_Cestera.jpg" class="hide-link" target="_blank">
+                            Ver foto en Wikipedia
+                        </a>
+                        <button class="close-btn">X</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -69,12 +70,22 @@ require_once 'header-Qom.php';
                 <br>
                 Nataq ʼen ihuen ra huo ʼo cam le ʼenaxat maye ntaigui ana ncomputarora, qatq ncontraseñ, ram huotaique huenoxonea ʼahua nam qar ʼonatac ram huotaique ho ʼo cam naralaxat, qataq ihuen ram ỹaxat ra QOM, MOQOIT qo ʼ LAQAXAIC.
             </p>
-            <figure>
-                <img src="img/mobile/Docentes_bilingües_qom.jpg" alt="Docentes bilingües qom (Ashazam, 2019). CC BY SA 4.0 internacional.">
-                <figcaption>
-                    Docentes bilingües qom (Ashazam, 2019). CC BY SA 4.0 internacional.
-                </figcaption>
-            </figure>
+            <div class="figure-container">
+                <figure>
+                    <img src="img/mobile/Docentes_bilingües_qom.jpg" class="nation-img" alt="Docentes bilingües qom (Ashazam, 2019). CC BY SA 4.0 internacional.">
+                    <figcaption>
+                        Docentes bilingües qom (Ashazam, 2019). CC BY SA 4.0 internacional.
+                    </figcaption>
+                </figure>
+                <div class="link-mega-container">
+                    <div class="link-container">
+                        <a href="https://commons.wikimedia.org/wiki/File:Artesana_Cestera.jpg" class="hide-link" target="_blank">
+                            Ver foto en Wikipedia
+                        </a>
+                        <button class="close-btn">X</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </article>
     <article class="collaborators">

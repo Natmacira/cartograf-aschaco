@@ -24,17 +24,19 @@ require_once 'header-Moqoit.php';
         <div>
             <p>Nataxare> plataforma no>ueenataxanaxaua, chaqai ỹoreta>oguit qomyipi la>qaatqa, chicqaugui so>maq proyecto mishi imiguí notoanta>guit aso>maq “Centro de Documentación Indígena No’lhametwet del Chaco” chaqai la Asociación Civil Wikipedia Argentina. Vichiguiño huotaque >inaxashiguim na>maq la>deenaxanaxa chaqai> na> >ueenataxac na> moqoit chaqai nahua liỹaripi quena> senqatalec provincia chaqueña quiyim huootae ana>maq lalamaxaret laviyaxac chaqai lauanaxanaxac. Nataxare> no>ueenatec chicqaugui na> rauegaxan queso noỹaxanaxac “Cultura, Ciencia y territorio 2022” lo>ueenatec saua fundación Williams chaqai Potenciar.
             </p>
-            <figure>
-                <img src="img/mobile/Artesana_Cestera.png" alt="No>xonaxanaq (Esteban Zugasti, 1960)" class="nation-img">
-                <figcaption>No>xonaxanaq (Esteban Zugasti, 1960). nqui>illipi lapoonecse so>maxare Esteban Zugasti.
-                    Centro de documentación indígena No'lhametwet </figcaption>
-            </figure>
-            <div class="link-mega-container">
-                <div class="link-container">
-                    <a href="https://commons.wikimedia.org/wiki/File:Artesana_Cestera.jpg" class="hide-link" target="_blank">
-                        Ver foto en Wikipedia
-                    </a>
-                    <button class="close-btn">X</button>
+            <div class="figure-container">
+                <figure>
+                    <img src="img/mobile/Artesana_Cestera.png" class="nation-img" alt="No>xonaxanaq (Esteban Zugasti, 1960)" class="nation-img">
+                    <figcaption>No>xonaxanaq (Esteban Zugasti, 1960). nqui>illipi lapoonecse so>maxare Esteban Zugasti.
+                        Centro de documentación indígena No'lhametwet </figcaption>
+                </figure>
+                <div class="link-mega-container">
+                    <div class="link-container">
+                        <a href="https://commons.wikimedia.org/wiki/File:Artesana_Cestera.jpg" class="hide-link" target="_blank">
+                            Ver foto en Wikipedia
+                        </a>
+                        <button class="close-btn">X</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -62,12 +64,22 @@ require_once 'header-Moqoit.php';
                 <br>
                 Chaqai>neta na>maq doqoshi >ishiteta inaxanshiguim lo>ueenatec da ỹahotaque rotauanaxague qalaq ỹa>maxate>tegue da >ichoxot naua no>ueenataxac na>maq moqoit chaqai nahua liỹaripi qarqaỹaripi.
             </p>
-            <figure>
-                <img src="img/mobile/Docentes_bilingües_qom.jpg" alt="Docentes bilingües qom (Ashazam, 2019). CC BY SA 4.0 internacional.">
-                <figcaption>
-                    Docentes bilingües qom (Ashazam, 2019). CC BY SA 4.0 internacional.
-                </figcaption>
-            </figure>
+            <div class="figure-container">
+                <figure>
+                    <img src="img/mobile/Docentes_bilingües_qom.jpg" class="nation-img" alt="Docentes bilingües qom (Ashazam, 2019). CC BY SA 4.0 internacional.">
+                    <figcaption>
+                        Docentes bilingües qom (Ashazam, 2019). CC BY SA 4.0 internacional.
+                    </figcaption>
+                </figure>
+                <div class="link-mega-container">
+                    <div class="link-container">
+                        <a href="https://commons.wikimedia.org/wiki/File:Artesana_Cestera.jpg" class="hide-link" target="_blank">
+                            Ver foto en Wikipedia
+                        </a>
+                        <button class="close-btn">X</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </article>
     <article class="collaborators">
