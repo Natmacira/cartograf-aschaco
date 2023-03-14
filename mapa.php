@@ -109,7 +109,7 @@
 	<script src="https://localhost/cartografiaschaco/lib/tooltranslate/tt.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/sm_comm.js"></script>
-
+	<script src="js/burger-menu.js"></script>
 
 	<script type='text/javascript'>
 		$(document).ready(function() {
@@ -128,12 +128,39 @@
 </head>
 
 <body class="page-mapa">
-
+	<header>
+		<img src="img/mobile/Banner_of_the_Qulla_Suyu.png" alt="">
+		<p class="header-text"><a href="index.php"> Cartografías abiertas
+				Qom, Wichi y Moqoit</a></p>
+		<div id="container" class="open clss">
+			<span class="cls"></span>
+			<span>
+				<ul class="sub-menu">
+					<li><a href="home-Qom.php">Qom</a></li>
+					<li><a href="home-Wichi.php">Wichí</a></li>
+					<li><a href="home-Moqoit.php">Moqoit</a></li>
+					<li><a href="home.php">Español</a></li>
+					<li><a href="javascript:history.back()" class="go-back-link">
+							< Volver</a>
+					</li>
+				</ul>
+			</span>
+			<span class="cls"></span>
+		</div>
+		<section>
+			<ul class="desktop-menu">
+				<li><a href="home-Qom.php">Qom</a></li>
+				<li><a href="home-Wichi.php">Wichí</a></li>
+				<li><a href="home-Moqoit.php">Moqoit</a></li>
+				<li><a href="home.php">Español</a></li>
+			</ul>
+		</section>
+	</header>
 	<div id='top'>
 		<nav class="navbar navbar-light bg-faded">
 			<ul class="nav navbar-nav">
 				<li class="nav-item"><button id='center_on_me' class='btn btn-secondary' tt_title='go_to_my_position'><i class="fa fa-compass" style='font-size:24pt' aria-hidden="true"></i></button></li>
-				<li class="nav-item"><button id='search' class='btn btn-secondary' tt_title='search'>&#128269;</button></li>
+				<!-- <li class="nav-item"><button id='search' class='btn btn-secondary' tt_title='search'>&#128269;</button></li> -->
 				<li class='nav-item' style='display:none' id='li_authorize'>
 					<a class='btn btn-outline-primary' href='api_v3.php?action=authorize' tt='authorize_upload'></a>
 				</li>
@@ -150,7 +177,21 @@
 				</li>
 			</ul>
 
-			<div class='pull-xs-right'>
+			<ul class="language-ul">
+				<li><a href="">Qom</a></li>
+				<li><a href="">Wichí</a></li>
+				<li><a href="">Moqoit</a></li>
+				<li><a href="">Español</a></li>
+			</ul>
+
+			<article class="sign-in-map">
+				<p class="mobile-version">Mantené presionada la pantalla del <br> mapa para agregar contenido</p>
+			</article>
+			<article class="sign-in-map">
+				<p class="desktop-version">Hacé click derecho en el mapa para <br> agregar contenido</p>
+			</article>
+			<!-- ESTE ES EL MENU VIEJO QUE NO VAMOS A USAR POR AHORA -->
+			<!-- <div class='pull-xs-right'>
 				<div class="dropdown" style='display:inline'>
 					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<i class="fa fa-bars" style='font-size:16pt' aria-hidden="true"></i>
@@ -164,7 +205,8 @@
 						<div id='tile_wrapper' class='dropdown-item'></div>
 					</div>
 				</div>
-			</div><!--pull-right-->
+			</div>
+			pull-right -->
 
 		</nav>
 	</div>
@@ -269,6 +311,6 @@
 		</div>
 	</div>
 
-</body>
-
-</html>
+	<?php
+	require_once 'footer-Qom.php';
+	?>

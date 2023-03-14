@@ -8,7 +8,7 @@ require_once 'header-Moqoit.php';
     <embed src="https://wikishootme.toolforge.org/#lat=-27.451389658914252&lng=-58.98666858673096&zoom=16" type="">
     <div class="charge-items">
         <a href="form-Moqoit.php"><strong>+</strong>
-            <p>Naqairishiguim rqui>i/>xaỹaxanaxac/na>ajhnec </p>
+            <p>Naqairishiguim <br> rqui>i/>xaỹaxanaxac/na>ajhnec </p>
         </a>
         <p class="highlighted-text">Ajñi nataxare na>ajhnec da co>vinetegue da qai>naashiguim naua no’ueenatec</p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/8wExCb_MuKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

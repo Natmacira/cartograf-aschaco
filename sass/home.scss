@@ -16,6 +16,7 @@ body.home {
     embed {
         background-color: pink;
         width: 100%;
+        height: 433px;
         @media (min-width: 980px) {
             width: 59%;
             display: inline;
@@ -89,7 +90,7 @@ body.home {
 
         div.charge-items {
             @media (min-width: 980px) {
-                width: 340px;
+                width: 355px;
                 float: right;
             }
             a {
