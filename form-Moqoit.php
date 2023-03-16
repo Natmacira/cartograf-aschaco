@@ -41,6 +41,12 @@ require_once 'header-Moqoit.php';
     <button>>neetasa></button>
 
 </form>
+<article class="show-after-submission">
+    <p>Qana>aachic dama 
+        <br>
+        ro>taanaxanaxaqui
+    </p>
+</article>
 
 <section class="contact-us">
     <h2>No>m >ue repeetaxanaxahi lqo>m ne>palaxañiira>a, ca> >vité qayirquí> </h2>

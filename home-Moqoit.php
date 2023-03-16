@@ -33,8 +33,7 @@ require_once 'header-Moqoit.php';
                 <div class="link-mega-container">
                     <div class="link-container">
                         <a href="https://commons.wikimedia.org/wiki/File:Artesana_Cestera.jpg" class="hide-link" target="_blank">
-                            Ver foto en Wikipedia
-                        </a>
+                        Ajñi nqui>i quena Wikipedia                        </a>
                         <button class="close-btn">X</button>
                     </div>
                 </div>
@@ -66,16 +65,15 @@ require_once 'header-Moqoit.php';
             </p>
             <div class="figure-container">
                 <figure>
-                    <img src="img/mobile/Docentes_bilingües_qom.jpg" class="nation-img" alt="Docentes bilingües qom (Ashazam, 2019). CC BY SA 4.0 internacional.">
+                    <img src="img/mobile/Docentes_bilingües_qom.jpg" class="nation-img" alt="Paxaguinataxanaripi Bilingüe Qom (Ashazam, 2019). CC BY SA 4.0 internacional.">
                     <figcaption>
-                        Docentes bilingües qom (Ashazam, 2019). CC BY SA 4.0 internacional.
+                        Paxaguinataxanaripi Bilingüe Qom (Ashazam, 2019). CC BY SA 4.0 internacional.
                     </figcaption>
                 </figure>
                 <div class="link-mega-container">
                     <div class="link-container">
                         <a href="https://commons.wikimedia.org/wiki/File:Artesana_Cestera.jpg" class="hide-link" target="_blank">
-                            Ver foto en Wikipedia
-                        </a>
+                        Ajñi nqui>i quena Wikipedia                        </a>
                         <button class="close-btn">X</button>
                     </div>
                 </div>
@@ -87,27 +85,27 @@ require_once 'header-Moqoit.php';
         <p>Najho proyecto >ishit imigui ma> notoanta>guit najho ỹoreta>oguit no>ueenataxanaxaqui culturales chaqai paxaguinataxanaxaqui:</p>
         <div class="inner-container-logos">
             <div class="sponsors-logos">
-                <img src="img/mobile/logo-wiki.png" alt="Logo wikimedia">
-                <img src="img/mobile/logo-centrodoc.png" alt="Logo Centro de documentación indigena">
-                <img src="img/mobile/logo-cultura.png" alt="Logo Programa de cultura de los pueblos originarios">
-                <img src="img/mobile/logo-potenciar.png" alt="Logo Potenciar">
-                <img src="img/mobile/logo-lab.png" alt="Logo Laboratorio de innovación cultural y cientifica">
-                <img src="img/mobile/logo-fundacionw.png" alt="Logo Fundación Williams">
+                <img src="img/mobile/logo-wiki.png" alt="Tanaxaset wikimedia">
+                <img src="img/mobile/logo-centrodoc.png" alt="Tanaxaset Centro de documentación indigena">
+                <img src="img/mobile/logo-cultura.png" alt="Tanaxaset Programa de cultura de los pueblos originarios">
+                <img src="img/mobile/logo-potenciar.png" alt="Tanaxaset Potenciar">
+                <img src="img/mobile/logo-lab.png" alt="Tanaxaset Laboratorio de innovación cultural y cientifica">
+                <img src="img/mobile/logo-fundacionw.png" alt="Tanaxaset Fundación Williams">
             </div>
             <div class="collaborators second">
-                <img src="img/mobile/logo-subsecretariapluri.png" alt="Logo subsecretaria plurilingÜismo">
-                <img src="img/mobile/logo-fadycc-UNNE.png" alt="Logo Facultad de Artes, Diseño y Ciencias de la cultura">
-                <img src="img/mobile/Logo-ICCH_.png" alt="Logo Instituto de cultura.">
+                <img src="img/mobile/logo-subsecretariapluri.png" alt="Tanaxaset subsecretaria plurilingÜismo">
+                <img src="img/mobile/logo-fadycc-UNNE.png" alt="Tanaxaset Facultad de Artes, Diseño y Ciencias de la cultura">
+                <img src="img/mobile/Logo-ICCH_.png" alt="Tanaxaset Instituto de cultura.">
             </div>
         </div>
         <div class="collaborators third">
-            <img src="img/mobile/logo-museo-hombre-chaq.png" alt="Logo museo del hombre chaqueño">
-            <img src="img/mobile/logo-museo-historico-reg.png" alt="Logo Museo histórico regional.">
-            <img src="img/mobile/logo-museo-medios.png" alt="Logo Museo de medios de comunicación.">
-            <img src="img/mobile/logo-archivo-historico.png" alt="Logo Archivo histórico.">
-            <img src="img/mobile/logo-conicet.png" alt="Logo Conicet">
-            <img src="img/mobile/logo-DCI-UNNE.png" alt="Logo lincenciatura de ciencias de la información.">
-            <img src="img/mobile/logo-DPC.png" alt="Logo Dirección de patrimonio cultural.">
+            <img src="img/mobile/logo-museo-hombre-chaq.png" alt="Tanaxaset museo del hombre chaqueño">
+            <img src="img/mobile/logo-museo-historico-reg.png" alt="Tanaxaset Museo histórico regional.">
+            <img src="img/mobile/logo-museo-medios.png" alt="Tanaxaset Museo de medios de comunicación.">
+            <img src="img/mobile/logo-archivo-historico.png" alt="Tanaxaset Archivo histórico.">
+            <img src="img/mobile/logo-conicet.png" alt="Tanaxaset Conicet">
+            <img src="img/mobile/logo-DCI-UNNE.png" alt="Tanaxaset lincenciatura de ciencias de la información.">
+            <img src="img/mobile/logo-DPC.png" alt="Tanaxaset Dirección de patrimonio cultural.">
         </div>
     </article>
 </section>

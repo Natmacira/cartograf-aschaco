@@ -1,0 +1,7 @@
+notas
+
+tts.js linea 372 código para el cambio de idioma
+llamo a los botones (que sean labels de input radio con el input oculto y funciona en el click)
+todos con el mismo name
+hago un for por todos los inputs y en el onchange le digo que haga lo que hace el de wikishootme
+y armo esta función 

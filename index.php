@@ -54,7 +54,7 @@ require_once 'header.php';
         </picture>
         <div class="link-container">
             <a href="https://commons.wikimedia.org/wiki/File:Vasija_moqoit.png" target="_blank" class="hide-link">
-                Ver foto en Wikipedia
+            Ajñi nqui>i quena Wikipedia
             </a>
             <button class="close-btn">X</button>
         </div>
