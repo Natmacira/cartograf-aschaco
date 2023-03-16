@@ -178,10 +178,10 @@
 			</ul>
 
 			<ul class="language-ul">
-				<li><a href="">Qom</a></li>
-				<li><a href="">Wichí</a></li>
-				<li><a href="">Moqoit</a></li>
-				<li><a href="">Español</a></li>
+				<li><label><input type="radio" class="language-switch" name="language-switch" value="qom">Qom</label></li>
+				<li><label><input type="radio" class="language-switch" name="language-switch" value="wichi">Wichí</label></li>
+				<li><label><input type="radio" class="language-switch" name="language-switch" value="moqoit">Moqoit</label></li>
+				<li><label><input type="radio" class="language-switch" name="language-switch" value="es">Español</label></li>
 			</ul>
 
 			<article class="sign-in-map">
