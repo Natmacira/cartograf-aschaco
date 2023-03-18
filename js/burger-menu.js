@@ -6,16 +6,5 @@ document.addEventListener('DOMContentLoaded', function() {
         container.classList.toggle('oppenned');
         document.body.classList.toggle('burger-menu-opened');
     });
-
-
-	// get all elements with "language-switch" class
-	let languageSwitch = document.getElementsByClassName('language-switch');
-
-	for (let i = 0; i < languageSwitch.length; i++) {
-		languageSwitch[i].addEventListener('click', function(e) {
-
-
-		});
-	}
 });
 

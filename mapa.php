@@ -87,7 +87,7 @@
 <html>
 
 <head>
-	<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+	<meta name="robots" content="noindex,nofollow">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 	<link rel="stylesheet" href="https://localhost/cartografiaschaco/lib/bootstrap/bootstrap.min.css">
@@ -107,23 +107,13 @@
 	<script src="https://localhost/cartografiaschaco/lib/magnustools/md5.js"></script>
 	<script src="https://localhost/cartografiaschaco/lib/magnustools/wikidata.js"></script>
 	<script src="https://localhost/cartografiaschaco/lib/tooltranslate/tt.js"></script>
-	<script src="js/main.js"></script>
-	<script src="js/sm_comm.js"></script>
-	<script src="js/burger-menu.js"></script>
-
-	<script type='text/javascript'>
-		$(document).ready(function() {
-			cartografiaschaco.init();
-		});
-
-		{
-			var m = window.location.href.match(/\?(.+)$/);
-			if (m != null) {
-				var url = '/cartografiaschaco/#' + m[1].replace(/\#/, '&');
-				window.location.href = url;
-			}
-		}
+	<script src="js/main-legacy.js"></script>
+	<script> var cartografiasTranslations = <?php echo file_get_contents( 'lib\tooltranslate\data\languages-custom.json');
+	?>
 	</script>
+	<script src="js/main.js"></script>
+	<script src="js/burger-menu.js"></script>
+	<script src="js/sm_comm.js"></script>
 
 </head>
 
@@ -181,14 +171,14 @@
 				<li><label><input type="radio" class="language-switch" name="language-switch" value="qom">Qom</label></li>
 				<li><label><input type="radio" class="language-switch" name="language-switch" value="wichi">Wichí</label></li>
 				<li><label><input type="radio" class="language-switch" name="language-switch" value="moqoit">Moqoit</label></li>
-				<li><label><input type="radio" class="language-switch" name="language-switch" value="es">Español</label></li>
+				<li><label><input type="radio" class="language-switch" name="language-switch" value="es" checked>Español</label></li>
 			</ul>
 
 			<article class="sign-in-map">
-				<p class="mobile-version">Mantené presionada la pantalla del <br> mapa para agregar contenido</p>
+				<p class="mobile-version" data-translation-id="instructivo-movil">Mantené presionada la pantalla del <br> mapa para agregar contenido</p>
 			</article>
 			<article class="sign-in-map">
-				<p class="desktop-version">Hacé click derecho en el mapa para <br> agregar contenido</p>
+				<p class="desktop-version" data-translation-id="instructivo-computadora">Hacé click derecho en el mapa para <br> agregar contenido</p>
 			</article>
 			<!-- ESTE ES EL MENU VIEJO QUE NO VAMOS A USAR POR AHORA -->
 			<!-- <div class='pull-xs-right'>

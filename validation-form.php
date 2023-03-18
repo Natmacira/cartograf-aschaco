@@ -1,45 +1,63 @@
+<?php
+if (isset($_POST['submit'])) {
+	$nombre       = '';
+	$nation_id    = '';
+	$nation_other    = '';
+	$parcialidad  = '';
+	$comunidad    = '';
+	$institucion  = '';
 
-<!-- 
-DB CONECTION -->
+	$host     = 'localhost';
+	$username = 'root';
+	$password = '';
+	$dbname   = 'cartografiaschaco.com';
 
-<!-- <?php
-    if(isset($_POST['submit']))
-    {
-        $nombre       = $_POST['nombre'];
-        $nation       = $_POST['nation'];
-        $parcialidad  = $_POST['parcialidad'];
-        $comunidad    = $_POST['comunidad'];
-        $institucion  = $_POST['institucion'];
-        $terminos     = $_POST['terminos'];
-    }
+	if (!empty($_POST['nombre']) && is_string($_POST['nombre'])) {
+		$nombre = $_POST['nombre'];
+	}
 
-        $host = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "cartografiaschaco.com";
+	if (!empty($_POST['nation-id']) && is_string($_POST['nation-id'])) {
+		$nation_id = $_POST['nation-id'];
+	}
 
-        // creating a connection
-        $con = mysqli_connect($host, $username, $password, $dbname);
+	if (!empty($_POST['nation-other']) && is_string($_POST['nation-other'])) {
+		$nation_other = $_POST['nation-other'];
+	}
 
-       // to ensure that the connection is made
-       if (!$con)
-       {
-        die("Connection failed!" . mysqli_connect_error());
-       }
+	if (!empty($_POST['parcialidad']) && is_string($_POST['parcialidad'])) {
+		$parcialidad = $_POST['parcialidad'];
+	};
 
-        // using sql to create a data entry query
-        $sql = "INSERT INTO testing (id, nombre, nation, parcialidad, comunidad, institucion, terminos) VALUES ('0', '$nombre', '$nation', '$parcialidad', '$comunidad', '$institucion', '$terminos')";
-  
-        // send query to the database to add values and confirm if successful
-         $rs = mysqli_query($con, $sql);
-         if($rs)
-        {
-        echo "Entries added!";
-       }
-  
-        // close connection
-        mysqli_close($con);
-?> -->
+	if (!empty($_POST['comunidad']) && is_string($_POST['comunidad'])) {
+		$comunidad = $_POST['comunidad'];
+	}
 
+	if (!empty($_POST['institucion']) && is_string($_POST['institucion'])) {
+		$institucion = $_POST['institucion'];
+	}
 
+	if ($nombre && $nation_id) {
+		$con = mysqli_connect($host, $username, $password, $dbname);
 
+		if (!$con) {
+			die('Connection failed!' . mysqli_connect_error());
+		}
+
+		$sql = "INSERT INTO users
+		(nombre, nation_id, nation_other, parcialidad, comunidad, institucion) VALUES
+		('$nombre', '$nation_id', '$nation_other', '$parcialidad', '$comunidad', '$institucion')";
+
+		$rs = mysqli_query($con, $sql);
+
+		if ($rs) {
+			$result = 'Success';
+		} else {
+			$result = 'Error';
+		}
+
+		mysqli_close($con);
+	} else {
+		$result = 'Missing required fields';
+	}
+
+}
