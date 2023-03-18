@@ -1,0 +1,38 @@
+{
+    "es": {
+        "coordenadas": "Coordenadas",
+        "titulo": "Nombre",
+        "imagen": "Carga la imagen",
+        "descripcion": "Descripción",
+        "algo-mas": "Información extra",
+        "instructivo-movil":"Mantené presionada la pantalla del mapa para agregar contenido",
+        "instructivo-computadora":"Hacé click derecho en el mapa para agregar contenido"
+    },
+    "qom": {
+        "coordenadas": "qomqomqomqomqom",
+        "titulo": "Nomqomqombre",
+        "imagen": "qomqomqomqomqom",
+        "descripcion": "qomqomqomqomqom",
+        "algo-mas": "qomqomqomqomqom",
+        "instructivo-movil":"qomqomqomqomqomqomqomqomqomqomqomqomqomqomqomqomqomqomqomqom",
+        "instructivo-computadora":"qomqomqomqomqomqomqomqomqomqomqomqomqomqomqomqomqomqomqomqomqom"
+    },
+    "moqoit": {
+        "coordenadas": "moqoit",
+        "titulo": "moqoit",
+        "imagen": "moqoitmoqoitmoqoit",
+        "descripcion": "moqoit",
+        "algo-mas": "moqoitmoqoit extra",
+        "instructivo-movil":"moqoitmoqoitmoqoitmoqoitmoqoitmoqoitmoqoitmoqoitmoqoitmoqoit",
+        "instructivo-computadora":"moqoitmoqoitmoqoitmoqoitmoqoitmoqoitmoqoitmoqoitmoqoitmoqoit"
+    },
+    "wichi": {
+        "coordenadas": "wichi",
+        "titulo": "wichi",
+        "imagen": "wichiwichiwichi",
+        "descripcion": "wichi",
+        "algo-mas": "wichiwichiwichiwichiwichi",
+        "instructivo-movil":"wichiwichiwichiwichiwichiwichiwichiwichiwichi",
+        "instructivo-computadora":"wichiwichiwichiwichiwichiwichiwichiwichiwichiwichi"
+    }
+}
