@@ -1,0 +1,50 @@
+{
+	"status": "ERROR",
+	"res": null,
+	"data": {
+		"labels": {
+			"en": {
+				"language": "en",
+				"value": "kiosko"
+			}
+		},
+		"claims": [
+			{
+				"mainsnak": {
+					"snaktype": "value",
+					"property": "P625",
+					"datavalue": {
+						"value": {
+							"latitude": -34.62858203477938,
+							"longitude": -58.498785495758064,
+							"altitude": null,
+							"precision": 1.0e-7,
+							"globe": "http:\/\/www.wikidata.org\/entity\/Q2"
+						},
+						"type": "globecoordinate"
+					},
+					"datatype": "globe-coordinate"
+				},
+				"type": "statement",
+				"rank": "normal"
+			},
+			{
+				"mainsnak": {
+					"snaktype": "value",
+					"property": "P131",
+					"datavalue": {
+						"value": {
+							"entity-type": "item",
+							"numeric-id": 1486,
+							"id": "Q1486"
+						},
+						"type": "wikibase-entityid"
+					},
+					"datatype": "wikibase-item"
+				},
+				"type": "statement",
+				"rank": "normal"
+			}
+		]
+	}
+}

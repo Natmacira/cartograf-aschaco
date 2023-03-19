@@ -1,0 +1,48 @@
+{
+	"status": "OK",
+	"result": {
+		"batchcomplete": "",
+		"query": {
+			"userinfo": {
+				"id": 11960500,
+				"name": "CartografiasChaco",
+				"groups": [
+					"*",
+					"user",
+					"autoconfirmed"
+				],
+				"rights": [
+					"read",
+					"edit",
+					"createpage",
+					"createtalk",
+					"writeapi",
+					"translate",
+					"abusefilter-view",
+					"abusefilter-log",
+					"flow-hide",
+					"flow-edit-title",
+					"item-term",
+					"property-term",
+					"item-merge",
+					"item-redirect",
+					"property-create",
+					"mediainfo-term",
+					"upload",
+					"reupload-own",
+					"move-categorypages",
+					"minoredit",
+					"purge",
+					"applychangetags",
+					"imagelabel-review",
+					"move",
+					"autoconfirmed",
+					"editsemiprotected",
+					"skipcaptcha",
+					"abusefilter-log-detail",
+					"flow-edit-post"
+				]
+			}
+		}
+	}
+}
