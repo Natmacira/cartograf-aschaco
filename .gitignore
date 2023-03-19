@@ -4,3 +4,5 @@
 *.scss.map
 
 *credentials.php
+*env.php
+*oauth.ini

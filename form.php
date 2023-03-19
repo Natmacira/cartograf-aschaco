@@ -1,6 +1,8 @@
 <?php
 $body_class = "form";
+
 require_once 'header.php';
+
 $form_result = '';
 
 if (isset($_POST['submit'])) {
@@ -10,11 +12,6 @@ if (isset($_POST['submit'])) {
 	$parcialidad  = '';
 	$comunidad    = '';
 	$institucion  = '';
-
-	$host     = 'localhost';
-	$username = 'root';
-	$password = '';
-	$dbname   = 'cartografiaschaco.com';
 
 	if (!empty($_POST['nombre']) && is_string($_POST['nombre'])) {
 		$nombre = $_POST['nombre'];
@@ -41,6 +38,21 @@ if (isset($_POST['submit'])) {
 	}
 
 	if ($nombre && $nation_id) {
+		require_once 'env.php';
+
+		$host     = getenv( 'DB_HOST' );
+		$user     = getenv( 'DB_USER' );
+		$password = getenv( 'DB_PASSWORD' );
+		$database = getenv( 'DB_NAME' );
+
+		// Create connection
+		$mysqli = new mysqli( $host, $user, $password, $database );
+
+		// Check connection
+		if ($mysqli->connect_errno) {
+			echo "Failed to connect to MySQL: " . $mysqli->connect_error;
+			exit();
+		}
 		$con = mysqli_connect($host, $username, $password, $dbname);
 
 		if (!$con) {
