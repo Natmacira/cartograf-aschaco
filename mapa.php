@@ -152,7 +152,7 @@
 				<li class="nav-item"><button id='center_on_me' class='btn btn-secondary' tt_title='go_to_my_position'><i class="fa fa-compass" style='font-size:24pt' aria-hidden="true"></i></button></li>
 				<!-- <li class="nav-item"><button id='search' class='btn btn-secondary' tt_title='search'>&#128269;</button></li> -->
 				<li class='nav-item' style='display:none' id='li_authorize'>
-					<a class='btn btn-outline-primary' href='api_v3.php?action=authorize' tt='authorize_upload'></a>
+					<a class='btn btn-outline-primary' href='api.php?action=authorize' tt='authorize_upload'></a>
 				</li>
 				<li class="nav-item" id='dropdownUploadsLi'>
 					<div class="dropdown" style='display:inline'>
@@ -303,4 +303,3 @@
 
 	<?php
 	require_once 'footer-Qom.php';
-	?>

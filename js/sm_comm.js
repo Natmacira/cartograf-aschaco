@@ -1,6 +1,6 @@
 var wsm_comm = {
 	is_app : false,
-	api_v3 : 'https://localhost/cartografiaschaco/api_v3.php' ,
+	api : 'https://localhost/cartografiaschaco/api.php' ,
 	api_autodesc : 'https://tools.wmflabs.org/autodesc' ,
 	api_wikidata : 'https://www.wikidata.org/w/api.php' ,
 	url_flinfo : 'https://tools.wmflabs.org/flickr2commons/flinfo_proxy.php' ,
@@ -13,8 +13,8 @@ var wsm_comm = {
 
 	getWSM : function ( params , callback ) {
 		var me = this ;
-		//$.getJSON ( me.api_v3+'?callback=?' , params , callback ) ;
-		$.get ( me.api_v3 , params , callback , 'json' ) ;
+		//$.getJSON ( me.api+'?callback=?' , params , callback ) ;
+		$.get ( me.api , params , callback , 'json' ) ;
 	} ,
 
 	getFlinfo : function ( params , callback ) {

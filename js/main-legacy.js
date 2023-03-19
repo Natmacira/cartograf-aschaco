@@ -262,7 +262,7 @@ var cartografiaschaco = {
 				desc += "== {{int:license-header}} ==\n{{self|cc-by-sa-3.0}}";
 
 				h += "<div style='margin-top:15px'>";
-				h += "<form method='post' enctype='multipart/form-data' action='" + wsm_comm.api_v3 + "' class='form form-inline' target='_blank'>";
+				h += "<form method='post' enctype='multipart/form-data' action='" + wsm_comm.api + "' class='form form-inline' target='_blank'>";
 				h += '<label class="btn btn-primary btn-file">' + me.tt.t('upload_file') + ' <input name="file" type="file" accept="image/*;capture=camera" onchange="cartografiaschaco.uploadFileHandler(this)" style="display: none;"></label>';
 				h += "<input type='hidden' name='action' value='" + me.upload_mode + "' />";
 				h += "<input type='hidden' name='q' value='" + entry.page + "' />";
@@ -285,7 +285,7 @@ var cartografiaschaco = {
 					h += "<div><button class='btn btn-primary' onclick='wsm_comm.appLogin();return false'>Log in!</button></div>";
 				} else {
 					h += "<div>";
-					h += "<form method='post' action='" + wsm_comm.api_v3 + "'>";
+					h += "<form method='post' action='" + wsm_comm.api + "'>";
 					h += "<input type='hidden' name='action' value='authorize' />";
 					h += "<input type='submit' class='btn btn-primary' value='" + me.tt.t('authorize_upload') + "' />";
 					h += "</form>";
@@ -445,7 +445,7 @@ var cartografiaschaco = {
 
 		// Uploading new file
 		var opts = {
-			url: wsm_comm.api_v3,
+			url: wsm_comm.api,
 			data: o.data,
 			cache: false,
 			contentType: false,
