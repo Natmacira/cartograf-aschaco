@@ -1,6 +1,6 @@
 var wsm_comm = {
 	is_app : false,
-	api : 'https://localhost/cartografiaschaco/api.php' ,
+	api : homeUrl + 'api.php' ,
 	api_autodesc : 'https://tools.wmflabs.org/autodesc' ,
 	api_wikidata : 'https://www.wikidata.org/w/api.php' ,
 	url_flinfo : 'https://tools.wmflabs.org/flickr2commons/flinfo_proxy.php' ,

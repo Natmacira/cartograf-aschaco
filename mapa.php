@@ -1,5 +1,7 @@
 <?php
 
+require_once 'functions.php';
+
 /** NOTAS 16.01 ----> Preferencia Ele tener un usuario único para que la gente no se tenga que crear el propio. Y en este caso
  * el formulario se llenaría cada vez y sería la forma de loguearse.
  *
@@ -34,7 +36,7 @@
  * une usuarie entra, carga una fotito. la fotito se la enviamos al bot, el bot la manda a wikidata a través
  * de su api, quien a su vez la recibe, la ingresa en la base de datos, y luego wikishoot me la levanta?
  *
- * https://localhost/cartografiaschaco/lib/tooltranslate/data/cartografiaschaco/en.json
+ * <?php echo APP_HOME_URL; ?>lib/tooltranslate/data/cartografiaschaco/en.json
  * https://tools-static.wmflabs.org/tooltranslate/data/cartografiaschaco/en.json
  *  -> las frases de cartografiaschaco en inglés, para traducir. Ver si existen los ISO de estos idiomas
  *
@@ -90,29 +92,31 @@
 	<meta name="robots" content="noindex,nofollow">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-	<link rel="stylesheet" href="https://localhost/cartografiaschaco/lib/bootstrap/bootstrap.min.css">
-	<link rel="stylesheet" href="https://localhost/cartografiaschaco/lib/tether/tether.min.css">
-	<link rel="stylesheet" href="https://localhost/cartografiaschaco/lib/leaflet/leaflet.css">
-	<link rel="stylesheet" href="https://localhost/cartografiaschaco/lib/leaflet/leaflet.contextmenu.min.css">
+	<link rel="stylesheet" href="<?php echo APP_HOME_URL; ?>lib/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php echo APP_HOME_URL; ?>lib/tether/tether.min.css">
+	<link rel="stylesheet" href="<?php echo APP_HOME_URL; ?>lib/leaflet/leaflet.css">
+	<link rel="stylesheet" href="<?php echo APP_HOME_URL; ?>lib/leaflet/leaflet.contextmenu.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="style.min.css">
-	<!--<link rel="stylesheet" type="text/css" href="https://localhost/cartografiaschaco/lib/magnustools/common.css">-->
+	<!--<link rel="stylesheet" type="text/css" href="<?php echo APP_HOME_URL; ?>lib/magnustools/common.css">-->
 	<title tt='toolname'></title>
-	<script src='https://localhost/cartografiaschaco/lib/jquery/jquery.min.js'></script>
-	<script src='https://localhost/cartografiaschaco/lib/tether/tether.min.js'></script>
-	<script src='https://localhost/cartografiaschaco/lib/bootstrap/bootstrap.min.js'></script>
-	<script src='https://localhost/cartografiaschaco/lib/leaflet/leaflet.js'></script>
-	<script src="https://localhost/cartografiaschaco/lib/leaflet/leaflet.contextmenu.min.js"></script>
-	<script src="https://localhost/cartografiaschaco/lib/magnustools/common.js"></script>
-	<script src="https://localhost/cartografiaschaco/lib/magnustools/md5.js"></script>
-	<script src="https://localhost/cartografiaschaco/lib/magnustools/wikidata.js"></script>
-	<script src="https://localhost/cartografiaschaco/lib/tooltranslate/tt.js"></script>
+	<script src='<?php echo APP_HOME_URL; ?>lib/jquery/jquery.min.js'></script>
+	<script src='<?php echo APP_HOME_URL; ?>lib/tether/tether.min.js'></script>
+	<script src='<?php echo APP_HOME_URL; ?>lib/bootstrap/bootstrap.min.js'></script>
+	<script src='<?php echo APP_HOME_URL; ?>lib/leaflet/leaflet.js'></script>
+	<script src="<?php echo APP_HOME_URL; ?>lib/leaflet/leaflet.contextmenu.min.js"></script>
+	<script src="<?php echo APP_HOME_URL; ?>lib/magnustools/common.js"></script>
+	<script src="<?php echo APP_HOME_URL; ?>lib/magnustools/md5.js"></script>
+	<script src="<?php echo APP_HOME_URL; ?>lib/magnustools/wikidata.js"></script>
+	<script src="<?php echo APP_HOME_URL; ?>lib/tooltranslate/tt.js"></script>
 	<script src="js/main-legacy.js"></script>
-	<script> var cartografiasTranslations = <?php echo file_get_contents( 'lib\tooltranslate\data\languages-custom.json');
-	?>
+	<script>
+	var cartografiasTranslations = <?php echo file_get_contents( 'lib\tooltranslate\data\languages-custom.json'); ?>;
+	var homeUrl = '<?php echo APP_HOME_URL; ?>';
 	</script>
 	<script src="js/main.js"></script>
 	<script src="js/burger-menu.js"></script>
+
 	<script src="js/sm_comm.js"></script>
 
 </head>

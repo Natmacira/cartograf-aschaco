@@ -6,26 +6,26 @@
  */
 
 // select your type of environment
-putenv( 'ENV=staging' ); // development || staging || production
+define('APP_ENV', 'development'); // development || staging || production
 
-if ( getenv( 'ENV' ) === 'production' || getenv( 'ENV' ) === 'staging' ) {
-	// your credentaials for production or staging
-	putenv( 'DB_USER=user' );
-	putenv( 'DB_PASSWORD=pass' );
-	putenv( 'DB_HOST=localhost' );
-	putenv( 'DB_NAME=dbname' );
+if (APP_ENV === 'production' || APP_ENV === 'staging') {
+    define('APP_DB_USER', '');
+    define('APP_DB_PASSWORD', '');
+    define('APP_DB_HOST', '');
+    define('APP_DB_NAME', '');
 } else {
-	// your credentials for development
-	putenv( 'DB_USER=user' );
-	putenv( 'DB_PASSWORD=pass' );
-	putenv( 'DB_HOST=localhost' );
-	putenv( 'DB_NAME=dbname' );
+    define('APP_DB_USER', '');
+    define('APP_DB_PASSWORD', '');
+    define('APP_DB_HOST', '');
+    define('APP_DB_NAME', '');
 }
 
-if ( getenv( 'ENV' ) === 'production' ) {
-	putenv( 'HOME_URL=https://cartografiaschaco.com/' );
-} elseif ( getenv( 'ENV' ) === 'staging' ) {
-	putenv( 'HOME_URL=https://cartografiaschaco.altcooperativa.com/' );
+if (APP_ENV === 'production') {
+    define('APP_HOME_URL', 'https://cartografiaschaco.com/');
+} elseif (APP_ENV === 'staging') {
+    define('APP_HOME_URL', 'https://cartografiaschaco.altcooperativa.com/');
 } else {
-	putenv( 'HOME_URL=https://localhost/cartografiaschaco/' );
+    define('APP_HOME_URL', 'https://localhost/cartografiaschaco/');
 }
+
+define('APP_DEBUG_MODE', true);

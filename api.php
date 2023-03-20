@@ -1,7 +1,6 @@
 <?php
 
-error_reporting(E_ERROR|E_CORE_ERROR|E_ALL|E_COMPILE_ERROR); #
-ini_set('display_errors', 'On');
+require_once 'functions.php';
 
 //require_once ( 'php/oauth.php' ) ;
 //require_once ( 'php/common.php' ) ;
@@ -97,7 +96,7 @@ function addImageToItem ( $q , $image ) {
 	$out['res'] = $oa->last_res ;
 }
 
-if ( isset($_REQUEST['oauth_verifier']) ) redirect2url ( 'https://localhost/cartografiaschaco/' ) ;
+if ( isset($_REQUEST['oauth_verifier']) ) redirect2url ( APP_HOME_URL . '/' ) ;
 
 $out = ['status'=>'OK'] ;
 
@@ -108,7 +107,7 @@ if ( $action == 'check' ) {
 	$oa->logout();
 	exit(0);
 } else if ( $action == 'authorize' ) {
-	$oa->doAuthorizationRedirect('https://localhost/cartografiaschaco/api.php');
+	$oa->doAuthorizationRedirect(APP_HOME_URL . '/api.php');
 	exit(0);
 
 } else if ( $action == 'changeCoordinates' ) {
@@ -291,7 +290,7 @@ if ( $action == 'check' ) {
 } else {
 	$widar = new \Widar ( 'wikishootme' ) ;
 	$widar->attempt_verification_auto_forward ( '/picturethis' ) ;
-	$widar->authorization_callback = 'https://localhost/cartografiaschaco/api.php' ;
+	$widar->authorization_callback = APP_HOME_URL . '/api.php' ;
 	if ( $widar->render_reponse(true) ) exit(0);
 
 	$out['status'] = "UNKNOWN ACTION '{$action}'" ;

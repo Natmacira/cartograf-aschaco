@@ -40,10 +40,10 @@ if (isset($_POST['submit'])) {
 	if ($nombre && $nation_id) {
 		require_once 'env.php';
 
-		$host     = getenv( 'DB_HOST' );
-		$user     = getenv( 'DB_USER' );
-		$password = getenv( 'DB_PASSWORD' );
-		$database = getenv( 'DB_NAME' );
+		$host     = APP_DB_HOST;
+		$user     = APP_DB_USER;
+		$password = APP_DB_PASSWORD;
+		$database = APP_DB_NAME;
 
 		// Create connection
 		$mysqli = new mysqli( $host, $user, $password, $database );
@@ -60,7 +60,7 @@ if (isset($_POST['submit'])) {
 		}
 
 		$sql = "INSERT INTO users
-		(nombre, nation_id, nation_other, parcialidad, comunidad, institucion) VALUES
+		(name, nation_id, nation_other, parcialidades, community, institution) VALUES
 		('$nombre', '$nation_id', '$nation_other', '$parcialidad', '$comunidad', '$institucion')";
 
 		$rs = mysqli_query($con, $sql);
@@ -79,7 +79,7 @@ if (isset($_POST['submit'])) {
 
 
 if ($form_result === 'Success') {
-	header( 'Location: https://localhost/cartografiaschacho/mapa.php' );
+	header( 'Location: ' . APP_HOME_URL . '/mapa.php' );
 	exit;
 	?>
 	<article class="show-after-submission">

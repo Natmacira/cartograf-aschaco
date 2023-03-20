@@ -24,7 +24,7 @@ class OAuth {
 	var $delay_after_edit_s = 1 ;
 	var $delay_after_upload_s = 1 ;
 	var $cookie_best_before = 60*60*24*30*3 ;# expires in three months
-	
+
 	function __construct ( $t , $l = '' , $p = '' , $oauth_url = '' ) {
 		if ( is_array($t) ) { // Bespoke override for third-party sites
 			foreach ( $t AS $k => $v ) {
@@ -35,7 +35,7 @@ class OAuth {
 			$this->language = $l ;
 			$this->project = $p ;
 			$this->ini_file = "/data/project/$t/oauth.ini" ;
-			
+
 			if ( $l == 'wikidata' ) $this->apiUrl = 'https://www.wikidata.org/w/api.php' ;
 			elseif ( $l == 'commons' ) $this->apiUrl = 'https://commons.wikimedia.org/w/api.php' ;
 			elseif ( $p == 'mediawiki' ) $this->apiUrl = 'https://www.mediawiki.org/w/api.php' ;
@@ -80,7 +80,7 @@ class OAuth {
 	function getCookiePath() {
 		return '/' ; # '/'.$this->tool.'/' # Unnecessary with toolname.toolforge.org
 	}
-	
+
 	function logout () {
 		$this->setupSession() ;
 		session_start();
@@ -90,7 +90,7 @@ class OAuth {
 		$_SESSION['tokenSecret'] = '' ;
 		session_write_close();
 	}
-	
+
 	function setupSession() {
 		// Setup the session cookie
 		session_name( $this->tool );
@@ -100,7 +100,7 @@ class OAuth {
 			dirname( $_SERVER['SCRIPT_NAME'] )
 		);
 	}
-	
+
 	function loadIniFile () {
 		$this->params = parse_ini_file ( $this->ini_file ) ;
 		$this->gUserAgent = $this->params['agent'];
@@ -110,7 +110,7 @@ class OAuth {
 		$this->gConsumerSecret = $this->params['consumerSecret'];
 		if ( !isset($this->gConsumerSecret) or $this->gConsumerSecret == '' ) throw new \Exception ( "Cannot get consumer secret from ini file '{$this->ini_file}'" ) ;
 	}
-	
+
 	// Load the user token (request or access) from the session
 	function loadToken() {
 		$this->gTokenKey = '';
@@ -198,12 +198,12 @@ class OAuth {
 	/**
 	 * Utility function to sign a request
 	 *
-	 * Note this doesn't properly handle the case where a parameter is set both in 
+	 * Note this doesn't properly handle the case where a parameter is set both in
 	 * the query string in $url and in $params, or non-scalar values in $params.
 	 *
 	 * @param string $method Generally "GET" or "POST"
 	 * @param string $url URL string
-	 * @param array $params Extra parameters for the Authorization header or post 
+	 * @param array $params Extra parameters for the Authorization header or post
 	 * 	data (if application/x-www-form-urlencoded).
 	 * @return string Signature
 	 */
@@ -218,7 +218,7 @@ class OAuth {
 		$port = isset( $parts['port'] ) ? $parts['port'] : ( $scheme == 'https' ? '443' : '80' );
 		$path = isset( $parts['path'] ) ? $parts['path'] : '';
 		if ( ( $scheme == 'https' && $port != '443' ) ||
-			( $scheme == 'http' && $port != '80' ) 
+			( $scheme == 'http' && $port != '80' )
 		) {
 			// Only include the port if it's not the default
 			$host = "$host:$port";
@@ -259,7 +259,7 @@ class OAuth {
 		$url = $this->getOAuthURL ( 'initiate' , true ) ;
 		$query = [
 			'format' => 'json',
-		
+
 			// OAuth information
 			'oauth_callback' => 'oob', // Must be "oob" for MWOAuth
 			'oauth_consumer_key' => $this->gConsumerKey,
@@ -367,7 +367,7 @@ class OAuth {
 #			echo '<hr>';
 			return (object) ['is_authorized'=>false] ;
 		}
-		
+
 		// There are three fields in the response
 		$fields = explode( '.', $data );
 		if ( count( $fields ) !== 3 ) {
@@ -404,7 +404,7 @@ class OAuth {
 			header( "HTTP/1.1 $errorCode Internal Server Error" );
 			throw new \Exception ( 'Invalid payload in identify response: ' . htmlspecialchars( $data ) ) ;
 		}
-		
+
 		$payload->is_authorized = true ;
 		return $payload ;
 	}
@@ -455,7 +455,7 @@ class OAuth {
 //			print_r ( $headerArr ) ;
 			print "</pre>" ;
 		}
-		
+
 		$to_sign = '' ;
 		if ( $mode == 'upload' ) {
 			$to_sign = $headerArr ;
@@ -476,9 +476,9 @@ class OAuth {
 
 		if ( !$ch ) {
 			$ch = curl_init();
-			
+
 		}
-		
+
 		$post_fields = '' ;
 		if ( $mode == 'upload' ) {
 			$post_fields = $post ;
@@ -486,7 +486,7 @@ class OAuth {
 		} else {
 			$post_fields = http_build_query( $post ) ;
 		}
-		
+
 		curl_setopt( $ch, CURLOPT_POST, true );
 		curl_setopt( $ch, CURLOPT_URL, $url );
 		curl_setopt( $ch, CURLOPT_POSTFIELDS, $post_fields );
@@ -510,7 +510,7 @@ class OAuth {
 		if ( !$data ) return ;
 		$ret = json_decode( $data );
 		if ( $ret == null ) return ;
-		
+
 		# maxlag
 		if ( isset($ret->error) and isset($ret->error->code) and $ret->error->code == 'maxlag' ) {
 			$lag = $maxlag * 1 ;
@@ -519,7 +519,7 @@ class OAuth {
 			$ch = null ;
 			$ret = $this->doApiQuery( $post, $ch , '' , $iterations_left-1 , $last_maxlag*1 ) ;
 		}
-		
+
 		return $ret ;
 	}
 
@@ -528,7 +528,7 @@ class OAuth {
 
 	// Wikidata-specific methods
 
-	
+
 	function doesClaimExist ( $claim ) {
 		$q = 'Q' . str_replace('Q','',$claim['q'].'') ;
 		$p = 'P' . str_replace('P','',$claim['prop'].'') ;
@@ -582,7 +582,7 @@ class OAuth {
 				$does_exist = true ;
 			}
 		}
-	
+
 		return $does_exist ;
 	}
 
@@ -595,7 +595,7 @@ class OAuth {
 			'meta' => 'userinfo',
 			'uiprop' => 'blockinfo|groups|rights'
 		], $ch );
-		
+
 //		$url = $this->apiUrl . "?action=query&meta=userinfo&uiprop=blockinfo|groups|rights&format=json" ;
 //		$ret = json_decode ( file_get_content ( $url ) ) ;
 
@@ -618,7 +618,7 @@ class OAuth {
 		if ( $summary != '' ) $params['summary'] = $summary ;
 	}
 
-	
+
 	function setLabel ( $q , $text , $language , $summary = '' ) {
 
 		// Fetch the edit token
@@ -647,7 +647,7 @@ class OAuth {
 
 		// Now do that!
 		$res = $this->doApiQuery( $params , $ch );
-		
+
 		if ( isset ( $res->error ) ) {
 			$this->error = $res->error->info ;
 			return false ;
@@ -657,8 +657,8 @@ class OAuth {
 
 		return true ;
 	}
-	
-	
+
+
 	function setSitelink ( $q , $site , $title ) {
 
 		// Fetch the edit token
@@ -687,7 +687,7 @@ class OAuth {
 
 		// Now do that!
 		$res = $this->doApiQuery( $params , $ch );
-		
+
 		$this->last_res = $res ;
 		if ( isset ( $res->error ) ) {
 			$this->error = $res->error->info ;
@@ -698,8 +698,8 @@ class OAuth {
 
 		return true ;
 	}
-	
-	
+
+
 	function setDesc ( $q , $text , $language , $summary = '' ) {
 
 		// Fetch the edit token
@@ -728,7 +728,7 @@ class OAuth {
 
 		// Now do that!
 		$res = $this->doApiQuery( $params , $ch );
-		
+
 		if ( isset ( $res->error ) ) {
 			$this->error = $res->error->info ;
 			return false ;
@@ -738,8 +738,8 @@ class OAuth {
 
 		return true ;
 	}
-	
-	
+
+
 	function set_Alias ( $q , $text , $language , $mode ) {
 
 		// Fetch the edit token
@@ -769,7 +769,7 @@ class OAuth {
 
 		// Now do that!
 		$res = $this->doApiQuery( $params , $ch );
-		
+
 		if ( isset ( $res->error ) ) {
 			$this->error = $res->error->info ;
 			return false ;
@@ -779,8 +779,8 @@ class OAuth {
 
 		return true ;
 	}
-	
-	
+
+
 	function setPageText ( $page , $text ) {
 
 		// Fetch the edit token
@@ -805,10 +805,10 @@ class OAuth {
 			'token' => $token,
 		] ;
 		$this->setToolTag($params,$summary);
-		
+
 		// Now do that!
 		$res = $this->doApiQuery( $params, $ch );
-		
+
 		if ( isset ( $res->error ) ) {
 			$this->error = $res->error->info ;
 			return false ;
@@ -818,7 +818,7 @@ class OAuth {
 
 		return true ;
 	}
-	
+
 	function addPageText ( $page , $text , $header , $summary , $section ) {
 
 		// Fetch the edit token
@@ -833,7 +833,7 @@ class OAuth {
 			return false ;
 		}
 		$token = $res->query->tokens->csrftoken;
-		
+
 		$params = [
 			'format' => 'json',
 			'action' => 'edit',
@@ -844,12 +844,12 @@ class OAuth {
 			'token' => $token,
 		] ;
 		$this->setToolTag($params,$summary);
-		
+
 		if ( isset ( $section ) and $section != '' ) $params['section'] = $section ;
-		
+
 		// Now do that!
 		$res = $this->doApiQuery( $params , $ch );
-		
+
 		if ( isset ( $res->error ) ) {
 			$this->error = $res->error->info ;
 			return false ;
@@ -859,11 +859,11 @@ class OAuth {
 
 		return true ;
 	}
-	
+
 	function createItem ( $data = '' ) {
-	
+
 		if ( $data == '' ) $data = (object) [] ;
-	
+
 		// Next fetch the edit token
 		$ch = null;
 		$res = $this->doApiQuery( [
@@ -889,7 +889,7 @@ class OAuth {
 		$this->setToolTag($params,$summary);
 
 		$res = $this->doApiQuery( $params , $ch );
-		
+
 		if ( isset ( $_REQUEST['test'] ) ) {
 			print "<pre>" ; print_r ( $res ) ; print "</pre>" ;
 		}
@@ -904,7 +904,7 @@ class OAuth {
 
 	function createItemFromPage ( $site , $page ) {
 		$page = str_replace ( ' ' , '_' , $page ) ;
-	
+
 		// Next fetch the edit token
 		$ch = null;
 		$res = $this->doApiQuery( [
@@ -960,10 +960,10 @@ class OAuth {
 		if ( isset ( $_REQUEST['test'] ) ) {
 			print "<pre>" ; print_r ( $params ) ; print "</pre>" ;
 		}
-		
+
 		$res = $this->doApiQuery( $params , $ch );
 
-		
+
 		if ( isset ( $_REQUEST['test'] ) ) {
 			print "<pre>" ; print_r ( $res ) ; print "</pre>" ;
 		}
@@ -989,9 +989,9 @@ class OAuth {
 			return false ;
 		}
 		$token = $res->query->tokens->csrftoken;
-	
-	
-	
+
+
+
 		// Now do that!
 		$params = [
 			'format' => 'json',
@@ -1004,22 +1004,22 @@ class OAuth {
 		if ( isset ( $baserev ) and $baserev != '' ) $params['baserevid'] = $baserev ;
 
 		$res = $this->doApiQuery( $params , $ch );
-		
+
 		if ( isset ( $_REQUEST['test'] ) ) {
 			print "<pre>" ; print_r ( $claim ) ; print "</pre>" ;
 			print "<pre>" ; print_r ( $res ) ; print "</pre>" ;
 		}
 
 		$this->sleepAfterEdit ( 'edit' ) ;
-		
+
 		return true ;
 	}
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	function setSource ( $statement , $snaks_json ) {
 
 		// Next fetch the edit token
@@ -1044,11 +1044,11 @@ class OAuth {
 			'bot' => 1
 		] ;
 		$this->setToolTag($params,$summary);
-		
+
 		// TODO : baserevid
 
 		$res = $this->doApiQuery( $params, $ch );
-		
+
 		if ( isset ( $_REQUEST['test'] ) ) {
 			print "<pre>" ; print_r ( $claim ) ; print "</pre>" ;
 			print "<pre>" ; print_r ( $res ) ; print "</pre>" ;
@@ -1067,10 +1067,10 @@ class OAuth {
 	}
 
 
-	
+
 	function createRedirect ( $from , $to ) {
 		# No summary option!
-	
+
 		// Next fetch the edit token
 		$ch = null;
 		$res = $this->doApiQuery( [
@@ -1094,7 +1094,7 @@ class OAuth {
 		] ;
 
 		$res = $this->doApiQuery( $params, $ch );
-		
+
 		if ( isset ( $_REQUEST['test'] ) ) {
 			print "<pre>" ; print_r ( $res ) ; print "</pre>" ;
 		}
@@ -1114,8 +1114,8 @@ class OAuth {
 			$this->error = "No action in " . json_encode ( $j ) ;
 			return false ;
 		}
-		
-		
+
+
 		// Next fetch the edit token
 		$ch = null;
 		$res = $this->doApiQuery( [
@@ -1131,19 +1131,19 @@ class OAuth {
 		$j->token = $res->query->tokens->csrftoken;
 		$j->format = 'json' ;
 		$j->bot = 1 ;
-		
+
 		$params = [] ;
 		foreach ( $j AS $k => $v ) $params[$k] = $v ;
 
 
 		$this->setToolTag($params,$summary);
-		
+
 		if ( isset ( $_REQUEST['test'] ) ) {
 			print "!!!!!<pre>" ; print_r ( $params ) ; print "</pre>" ;
 		}
 
 		$res = $this->doApiQuery( $params, $ch );
-		
+
 		if ( isset ( $_REQUEST['test'] ) ) {
 			print "<pre>" ; print_r ( $claim ) ; print "</pre>" ;
 			print "<pre>" ; print_r ( $res ) ; print "</pre>" ;
@@ -1179,7 +1179,7 @@ class OAuth {
 			return false ;
 		}
 		$token = $res->query->tokens->csrftoken;
-	
+
 
 		// Now do that!
 		$value = "" ;
@@ -1197,7 +1197,7 @@ class OAuth {
 		} else if ( $claim['type'] == 'monolingualtext' ) {
 			$value = '{"text":' . json_encode($claim['text']) . ',"language":' . json_encode($claim['language']) . '}' ;
 		}
-		
+
 		$params = [
 			'format' => 'json',
 			'action' => 'wbcreateclaim',
@@ -1208,7 +1208,7 @@ class OAuth {
 			'bot' => 1
 		] ;
 		$this->setToolTag($params,$summary);
-	
+
 		if ( isset ( $claim['claim'] ) ) { // Set qualifier
 			$params['action'] = 'wbsetqualifier' ;
 			$params['claim'] = $claim['claim'] ;
@@ -1217,7 +1217,7 @@ class OAuth {
 		}
 
 		$res = $this->doApiQuery( $params, $ch );
-		
+
 		if ( isset ( $_REQUEST['test'] ) ) {
 			print "!!!!!<pre>" ; print_r ( $params ) ; print "</pre>" ;
 			print "<pre>" ; print_r ( $claim ) ; print "</pre>" ;
@@ -1250,7 +1250,7 @@ class OAuth {
 			return false ;
 		}
 		$token = $res->query->tokens->csrftoken;
-	
+
 		$params = [
 			'format' => 'json',
 			'action' => 'wbmergeitems',
@@ -1268,7 +1268,7 @@ class OAuth {
 			print "1<pre>" ; print_r ( $claim ) ; print "</pre>" ;
 			print "2<pre>" ; print_r ( $res ) ; print "</pre>" ;
 		}
-		
+
 		if ( isset ( $res->error ) ) {
 			$this->error = $res->error->info ;
 			return false ;
@@ -1291,7 +1291,7 @@ class OAuth {
 			return false ;
 		}
 		$token = $res->query->tokens->csrftoken;
-		
+
 		$params = [
 			'format' => 'json',
 			'action' => 'delete',
@@ -1301,14 +1301,14 @@ class OAuth {
 		] ;
 		$this->setToolTag($params,$summary);
 		if ( $reason != '' ) $params['reason'] = $reason ;
-	
+
 		$res = $this->doApiQuery( $params , $ch );
-		
+
 		if ( isset ( $_REQUEST['test'] ) ) {
 			print "1<pre>" ; print_r ( $claim ) ; print "</pre>" ;
 			print "2<pre>" ; print_r ( $res ) ; print "</pre>" ;
 		}
-		
+
 		if ( isset ( $res->error ) ) {
 			$this->error = $res->error->info ;
 			return false ;
@@ -1320,7 +1320,7 @@ class OAuth {
 
 
 	function doUploadFromFile ( $local_file , $new_file_name , $desc , $comment , $ignorewarnings ) {
-	
+
 		$new_file_name = ucfirst ( str_replace ( ' ' , '_' , $new_file_name ) ) ;
 
 		// Next fetch the edit token
@@ -1343,11 +1343,11 @@ class OAuth {
 			'text' => $desc ,
 			'token' => $token ,
 			'filename' => $new_file_name ,
-			'file' => $local_file // '@' . 
+			'file' => $local_file // '@' .
 		] ;
 		$this->setToolTag($params,$comment);
 		if ( $ignorewarnings ) $params['ignorewarnings'] = 1 ;
-		
+
 		$res = $this->doApiQuery( $params , $ch , 'upload' );
 
 		$this->last_res = $res ;
@@ -1398,15 +1398,15 @@ class OAuth {
 			'text' => $desc ,
 			'token' => $token ,
 			'filename' => $new_file_name ,
-			'file' => $tmpfile // '@' . 
+			'file' => $tmpfile // '@' .
 		] ;
 		$this->setToolTag($params,$summary);
 		if ( $ignorewarnings ) $params['ignorewarnings'] = 1 ;
-		
+
 		$res = $this->doApiQuery( $params , $ch , 'upload' );
 
 		unlink ( $tmpfile ) ;
-		
+
 		$this->last_res = $res ;
 		if ( $res->upload->result != 'Success' ) {
 			$this->error = $res->upload->result ;
@@ -1420,7 +1420,7 @@ class OAuth {
 
 
 
-	
+
 	function isAuthOK () {
 
 		$ch = null;
@@ -1449,7 +1449,7 @@ class OAuth {
 		}
 
 		$this->userinfo = $res->query->userinfo ;
-		
+
 
 		return true ;
 	}

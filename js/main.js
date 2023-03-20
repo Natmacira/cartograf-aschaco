@@ -16,6 +16,5 @@ function loadTranslation() {
 		let translation = translations[language][translationId];
 		textElements[i].innerText = translation;
 	}
-
-
 }
+

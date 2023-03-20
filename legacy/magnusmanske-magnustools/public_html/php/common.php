@@ -1,4 +1,4 @@
-<?PHP
+<?php
 
 define('CLI', PHP_SAPI === 'cli');
 ini_set('user_agent','Magnus labs tools'); # Fake user agent
