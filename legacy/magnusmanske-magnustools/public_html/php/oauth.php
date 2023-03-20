@@ -14,7 +14,15 @@ class MW_OAuth {
 	var $publicMwOAuthUrl; //if the mediawiki url given to the user is different from how this
 							//script may see it (e.g. if behind a proxy) set the user url here.
 	var $mwOAuthIW = 'mw'; // Set this to the interwiki prefix for the OAuth central wiki.
-	var $userinfo ;
+	var $userinfo;
+	var $apiUrl;
+
+	var $gUserAgent;
+	var $gConsumerKey;
+	var $gConsumerSecret;
+	var $gTokenKey;
+	var $gTokenSecret;
+	var $signature;
 
 	var $auto_detect_lag = false ;
 	var $delay_after_create_s = 2 ;
