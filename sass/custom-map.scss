@@ -1,7 +1,12 @@
 body.page-mapa {
+    a {
+        text-decoration: none;
+        color: white;
+    }
     #top {
         top: 59px;
         position: relative;
+        
         .language-ul {
             display: flex;
             align-items: center;
@@ -19,10 +24,14 @@ body.page-mapa {
             li {
                 border: solid 1px;
                 font-size: 12px;
-                padding: 8px;
                 font-weight: bold;
                 border-radius: 4px;
                 margin-left: 5px;
+                border: 2px solid #A40F2C;
+                background-color: white;
+                padding: 5px;
+                padding-left: 8px;
+                cursor: pointer;
                 @media (min-width: 330px) {
                     padding-right: 10px;
                 }
@@ -35,18 +44,34 @@ body.page-mapa {
                     background-color: $theme-purple;
                     border-color: $theme-gray;
                 }
-                a {
-                    text-decoration: none;
-                    &:hover {
-                        color: white;
-                    }
+                label {
+                    margin-bottom: 0;
+                    cursor: pointer;
+                }
+                input[type="radio"] {
+                    visibility: hidden;
+                    width: 0;
+                    height: 0;
+                    position: absolute;
+                    left: -500000px;
+                    
                 }
             }
+        }
+
+        #li_authorize {
+            display: none !important;
         }
     }
 
     .leaflet-top {
         top: 59px;
+        a.leaflet-control-zoom-in {
+            color: black;
+        }
+        a.leaflet-control-zoom-out {
+            color: black;
+        }
     }
 
     .sign-in-map {
