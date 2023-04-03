@@ -41,29 +41,24 @@ if (isset($_POST['submit'])) {
 		require_once 'env.php';
 
 		$host     = APP_DB_HOST;
-		$user     = APP_DB_USER;
+		$username = APP_DB_USER;
 		$password = APP_DB_PASSWORD;
-		$database = APP_DB_NAME;
+		$dbname   = APP_DB_NAME;
 
 		// Create connection
-		$mysqli = new mysqli( $host, $user, $password, $database );
+		$mysqli = new mysqli( $host, $username, $password, $dbname );
 
 		// Check connection
-		if ($mysqli->connect_errno) {
+		if ( $mysqli->connect_errno ) {
 			echo "Failed to connect to MySQL: " . $mysqli->connect_error;
 			exit();
-		}
-		$con = mysqli_connect($host, $username, $password, $dbname);
-
-		if (!$con) {
-			die('Connection failed!' . mysqli_connect_error());
 		}
 
 		$sql = "INSERT INTO users
 		(name, nation_id, nation_other, parcialidades, community, institution) VALUES
 		('$nombre', '$nation_id', '$nation_other', '$parcialidad', '$comunidad', '$institucion')";
 
-		$rs = mysqli_query($con, $sql);
+		$rs = mysqli_query($mysqli, $sql);
 
 		if ($rs) {
 			$form_result = 'Success';
@@ -71,7 +66,7 @@ if (isset($_POST['submit'])) {
 			$form_result = 'Error';
 		}
 
-		mysqli_close($con);
+		mysqli_close($mysqli);
 	} else {
 		$form_result = 'Missing required fields';
 	}
@@ -79,7 +74,7 @@ if (isset($_POST['submit'])) {
 
 
 if ($form_result === 'Success') {
-	header( 'Location: ' . APP_HOME_URL . '/mapa.php' );
+	header( 'Location: ' . APP_HOME_URL . 'mapa.php#lat=-27.451389658914252&lng=-58.98666858673096&zoom=16' );
 	exit;
 	?>
 	<article class="show-after-submission">

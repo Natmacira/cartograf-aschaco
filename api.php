@@ -1,5 +1,12 @@
 <?php
 
+$response = file_get_contents( 'check.json' );
+
+// print headers for json
+header('Content-Type: application/json');
+echo $response;
+die();
+/*
 require_once 'functions.php';
 
 //require_once ( 'php/oauth.php' ) ;
@@ -305,3 +312,4 @@ if ( isset($_REQUEST['callback']) ) print $_REQUEST['callback'].'(' ;
 print json_encode($out) ;
 if ( isset($_REQUEST['callback']) ) print ');' ;
 
+*/
