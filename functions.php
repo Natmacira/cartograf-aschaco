@@ -12,3 +12,10 @@ if (APP_DEBUG_MODE) {
 	error_reporting(0);
 }
 
+function chaco_set_user_cookie() {
+	setcookie( 'userSaved', '1', time() + 60 * 60 * 24 * 30, '/' );
+}
+
+function chaco_check_user_cookie() {
+	return ! empty( $_COOKIE['userSaved'] );
+}

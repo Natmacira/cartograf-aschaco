@@ -2,12 +2,6 @@
 
 require_once 'functions.php';
 
-if ( ! chaco_check_user_cookie() ) {
-	header( 'Location: form.php' );
-	exit();
-}
-
-
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -22,7 +16,6 @@ if ( ! chaco_check_user_cookie() ) {
 	<link rel="stylesheet" href="<?php echo APP_HOME_URL; ?>lib/leaflet/leaflet.contextmenu.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="style.min.css">
-	<!--<link rel="stylesheet" type="text/css" href="<?php echo APP_HOME_URL; ?>lib/magnustools/common.css">-->
 	<title tt='toolname'></title>
 	<script src='<?php echo APP_HOME_URL; ?>lib/jquery/jquery.min.js'></script>
 	<script src='<?php echo APP_HOME_URL; ?>lib/tether/tether.min.js'></script>
@@ -40,45 +33,25 @@ if ( ! chaco_check_user_cookie() ) {
 	<script src="js/main-legacy.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/burger-menu.js"></script>
-
 	<script src="js/sm_comm.js"></script>
 
+	<style>
+		.sign-in-map,
+		.leaflet-contextmenu,
+		.form.form-inline {
+			display: none !important;
+		}
+		#top {
+			top: 0 !important;
+		}
+	</style>
 </head>
 
-<body class="page-mapa <?php if ( ! $is_user_registered ) { echo 'unregistered-user'; } ?>">
-	<header>
-		<img src="img/mobile/Banner_of_the_Qulla_Suyu.png" alt="">
-		<p class="header-text"><a href="index.php"> Cartografías abiertas
-				Qom, Wichi y Moqoit</a></p>
-		<div id="container" class="open clss">
-			<span class="cls"></span>
-			<span>
-				<ul class="sub-menu">
-					<li><a href="home-Qom.php">Qom</a></li>
-					<li><a href="home-Wichi.php">Wichí</a></li>
-					<li><a href="home-Moqoit.php">Moqoit</a></li>
-					<li><a href="home.php">Español</a></li>
-					<li><a href="javascript:history.back()" class="go-back-link">
-							< Volver</a>
-					</li>
-				</ul>
-			</span>
-			<span class="cls"></span>
-		</div>
-		<section>
-			<ul class="desktop-menu">
-				<li><a href="home-Qom.php">Qom</a></li>
-				<li><a href="home-Wichi.php">Wichí</a></li>
-				<li><a href="home-Moqoit.php">Moqoit</a></li>
-				<li><a href="home.php">Español</a></li>
-			</ul>
-		</section>
-	</header>
+<body class="page-mapa unregistered-user">
 	<div id='top'>
 		<nav class="navbar navbar-light bg-faded">
 			<ul class="nav navbar-nav">
 				<li class="nav-item"><button id='center_on_me' class='btn btn-secondary' tt_title='go_to_my_position'><i class="fa fa-compass" style='font-size:24pt' aria-hidden="true"></i></button></li>
-				<!-- <li class="nav-item"><button id='search' class='btn btn-secondary' tt_title='search'>&#128269;</button></li> -->
 				<li class='nav-item' style='display:none' id='li_authorize'>
 					<a class='btn btn-outline-primary' href='api.php?action=authorize' tt='authorize_upload'></a>
 				</li>
@@ -103,14 +76,10 @@ if ( ! chaco_check_user_cookie() ) {
 			</ul>
 
 			<article class="sign-in-map">
-				<p class="mobile-version" data-translation-id="instructivo-movil">Mantené presionada la pantalla del <br> mapa para agregar contenido
-					<button onclick="$(this).parent().hide()" style="position: absolute; top: 0; right: 0; border: 0; background: transparent;">X</button>
-				</p>
+				<p class="mobile-version" data-translation-id="instructivo-movil">Mantené presionada la pantalla del <br> mapa para agregar contenido</p>
 			</article>
 			<article class="sign-in-map">
-				<p class="desktop-version" data-translation-id="instructivo-computadora">Hacé click derecho en el mapa para <br> agregar contenido
-					<button onclick="$(this).parent().hide()" style="position: absolute; top: 0; right: 0; border: 0; background: transparent;">X</button>
-				</p>
+				<p class="desktop-version" data-translation-id="instructivo-computadora">Hacé click derecho en el mapa para <br> agregar contenido</p>
 			</article>
 		</nav>
 	</div>
@@ -192,10 +161,6 @@ if ( ! chaco_check_user_cookie() ) {
 					</div>
 
 				</div>
-				<!--      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>-->
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
@@ -216,4 +181,4 @@ if ( ! chaco_check_user_cookie() ) {
 	</div>
 
 	<?php
-	require_once 'footer-Qom.php';
+	// require_once 'footer-Qom.php';

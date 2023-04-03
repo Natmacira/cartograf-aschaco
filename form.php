@@ -74,6 +74,8 @@ if (isset($_POST['submit'])) {
 
 
 if ($form_result === 'Success') {
+	chaco_set_user_cookie();
+
 	header( 'Location: ' . APP_HOME_URL . 'mapa.php#lat=-27.451389658914252&lng=-58.98666858673096&zoom=16' );
 	exit;
 	?>
@@ -142,8 +144,6 @@ if ($form_result === 'Success') {
     </article>
 </section>
 
-
-
 <?php
+
 require_once 'footer.php';
-?>

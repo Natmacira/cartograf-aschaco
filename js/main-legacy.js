@@ -1099,13 +1099,22 @@ var cartografiaschaco = {
 		me.map = L.map('map', {
 			contextmenu: true,
 			contextmenuWidth: 250,
-			contextmenuItems: [{
-				text: me.tt.t('create_new_item_from_coordinate'),
-				callback: function (ev) { me.createNewItem({ pos: ev.latlng, label_default: '' }) }
-			}, {
-				text: me.tt.t('show_coordinates'),
-				callback: function (ev) { alert(ev.latlng); }
-			}]
+			contextmenuItems: [
+				{
+					text: me.tt.t('create_new_item_from_coordinate'),
+					callback: function (ev) {
+						console.log( ev.latlng );
+					}
+				}
+				// {
+				// 	text: me.tt.t('create_new_item_from_coordinate'),
+				// 	callback: function (ev) { me.createNewItem({ pos: ev.latlng, label_default: '' }) }
+				// },
+				// {
+				// 	text: me.tt.t('show_coordinates'),
+				// 	callback: function (ev) { alert(ev.latlng); }
+				// }
+			]
 		}).setView([me.pos.lat, me.pos.lng], me.zoom_level);
 
 		var tl = me.tile_layers[me.current_tile_layer];
