@@ -89,14 +89,14 @@ class MW_OAuth {
 	function logout () {
 		$this->setupSession() ;
 		session_start();
-		// setcookie ( 'tokenKey' , '' , 1 , $this->getCookiePath() ) ;
-		// setcookie ( 'tokenSecret' , '' , 1 , $this->getCookiePath() ) ;
-		// $_SESSION['tokenKey'] = '' ;
-		// $_SESSION['tokenSecret'] = '' ;
-		setcookie ( 'tokenKey' , APP_ACCESS_TOKEN, 1 , $this->getCookiePath() ) ;
-		setcookie ( 'tokenSecret' , APP_ACCESS_SECRET, 1 , $this->getCookiePath() ) ;
-		$_SESSION['tokenKey'] = APP_ACCESS_TOKEN;
-		$_SESSION['tokenSecret'] = APP_ACCESS_SECRET;
+		setcookie ( 'tokenKey' , '' , 1 , $this->getCookiePath() ) ;
+		setcookie ( 'tokenSecret' , '' , 1 , $this->getCookiePath() ) ;
+		$_SESSION['tokenKey'] = '' ;
+		$_SESSION['tokenSecret'] = '' ;
+		// setcookie ( 'tokenKey' , APP_ACCESS_TOKEN, 1 , $this->getCookiePath() ) ;
+		// setcookie ( 'tokenSecret' , APP_ACCESS_SECRET, 1 , $this->getCookiePath() ) ;
+		// $_SESSION['tokenKey'] = APP_ACCESS_TOKEN;
+		// $_SESSION['tokenSecret'] = APP_ACCESS_SECRET;
 		session_write_close();
 	}
 
@@ -302,19 +302,19 @@ class MW_OAuth {
 		if ( is_object( $token ) && isset( $token->error ) ) {
 			header( "HTTP/1.1 500 Internal Server Error" );
 			$token->callback = $callback ;
-			// throw new Exception ( 'Error retrieving token1: ' . htmlspecialchars( json_encode($token) ) ) ;
+			throw new Exception ( 'Error retrieving token1: ' . htmlspecialchars( json_encode($token) ) ) ;
 		}
 		if ( !is_object( $token ) || !isset( $token->key ) || !isset( $token->secret ) ) {
 			header( "HTTP/1.1 500 Internal Server Error" );
-			// throw new Exception ( 'Invalid response from token request' ) ;
+			throw new Exception ( 'Invalid response from token request' ) ;
 		}
 
 		// Now we have the request token, we need to save it for later.
 		session_start();
-		// $_SESSION['tokenKey'] = $token->key;
-		// $_SESSION['tokenSecret'] = $token->secret;
-		$_SESSION['tokenKey'] = APP_ACCESS_TOKEN;
-		$_SESSION['tokenSecret'] = APP_ACCESS_SECRET;
+		$_SESSION['tokenKey'] = $token->key;
+		$_SESSION['tokenSecret'] = $token->secret;
+		// $_SESSION['tokenKey'] = APP_ACCESS_TOKEN;
+		// $_SESSION['tokenSecret'] = APP_ACCESS_SECRET;
 		if ( $this->use_cookies ) {
 			$t = time()+60*60*24*30 ; // expires in one month
 			setcookie ( 'tokenKey' , $_SESSION['tokenKey'] , $t , $this->getCookiePath() ) ;

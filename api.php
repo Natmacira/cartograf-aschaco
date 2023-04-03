@@ -101,11 +101,11 @@ if ( isset($_REQUEST['oauth_verifier']) ) redirect2url ( APP_HOME_URL . '/' ) ;
 $out = ['status'=>'OK'] ;
 
 if ( $action == 'check' ) {
-	// $res = $oa->getConsumerRights() ;
-	// $out['result'] = $res ;
-	header('Content-Type: application/json');
-	echo file_get_contents( 'check.json' );
-	die();
+	$res = $oa->getConsumerRights() ;
+	$out['result'] = $res ;
+	// header('Content-Type: application/json');
+	// echo file_get_contents( 'check.json' );
+	// die();
 } else if ( $action == 'logout' ) {
 	$oa->logout();
 	exit(0);
