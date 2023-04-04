@@ -22,7 +22,6 @@ if ( ! chaco_check_user_cookie() ) {
 	<link rel="stylesheet" href="<?php echo APP_HOME_URL; ?>lib/leaflet/leaflet.contextmenu.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="style.min.css">
-	<!--<link rel="stylesheet" type="text/css" href="<?php echo APP_HOME_URL; ?>lib/magnustools/common.css">-->
 	<title tt='toolname'></title>
 	<script src='<?php echo APP_HOME_URL; ?>lib/jquery/jquery.min.js'></script>
 	<script src='<?php echo APP_HOME_URL; ?>lib/tether/tether.min.js'></script>
@@ -42,6 +41,59 @@ if ( ! chaco_check_user_cookie() ) {
 	<script src="js/burger-menu.js"></script>
 
 	<script src="js/sm_comm.js"></script>
+
+	<style>
+		#add-item-form-container {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			z-index: 10;
+		}
+
+		#add-item {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 80%;
+			max-width: 500px;
+			background-color: white;
+			padding: 20px;
+			border-radius: 10px;
+		}
+
+		#add-item label {
+			font-weight: 700;
+		}
+
+		#add-item label,
+		#add-item label input,
+		#add-item label select {
+			display: block;
+			width: 100%;
+		}
+
+		#add-item label input,
+		#add-item label select {
+			border: solid 1px #ccc;
+			border-radius: 5px;
+			padding: 5px;
+		}
+
+		#add-item button {
+			background-color: #A40F2C;
+			color: white;
+			display: block;
+			width: 100px;
+			padding: 8px;
+			margin: 25px auto 0;
+			border: 0;
+		}
+	</style>
 
 </head>
 
@@ -192,14 +244,9 @@ if ( ! chaco_check_user_cookie() ) {
 					</div>
 
 				</div>
-				<!--      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>-->
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
-
 
 
 	<div class="modal fade hide" id="pleaseWaitDialog" data-backdrop="static" data-keyboard="false">
@@ -213,6 +260,37 @@ if ( ! chaco_check_user_cookie() ) {
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<div id="add-item-form-container" style="display: none;">
+		<form id="add-item" action="add-item.php" method="post">
+			<button onclick="$(this).parent().parent().hide()" style="position: absolute; top: 0; right: 0; border: 0; background: transparent; color: black; margin: 0;margin: 0; outline: 0; width: 40px; font-weight: 700;">X</button>
+			<input type="hidden" name="lat" id="new-item-lat">
+			<input type="hidden" name="long" id="new-item-lng">
+			<input type="hidden" name="lang" id="new-item-lang" value="es">
+			<!-- Add titulo, descripción, imagen inputs  -->
+			<label>Título *
+				<input type="text" name="title" id="new-item-titulo" placeholder="Título" required>
+			</label>
+			<label>
+				Descripción *
+				<input type="text" name="description" id="new-item-description" placeholder="Descripción" required>
+			</label>
+			<label>
+				Pueblo Nación *
+				<select name="nation" id="new-item-nation">
+					<option value="qo">Qom</option>
+					<option value="wi">Wichí</option>
+					<option value="mo">Moqoit</option>
+				</select>
+			</label>
+			<label>
+				Agrega una foto (opcional)
+				<input type="file" name="image" id="new-item-image" placeholder="Foto">
+			</label>
+
+			<button>Agregar</button>
+		</form>
 	</div>
 
 	<?php

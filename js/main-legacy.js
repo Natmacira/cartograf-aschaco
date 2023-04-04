@@ -1104,6 +1104,13 @@ var cartografiaschaco = {
 					text: me.tt.t('create_new_item_from_coordinate'),
 					callback: function (ev) {
 						console.log( ev.latlng );
+						// show #add-item form
+
+						$('#add-item-form-container').show();
+						$('#new-item-lat').val( ev.latlng.lat );
+						$('#new-item-lng').val( ev.latlng.lng );
+
+
 					}
 				}
 				// {

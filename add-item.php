@@ -22,15 +22,30 @@ $api = new ActionApi('https://www.wikidata.org/w/api.php', $auth);
 $label = 'My New Item';
 $description = 'This is a description of my new item.';
 
-$latitude = 40.748817;
-$longitude = -73.985428;
+// read the input from the POST request: lat, long, title, description
+// $latitude = 40.748817;
+// $longitude = -73.985428;
+$latitude    = $_POST['lat'];
+$longitude   = $_POST['long'];
+$label       = $_POST['title'];
+$description = $_POST['description'];
+
+$nation = $_POST['nation'];
+
+if ($nation == 'qo') {
+	$group = 'Q1542227';
+} else if ($nation == 'wi') {
+	$group = 'Q1284276';
+} else if ($nation == 'mo') {
+	$group = 'Q3099764';
+}
 
 $params = [
     'action' => 'wbeditentity',
     'new' => 'item',
     'data' => json_encode([
-        'labels' => ['en' => ['language' => 'en', 'value' => $label]],
-        'descriptions' => ['en' => ['language' => 'en', 'value' => $description]],
+        'labels' => ['es' => ['language' => 'es', 'value' => $label]],
+        'descriptions' => ['es' => ['language' => 'es', 'value' => $description]],
         // Add the P625 property to specify the coordinates
         'claims' => [
             'P625' => [
@@ -62,7 +77,7 @@ $params = [
                             'type' => 'wikibase-entityid',
                             'value' => [
                                 'entity-type' => 'item',
-                                'id' => 'QID_OF_INDIGENOUS_GROUP_ITEM',
+                                'id' => $group,
                             ],
                         ],
                     ],
@@ -78,8 +93,6 @@ $params = [
 
 $request = ActionRequest::simplePost('wbeditentity', $params);
 
-die();
-
 // make the API call
 $data = $api->request($request);
 var_dump( $data );
@@ -87,7 +100,7 @@ var_dump( $data );
 
 if ($data['success'] === 1) {
     $item_id = $data['entity']['id'];
-    echo "Item added with ID: $item_id";
+    echo 'Item added with ID: https://www.wikidata.org/wiki/' . $item_id;
 } else {
     echo "Failed to add item";
 }
