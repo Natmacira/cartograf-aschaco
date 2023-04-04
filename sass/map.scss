@@ -1,106 +1,106 @@
 body.page-mapa {
 	#top {
-		position:absolute;
-		left:0px;
-		top:0px;
-		right:0px;
-		border-bottom:1px solid black;
-		padding:2px;
-		z-index:5;
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		right: 0px;
+		border-bottom: 1px solid black;
+		padding: 2px;
+		z-index: 5;
 	}
 	#map {
-		position:absolute;
-		left:0px;
-		top:5em;
-		bottom:0px;
-		right:0px;
-		z-index:2;
+		position: absolute;
+		left: 0px;
+		top: 5em;
+		bottom: 0px;
+		right: 0px;
+		z-index: 2;
 	}
 	#busy {
-		display:none;
-		padding-top:5px;
+		display: none;
+		padding-top: 5px;
 	}
 	#update {
-		display:none;
+		display: none;
 	}
 	#options {
-		display:none;
+		display: none;
 	}
 	#interface_language_wrapper {
-		margin-right:5px;
-		white-space:nowrap;
+		margin-right: 5px;
+		white-space: nowrap;
 	}
 	#wdfist {
-		display:none;
+		display: none;
 	}
 	#flickr {
-		display:none;
+		display: none;
 	}
 	#center_on_me {
-		font-size:20pt;
-		padding-top:3px;
-		padding-bottom:3px;
+		font-size: 20pt;
+		padding-top: 3px;
+		padding-bottom: 3px;
 	}
 	#search {
-		font-size:20pt;
-		padding-top:3px;
-		padding-bottom:3px;
+		font-size: 20pt;
+		padding-top: 3px;
+		padding-bottom: 3px;
 	}
 	#search_dialog {
-		display:none;
+		display: none;
 	}
 	#app_login_dialog {
-		display:none;
+		display: none;
 	}
 	#sparql_filter_dialog {
-		display:none;
+		display: none;
 	}
 	#search_results {
-		display:none;
-		max-height:30em;
-		overflow:auto;
-		margin-top:10px;
+		display: none;
+		max-height: 30em;
+		overflow: auto;
+		margin-top: 10px;
 	}
 	#is_using_filter {
-		display:none;
+		display: none;
 	}
 	#dropdownUploadsLi {
-		display:none;
+		display: none;
 	}
 	div.thumb {
-		margin:3px;
+		margin: 3px;
 	}
 	div.smallimgname {
-		font-size:8pt;
+		font-size: 8pt;
 	}
 	div.popup_coords {
-		margin-top:5px;
-		padding-top:2px;
-		font-family:Courier;
-		font-size:10pt;
-		border-top:1px solid #DDD;
+		margin-top: 5px;
+		padding-top: 2px;
+		font-family: Courier;
+		font-size: 10pt;
+		border-top: 1px solid #ddd;
 	}
 	div.sr_title {
-		font-size:12pt;
-		font-weight:bold;
+		font-size: 12pt;
+		font-weight: bold;
 	}
 	div.sr_auto {
-		font-size:10pt;
+		font-size: 10pt;
 	}
 	div.sr_manual {
-		font-size:9pt;
+		font-size: 9pt;
 	}
 	li.sr_result {
-		cursor:pointer;
+		cursor: pointer;
 	}
 	div.add_image2item {
-		margin-top:15px;
-		padding-top:5px;
-		border-top:1px solid #DDD
+		margin-top: 15px;
+		padding-top: 5px;
+		border-top: 1px solid #ddd;
 	}
 	div.popup_section {
-		margin-top:3px;
-		padding:2px;
-		border-top:1px solid #DDD
+		margin-top: 3px;
+		padding: 2px;
+		border-top: 1px solid #ddd;
 	}
 }

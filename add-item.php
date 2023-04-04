@@ -1,5 +1,11 @@
 <?php
 
+// ?q wdt:P31/wdt:P279* wd:Q385994 búsqueda de bibliotecas especializadas
+// ?q wdt:P2596/wdt:P279* wd:Q6122670 búsqueda de items de cultura maori
+// https://wikishootme.toolforge.org/#lat=-38.26838272806484&lng=176.4137878501788&zoom=10&layers=wikidata_image,wikidata_no_image&sparql_filter=%3Fq%20wdt%3AP2596%2Fwdt%3AP279*%20wd%3AQ6122670&worldwide=1
+
+// https://www.wikidata.org/wiki/Q117313340 =>Axion Energy
+
 // https://www.wikidata.org/wiki/Q1542227 => Toba people
 // https://www.wikidata.org/wiki/Q3099764 => Mocoví people
 // https://www.wikidata.org/wiki/Q1284276 => Wichís
@@ -68,11 +74,28 @@ $params = [
                 ],
             ],
 			// Add a P172 statement to specify that the item belongs to an indigenous group
-            'P172' => [
+            /*'P172' => [
                 [
                     'mainsnak' => [
                         'snaktype' => 'value',
                         'property' => 'P172', // P172 is the property for "member of"
+                        'datavalue' => [
+                            'type' => 'wikibase-entityid',
+                            'value' => [
+                                'entity-type' => 'item',
+                                'id' => $group,
+                            ],
+                        ],
+                    ],
+                    'type' => 'statement',
+                    'rank' => 'normal',
+                ],
+            ],*/
+            'P2596' => [
+                [
+                    'mainsnak' => [
+                        'snaktype' => 'value',
+                        'property' => 'P2596', // P2596 is the property for "culture"
                         'datavalue' => [
                             'type' => 'wikibase-entityid',
                             'value' => [

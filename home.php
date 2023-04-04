@@ -8,7 +8,7 @@ require_once 'header.php';
         Qom, Wichi y Moqoit.</p>
     <embed src="<?php echo APP_HOME_URL . 'mapa-embed.php'; ?>#lat=-27.451389658914252&lng=-58.98666858673096&zoom=16" type="">
     <div class="charge-items">
-        <a href="form.php"><strong>+</strong>
+        <a href="mapa.php#lat=-27.451389658914252&lng=-58.98666858673096&zoom=16"><strong>+</strong>
             <p>Subí tu foto / audio / video</p>
         </a>
         <p class="highlighted-text">Mirá el video para aprender cómo subir contenido</p>

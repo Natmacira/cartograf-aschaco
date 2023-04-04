@@ -60,7 +60,7 @@
     "sparql_filter_dialog": "Filtro SPARQL",
     "sparql_filter_query_hint": "Consejo: puedes usar \"MINUS { ?q ... }\" para excluir objetos",
     "streetview": "vista de la calle",
-    "toolname": "WikiShootMe!",
+    "toolname": "CartografiasChaco",
     "trying_position": "Intentando determinar tu posici\u00f3n...",
     "update": "Actualizar",
     "updating": "Actualizando...",

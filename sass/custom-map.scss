@@ -3,10 +3,15 @@ body.page-mapa {
         text-decoration: none;
         color: white;
     }
-    #top {
-        top: 59px;
+    div#top {
+        top: 58px;
         position: relative;
-        
+		padding: 0;
+
+		nav.navbar {
+			border-radius: 0;
+		}
+
         .language-ul {
             display: flex;
             align-items: center;
@@ -54,7 +59,7 @@ body.page-mapa {
                     height: 0;
                     position: absolute;
                     left: -500000px;
-                    
+
                 }
             }
         }
@@ -82,7 +87,7 @@ body.page-mapa {
             background: white;
             border: solid 2px;
             border-color: $theme-purple;
-            padding: 12px 22px;
+            padding: 9px 16px;
             position: absolute;
             left: 0;
             right: 0;
@@ -90,12 +95,16 @@ body.page-mapa {
             max-width: 400px;
             text-align: center;
             margin: 0 auto;
+
             @media (min-width: 980px) {
+				padding: 12px 22px;
                 top: 490px;
             }
-            &.desktop-version {
+
+			&.desktop-version {
                 display: none;
-                @media (min-width: 980px) {
+
+				@media (min-width: 980px) {
                     display: block;
                 }
             }
