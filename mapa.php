@@ -214,7 +214,7 @@ if ( ! chaco_check_user_cookie() ) {
 	</div>
 
 	<div id="add-item-form-container" style="display: none;">
-		<form id="add-item" action="add-item.php" method="post">
+		<form id="add-item" action="add-media-item.php" method="post" enctype="multipart/form-data">
 			<button class="close-form" onclick="$(this).parent().parent().hide()">X</button>
 			<input type="hidden" name="lat" id="new-item-lat">
 			<input type="hidden" name="long" id="new-item-lng">
