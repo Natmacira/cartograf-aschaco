@@ -13,7 +13,7 @@ require_once 'header-Qom.php';
         <a href="form-Qom.php"><strong>+</strong>
             <p>ishet ra ahuasaxashiguem nam ʼarmejnec nqui ʼi/ ʼangravan ʼarʼaqtac / qataq ishet ra ʼahuo ʼot ra am qaỹallihuigui.</p>
         </a>
-        <p class="highlighted-text">Mirá el video para aprender cómo subir contenido</p>
+        <p class="highlighted-text">Ameten na n-meenec nache ishet ra ahuaỹaten ra huo'o na ahuamaxasheguem.</p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/8wExCb_MuKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <p class="content-text">Nam ʼahuasaxasheguem ʼishet ra nmejnec nqui ʼi, qo̕ nam qaỹallihuigui, ʼangravan, qo̕ nerguishec (lamoxoñi qataq ralaxaic)</p>
 </section>
@@ -39,7 +39,7 @@ require_once 'header-Qom.php';
                 <div class="link-mega-container">
                     <div class="link-container">
                         <a href="https://commons.wikimedia.org/wiki/File:Artesana_Cestera.jpg" class="hide-link" target="_blank">
-                            Ver foto en Wikipedia
+                            Ahuallenec na lloxola' Wikipedia.
                         </a>
                         <button class="close-btn">X</button>
                     </div>
@@ -80,7 +80,7 @@ require_once 'header-Qom.php';
                 <div class="link-mega-container">
                     <div class="link-container">
                         <a href="https://commons.wikimedia.org/wiki/File:Artesana_Cestera.jpg" class="hide-link" target="_blank">
-                            Ver foto en Wikipedia
+                            Ahuallenec na lloxola' Wikipedia.
                         </a>
                         <button class="close-btn">X</button>
                     </div>

@@ -9,16 +9,16 @@
         "instructivo-computadora":"Hacé click derecho en el mapa para agregar contenido"
     },
     "qom": {
-        "coordenadas": "qomqomqomqomqom",
-        "titulo": "Nomqomqombre",
-        "imagen": "qomqomqomqomqom",
-        "descripcion": "qomqomqomqomqom",
-        "documentacion": "qomqomqomqomqom",
-        "instructivo-movil":"qomqomqomqomqomqomqomqomqomqomqomqomqomqomqomqomqomqomqomqom",
-        "instructivo-computadora":"qomqomqomqomqomqomqomqomqomqomqomqomqomqomqomqomqomqomqomqomqom"
+        "coordenadas": "Nchiguiña-lma’",
+        "titulo": "L’enaxat, nlonaxat, nlotaguet.",
+        "imagen": "ʼayoxoxoshiguem na lqui̕i nam ʼarʼoatac",
+        "descripcion": "Nachaxanataxanaxac",
+        "documentacion": "Lmalatepi",
+        "instructivo-movil":"apataxañe añe negaxaijte maye paʼayague na oic ỹaqto̕ ishet ra aqotnehuo ca rallaxaic arʼonatac.",
+        "instructivo-computadora":"Apataxañe añe negaxaijte maye paʼayague na oic ỹaqto̕ ishet ra aqotnehuo ca rallaxaic arʼonatac."
     },
     "moqoit": {
-        "coordenadas": "moqoit",
+        "coordenadas": "Laloqote>",
         "titulo": "Na>maq Leenaxat",
         "imagen": "Naqairishiguim nqui>i",
         "descripcion": "Nachaxanatec",
@@ -27,12 +27,12 @@
         "instructivo-computadora":"Ñitetegue click quena nimiitaxanaxac loicsec quena >laua lomalate quiyim lecqajñiro na>maq no>ueenatec hueetaugui."
     },
     "wichi": {
-        "coordenadas": "wichi",
-        "titulo": "wichi",
-        "imagen": "wichiwichiwichi",
+        "coordenadas": "Om kalelhojh mak tojh lhenlhi",
+        "titulo": "Tolesainek-hi",
+        "imagen": "Thathu apeyak",
         "descripcion": "wichi",
-        "documentacion": "wichiwichiwichiwichiwichi",
-        "instructivo-movil":"wichiwichiwichiwichiwichiwichiwichiwichiwichi",
-        "instructivo-computadora":"wichiwichiwichiwichiwichiwichiwichiwichiwichiwichi"
+        "documentacion": "Achemet",
+        "instructivo-movil":"Tshokpe mapa tojh ihi pantalla che lathek latathu ahanyajh",
+        "instructivo-computadora":"Che lathathu ahanyajh tojha watlok lhenlhi click tojh ihi afwumkat, tojha ihi mapa"
     }
 }
