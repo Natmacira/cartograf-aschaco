@@ -14,7 +14,7 @@ use Exception;
  */
 trait MultipartTrait {
 
-	private bool $isMultipart = true;
+	private bool $isMultipart = false;
 	private array $multipartParams = [];
 
 	public function isMultipart(): bool {
@@ -23,7 +23,6 @@ trait MultipartTrait {
 
 	public function setMultipart( bool $multipart ): self {
 		$this->isMultipart = $multipart;
-		$this->isMultipart = true;
 		return $this;
 	}
 
