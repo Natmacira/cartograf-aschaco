@@ -214,7 +214,7 @@ if ( ! chaco_check_user_cookie() ) {
 	</div>
 
 	<div id="add-item-form-container" style="display: none;">
-		<form id="add-item" action="add-media-item.php" method="post" enctype="multipart/form-data">
+		<form id="add-item" action="add-item.php" method="post" enctype="multipart/form-data">
 			<button class="close-form" onclick="$(this).parent().parent().hide()">X</button>
 			<input type="hidden" name="lat" id="new-item-lat">
 			<input type="hidden" name="long" id="new-item-lng">
@@ -229,13 +229,13 @@ if ( ! chaco_check_user_cookie() ) {
 			<p>
 				Pueblo Nación *
 				<label>
-					<input type="checkbox" name="nation" class="new-item-nation" value="qo"> Qom
+					<input type="checkbox" name="nation[]" class="new-item-nation" value="qo"> Qom
 				</label>
 				<label>
-					<input type="checkbox" name="nation" class="new-item-nation" value="wi"> Wichí
+					<input type="checkbox" name="nation[]" class="new-item-nation" value="wi"> Wichí
 				</label>
 				<label>
-					<input type="checkbox" name="nation" class="new-item-nation" value="mo"> Moqoit
+					<input type="checkbox" name="nation[]" class="new-item-nation" value="mo"> Moqoit
 				</label>
 
 			</p>

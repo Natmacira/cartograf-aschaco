@@ -19,3 +19,13 @@ function chaco_set_user_cookie() {
 function chaco_check_user_cookie() {
 	return ! empty( $_COOKIE['userSaved'] );
 }
+
+function chaco_sanitize_title( $title ) {
+    $title = strtolower($title);
+    $title = str_replace(' ', '_', $title);
+
+	// Remove any characters that are not letters, numbers, or underscores
+    $title = preg_replace('/[^a-z0-9_]/', '', $title);
+
+    return $title;
+}
