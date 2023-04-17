@@ -40,3 +40,8 @@ body {
 	font-family: "Open Sans", sans-serif;
 	color: $theme-dark-gray;
 }
+
+main {
+	margin-top: 60px;
+	min-height: calc(100vh - 115.6px);
+}
