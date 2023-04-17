@@ -31,266 +31,263 @@ foreach ($nation as $nation_code) {
 }
 
 if (
-	empty($nation) ||
-	empty($nation_q_ids) ||
-	empty($latitude) ||
-	empty($longitude) ||
-	empty($label) ||
-	empty($description)
+	!empty($nation) &&
+	!empty($nation_q_ids) &&
+	!empty($latitude) &&
+	!empty($longitude) &&
+	!empty($label) &&
+	!empty($description)
 ) {
-	require 'error.php';
-}
+	$p172 = array();
 
-$p172 = array();
-
-foreach ($nation_q_ids as $nation_q_id) {
-	$p172[] = array(
-		'mainsnak' => array(
-			'snaktype' => 'value',
-			'property' => 'P172',
-			'datavalue' => array(
-				'type' => 'wikibase-entityid',
-				'value' => array(
-					'entity-type' => 'item',
-					'id' => $nation_q_id,
+	foreach ($nation_q_ids as $nation_q_id) {
+		$p172[] = array(
+			'mainsnak' => array(
+				'snaktype' => 'value',
+				'property' => 'P172',
+				'datavalue' => array(
+					'type' => 'wikibase-entityid',
+					'value' => array(
+						'entity-type' => 'item',
+						'id' => $nation_q_id,
+					),
 				),
 			),
-		),
-		'type' => 'statement',
-		'rank' => 'normal',
-	);
-}
-
-$p2596 = array();
-
-foreach ($nation_q_ids as $nation_q_id) {
-	$p2596[] = array(
-		'mainsnak' => array(
-			'snaktype' => 'value',
-			'property' => 'P2596',
-			'datavalue' => array(
-				'type' => 'wikibase-entityid',
-				'value' => array(
-					'entity-type' => 'item',
-					'id' => $nation_q_id,
-				),
-			),
-		),
-		'type' => 'statement',
-		'rank' => 'normal',
-	);
-}
-
-if (isset($_FILES['image'])) {
-	$file_in_localhost = false;
-
-	if (!$_FILES['image']['error']) {
-		$file_type = $_FILES['image']['type'];
-		$file_size = $_FILES['image']['size'];
-		$tmp_name  = $_FILES['image']['tmp_name'];
-		$extension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
-		$filename  = chaco_sanitize_title($label) . '.' . $extension;
-
-		$uploadDir          = 'uploads/';
-		$allowed_file_types = ['image/jpeg', 'image/png', 'image/gif', 'application/pdf', 'image/webp'];
-
-		if (in_array($file_type, $allowed_file_types)) {
-			// Check if the file size is within the allowed limit
-			$maxFile_size = 5 * 1024 * 1024; // 5 MB
-			if ($file_size <= $maxFile_size) {
-				// Move the uploaded file to the upload directory
-				$file_in_localhost = move_uploaded_file($tmp_name, $uploadDir . $filename);
-			} else {
-				$commons_error = 'El archivo excede el límite de 5M.';
-			}
-		} else {
-			$commons_error = 'El archivo tiene una extensión no permitida: ' . $extension;
-		}
-	} else {
-		$commons_error = 'Error en la carga del archivo al servidor local.';
+			'type' => 'statement',
+			'rank' => 'normal',
+		);
 	}
 
-	if ($file_in_localhost) {
-		$auth               = new UserAndPassword($username, $password);
-		$commons_api        = new ActionApi('https://commons.wikimedia.org/w/api.php', $auth);
-		$local_file_url     = APP_HOME_URL . $uploadDir . $filename;
-		$commons_file_url   = '';
-		$commons_upload_url = '';
+	$p2596 = array();
 
-		$params = [
-			'action'   => 'upload',
-			'filename' => $filename,
-			'comment'  => $label,
-			'text'     => $description,
-			'url'      => $local_file_url,
-			'token'    => $commons_api->getToken(),
-			'format'   => 'json',
-		];
+	foreach ($nation_q_ids as $nation_q_id) {
+		$p2596[] = array(
+			'mainsnak' => array(
+				'snaktype' => 'value',
+				'property' => 'P2596',
+				'datavalue' => array(
+					'type' => 'wikibase-entityid',
+					'value' => array(
+						'entity-type' => 'item',
+						'id' => $nation_q_id,
+					),
+				),
+			),
+			'type' => 'statement',
+			'rank' => 'normal',
+		);
+	}
 
-		$request = new ActionRequest();
-		$request->setMethod('POST');
-		$request->setPath('upload');
-		$request->addParams($params);
+	if (isset($_FILES['image'])) {
+		$file_in_localhost = false;
 
-		$commons_success = false;
+		if (!$_FILES['image']['error']) {
+			$file_type = $_FILES['image']['type'];
+			$file_size = $_FILES['image']['size'];
+			$tmp_name  = $_FILES['image']['tmp_name'];
+			$extension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+			$filename  = chaco_sanitize_title($label) . '.' . $extension;
 
-		try {
-			$result = $commons_api->request($request);
+			$uploadDir          = 'uploads/';
+			$allowed_file_types = ['image/jpeg', 'image/png', 'image/gif', 'application/pdf', 'image/webp'];
 
-			if (isset($result['upload']['result']) && 'Success' === $result['upload']['result']) {
-				$commons_success = true;
+			if (in_array($file_type, $allowed_file_types)) {
+				// Check if the file size is within the allowed limit
+				$maxFile_size = 5 * 1024 * 1024; // 5 MB
+				if ($file_size <= $maxFile_size) {
+					// Move the uploaded file to the upload directory
+					$file_in_localhost = move_uploaded_file($tmp_name, $uploadDir . $filename);
+				} else {
+					$commons_error = 'El archivo excede el límite de 5M.';
+				}
 			} else {
-				throw new Exception('Wiki Commons rechazó el archivo.');
+				$commons_error = 'El archivo tiene una extensión no permitida: ' . $extension;
 			}
-		} catch (Exception $e) {
-			$commons_error = $e->getMessage();
+		} else {
+			$commons_error = 'Error en la carga del archivo al servidor local.';
 		}
 
-		if ($commons_success) {
-			$commons_file_url   = $result['upload']['imageinfo']['descriptionurl'];
-			$commons_upload_url = $result['upload']['imageinfo']['url'];
-
-			$auth = new UserAndPassword($username, $password);
-			$api  = new ActionApi('https://www.wikidata.org/w/api.php', $auth);
+		if ($file_in_localhost) {
+			$auth               = new UserAndPassword($username, $password);
+			$commons_api        = new ActionApi('https://commons.wikimedia.org/w/api.php', $auth);
+			$local_file_url     = APP_HOME_URL . $uploadDir . $filename;
+			$commons_file_url   = '';
+			$commons_upload_url = '';
 
 			$params = [
-				'action' => 'wbeditentity',
-				'new' => 'item',
-				'data' => json_encode([
-					'labels' => ['es' => ['language' => 'es', 'value' => $label]],
-					'descriptions' => ['es' => ['language' => 'es', 'value' => $description]],
-					// Add the P625 property to specify the coordinates
-					'claims' => [
-						'P625' => [
-							[
-								'mainsnak' => [
-									'snaktype' => 'value',
-									'property' => 'P625',
-									'datavalue' => [
-										'type' => 'globecoordinate',
-										'value' => [
-											'latitude' => $latitude,
-											'longitude' => $longitude,
-											'precision' => 0.0001,
-											'globe' => 'http://www.wikidata.org/entity/Q2',
+				'action'   => 'upload',
+				'filename' => $filename,
+				'comment'  => $label,
+				'text'     => $description,
+				'url'      => $local_file_url,
+				'token'    => $commons_api->getToken(),
+				'format'   => 'json',
+			];
+
+			$request = new ActionRequest();
+			$request->setMethod('POST');
+			$request->setPath('upload');
+			$request->addParams($params);
+
+			$commons_success = false;
+
+			try {
+				$result = $commons_api->request($request);
+
+				if (isset($result['upload']['result']) && 'Success' === $result['upload']['result']) {
+					$commons_success = true;
+				} else {
+					throw new Exception('Wiki Commons rechazó el archivo.');
+				}
+			} catch (Exception $e) {
+				$commons_error = $e->getMessage();
+			}
+
+			if ($commons_success) {
+				$commons_file_url   = $result['upload']['imageinfo']['descriptionurl'];
+				$commons_upload_url = $result['upload']['imageinfo']['url'];
+
+				$auth = new UserAndPassword($username, $password);
+				$api  = new ActionApi('https://www.wikidata.org/w/api.php', $auth);
+
+				$params = [
+					'action' => 'wbeditentity',
+					'new' => 'item',
+					'data' => json_encode([
+						'labels' => ['es' => ['language' => 'es', 'value' => $label]],
+						'descriptions' => ['es' => ['language' => 'es', 'value' => $description]],
+						// Add the P625 property to specify the coordinates
+						'claims' => [
+							'P625' => [
+								[
+									'mainsnak' => [
+										'snaktype' => 'value',
+										'property' => 'P625',
+										'datavalue' => [
+											'type' => 'globecoordinate',
+											'value' => [
+												'latitude' => $latitude,
+												'longitude' => $longitude,
+												'precision' => 0.0001,
+												'globe' => 'http://www.wikidata.org/entity/Q2',
+											],
 										],
 									],
+									'type' => 'statement',
+									'rank' => 'normal',
 								],
-								'type' => 'statement',
-								'rank' => 'normal',
 							],
-						],
-						// P172 statement to specify that the item belongs to an indigenous group
-						'P172' => $p172,
-						// P2596 is the property for "culture"
-						'P2596' => $p2596,
-						'P18' => [
-							[
-								'mainsnak' => [
-									'snaktype' => 'value',
-									'property' => 'P18',
-									'datavalue' => [
-										'value' => $filename, // Image.jpg
-										'type' => 'string',
+							// P172 statement to specify that the item belongs to an indigenous group
+							'P172' => $p172,
+							// P2596 is the property for "culture"
+							'P2596' => $p2596,
+							'P18' => [
+								[
+									'mainsnak' => [
+										'snaktype' => 'value',
+										'property' => 'P18',
+										'datavalue' => [
+											'value' => $filename, // Image.jpg
+											'type' => 'string',
+										],
+										'datatype' => 'commonsMedia',
 									],
-									'datatype' => 'commonsMedia',
+									'type' => 'statement',
+									'rank' => 'normal',
 								],
-								'type' => 'statement',
-								'rank' => 'normal',
 							],
 						],
-					],
-				]),
-				'token' => $api->getToken(),
-				'format' => 'json',
-			];
+					]),
+					'token' => $api->getToken(),
+					'format' => 'json',
+				];
+			}
 		}
-	}
-} else {
-	$auth = new UserAndPassword($username, $password);
-	$api  = new ActionApi('https://www.wikidata.org/w/api.php', $auth);
+	} else {
+		$auth = new UserAndPassword($username, $password);
+		$api  = new ActionApi('https://www.wikidata.org/w/api.php', $auth);
 
-	$params = [
-		'action' => 'wbeditentity',
-		'new' => 'item',
-		'data' => json_encode([
-			'labels' => ['es' => ['language' => 'es', 'value' => $label]],
-			'descriptions' => ['es' => ['language' => 'es', 'value' => $description]],
-			// Add the P625 property to specify the coordinates
-			'claims' => [
-				'P625' => [
-					[
-						'mainsnak' => [
-							'snaktype' => 'value',
-							'property' => 'P625',
-							'datavalue' => [
-								'type' => 'globecoordinate',
-								'value' => [
-									'latitude' => $latitude,
-									'longitude' => $longitude,
-									'precision' => 0.0001,
-									'globe' => 'http://www.wikidata.org/entity/Q2',
+		$params = [
+			'action' => 'wbeditentity',
+			'new' => 'item',
+			'data' => json_encode([
+				'labels' => ['es' => ['language' => 'es', 'value' => $label]],
+				'descriptions' => ['es' => ['language' => 'es', 'value' => $description]],
+				// Add the P625 property to specify the coordinates
+				'claims' => [
+					'P625' => [
+						[
+							'mainsnak' => [
+								'snaktype' => 'value',
+								'property' => 'P625',
+								'datavalue' => [
+									'type' => 'globecoordinate',
+									'value' => [
+										'latitude' => $latitude,
+										'longitude' => $longitude,
+										'precision' => 0.0001,
+										'globe' => 'http://www.wikidata.org/entity/Q2',
+									],
 								],
 							],
+							'type' => 'statement',
+							'rank' => 'normal',
 						],
-						'type' => 'statement',
-						'rank' => 'normal',
 					],
+					// P172 statement to specify that the item belongs to an indigenous group
+					'P172' => $p172,
+					// P2596 is the property for "culture"
+					'P2596' => $p2596,
 				],
-				// P172 statement to specify that the item belongs to an indigenous group
-				'P172' => $p172,
-				// P2596 is the property for "culture"
-				'P2596' => $p2596,
-			],
-		]),
-		'token' => $api->getToken(),
-		'format' => 'json',
-	];
-}
-
-if ( ! empty($params )) {
-	$request = ActionRequest::simplePost('wbeditentity', $params);
-
-	try {
-		$data = $api->request($request);
-
-		if ($data['success'] === 1) {
-			$new_item_id = $data['entity']['id'];
-			echo 'Item added with ID: https://www.wikidata.org/wiki/' . $new_item_id;
-		} else {
-			$wikidata_error = 'Wikidata rechazó el item.';
-		}
-	} catch (Exception $e) {
-		$wikidata_error = $e->getMessage();
+			]),
+			'token' => $api->getToken(),
+			'format' => 'json',
+		];
 	}
-}
 
-$host     = APP_DB_HOST;
-$username = APP_DB_USER;
-$password = APP_DB_PASSWORD;
-$dbname   = APP_DB_NAME;
+	if (!empty($params)) {
+		$request = ActionRequest::simplePost('wbeditentity', $params);
 
-// Create connection
-$mysqli = new mysqli( $host, $username, $password, $dbname );
+		try {
+			$data = $api->request($request);
 
-// Check connection
-if ( $mysqli->connect_errno ) {
-	exit();
-}
+			if ($data['success'] === 1) {
+				$new_item_id = $data['entity']['id'];
+				echo 'Item added with ID: https://www.wikidata.org/wiki/' . $new_item_id;
+			} else {
+				$wikidata_error = 'Wikidata rechazó el item.';
+			}
+		} catch (Exception $e) {
+			$wikidata_error = $e->getMessage();
+		}
+	}
 
-$date = date('YYYY-mm-dd h:i:s');
-$sql = 'INSERT INTO users (name, commons_filename, wikidata_id, date, commons_error, wikidata_error) VALUES
+	$host     = APP_DB_HOST;
+	$username = APP_DB_USER;
+	$password = APP_DB_PASSWORD;
+	$dbname   = APP_DB_NAME;
+
+	$mysqli = new mysqli($host, $username, $password, $dbname);
+
+	if ($mysqli->connect_errno) {
+		exit();
+	}
+
+	$date = date('YYYY-mm-dd h:i:s');
+
+	$sql = 'INSERT INTO entries (commons_filename, wikidata_id, date, commons_error, wikidata_error) VALUES
 		("' . $mysqli->real_escape_string($filename) . '",
 		"' . $mysqli->real_escape_string($new_item_id) . '",
 		"' . $mysqli->real_escape_string($date) . '",
 		"' . $mysqli->real_escape_string($commons_error) . '",
 		"' . $mysqli->real_escape_string($wikidata_error) . '")';
 
-$insert = mysqli_query($mysqli, $sql);
+	$insert = mysqli_query($mysqli, $sql);
 
-mysqli_close($mysqli);
+	mysqli_close($mysqli);
+}
 
-if ( empty( $new_item_id ) ) {
+if (empty($new_item_id)) {
 	$message = 'Ha habido un error en el proceso. Por favor, verifique que ha completado todos los campos requeridos.';
 } else {
 	$message = 'Se ha cargado con éxito la entrada. El código de la misma es: ' . $new_item_id;
@@ -301,7 +298,7 @@ $body_class = 'submission-result';
 require_once 'header.php';
 ?>
 <section class="message">
-    <h2><?php echo $message; ?></h2>
+	<h2><?php echo $message; ?></h2>
 
 	<a href="mapa.php">Volver al mapa</a>
 </section>
