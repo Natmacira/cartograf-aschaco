@@ -48,6 +48,21 @@ CREATE TABLE `users` (
   `institution` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `entries`
+--
+
+CREATE TABLE `entries` (
+  `id` int(255) NOT NULL,
+  `commons_filename` varchar(255) NOT NULL,
+  `wikidata_id` varchar(255) NOT NULL,
+  `date` DATETIME NOT NULL,
+  `commons_error` varchar(255) NOT NULL,
+  `wikidata_error` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 --
 -- Indexes for dumped tables
@@ -66,6 +81,12 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `entries`
+--
+ALTER TABLE `entries`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for table `nations`
 --
 ALTER TABLE `nations`
@@ -75,6 +96,12 @@ ALTER TABLE `nations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `entries`
+--
+ALTER TABLE `entries`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
 
 

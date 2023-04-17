@@ -8,7 +8,7 @@ $form_result = '';
 if (isset($_POST['submit'])) {
 	$nombre       = '';
 	$nation_id    = '';
-	$nation_other    = '';
+	$nation_other = '';
 	$parcialidad  = '';
 	$comunidad    = '';
 	$institucion  = '';
@@ -54,13 +54,17 @@ if (isset($_POST['submit'])) {
 			exit();
 		}
 
-		$sql = "INSERT INTO users
-		(name, nation_id, nation_other, parcialidades, community, institution) VALUES
-		('$nombre', '$nation_id', '$nation_other', '$parcialidad', '$comunidad', '$institucion')";
+		$sql = 'INSERT INTO users (name, nation_id, nation_other, parcialidades, community, institution) VALUES
+		("' . $mysqli->real_escape_string($nombre) . '",
+		"' . $mysqli->real_escape_string($nation_id) . '",
+		"' . $mysqli->real_escape_string($nation_other) . '",
+		"' . $mysqli->real_escape_string($parcialidad) . '",
+		"' . $mysqli->real_escape_string($comunidad) . '",
+		"' . $mysqli->real_escape_string($institucion) . '")';
 
-		$rs = mysqli_query($mysqli, $sql);
+		$insert = mysqli_query($mysqli, $sql);
 
-		if ($rs) {
+		if ($insert) {
 			$form_result = 'Success';
 		} else {
 			$form_result = 'Error';
@@ -129,7 +133,7 @@ if ($form_result === 'Success') {
 
 <section class="contact-us">
     <h2>Si tenés dudas o sugerencias, escribinos</h2>
-    <form action="">
+    <form method="post">
         <strong>Dejanos tu consulta</strong>
         <label for="">Nombre <input type="text" placeholder="Escribí tu nombre"></label>
         <label for="">Mail <input type="mail" placeholder="Escribí tu mail"></label>

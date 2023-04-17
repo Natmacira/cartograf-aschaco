@@ -1,19 +1,4 @@
-<pre>
 <?php
-$debugging = true;
-
-// ?q wdt:P31/wdt:P279* wd:Q385994 búsqueda de bibliotecas especializadas
-// ?q wdt:P2596/wdt:P279* wd:Q6122670 búsqueda de items de cultura maori
-// https://wikishootme.toolforge.org/#lat=-38.26838272806484&lng=176.4137878501788&zoom=10&layers=wikidata_image,wikidata_no_image&sparql_filter=%3Fq%20wdt%3AP2596%2Fwdt%3AP279*%20wd%3AQ6122670&worldwide=1
-
-// https://www.wikidata.org/wiki/Q117313340 =>Axion Energy
-
-// https://www.wikidata.org/wiki/Q1542227 => Toba people
-// https://www.wikidata.org/wiki/Q3099764 => Mocoví people
-// https://www.wikidata.org/wiki/Q1284276 => Wichís
-
-// item added with this approach: https://www.wikidata.org/wiki/Q117337907
-
 require_once(__DIR__ . '/vendor/autoload.php');
 require_once 'functions.php';
 
@@ -30,12 +15,14 @@ use Addwiki\Mediawiki\Api\Client\Auth\UserAndPassword;
 use Addwiki\Mediawiki\Api\Client\Action\ActionApi;
 use Addwiki\Mediawiki\Api\Client\Action\Request\ActionRequest;
 
-$latitude     = !empty($_POST['lat']) ? $_POST['lat'] : '';
-$longitude    = !empty($_POST['long']) ? $_POST['long'] : '';
-$label        = !empty($_POST['title']) ? $_POST['title'] : '';
-$description  = !empty($_POST['description']) ? $_POST['description'] : '';
-$nation       = !empty($_POST['nation']) ? $_POST['nation'] : array();
-$nation_q_ids = array();
+$latitude       = !empty($_POST['lat']) ? $_POST['lat'] : '';
+$longitude      = !empty($_POST['long']) ? $_POST['long'] : '';
+$label          = !empty($_POST['title']) ? $_POST['title'] : '';
+$description    = !empty($_POST['description']) ? $_POST['description'] : '';
+$nation         = !empty($_POST['nation']) ? $_POST['nation'] : array();
+$nation_q_ids   = array();
+$commons_error  = '';
+$wikidata_error = '';
 
 foreach ($nation as $nation_code) {
 	foreach ($q_ids[$nation_code] as $q_id) {
@@ -51,10 +38,8 @@ if (
 	empty($label) ||
 	empty($description)
 ) {
-	header('Location: error.php');
-	exit;
+	require 'error.php';
 }
-
 
 $p172 = array();
 
@@ -116,30 +101,19 @@ if (isset($_FILES['image'])) {
 				// Move the uploaded file to the upload directory
 				$file_in_localhost = move_uploaded_file($tmp_name, $uploadDir . $filename);
 			} else {
-				$upload_error = 'Error: File size exceeds the allowed limit.';
+				$commons_error = 'El archivo excede el límite de 5M.';
 			}
 		} else {
-			$upload_error = 'Error: File type not allowed.';
+			$commons_error = 'El archivo tiene una extensión no permitida: ' . $extension;
 		}
 	} else {
-		$upload_error = 'Error: An error occurred while uploading the file.';
+		$commons_error = 'Error en la carga del archivo al servidor local.';
 	}
 
 	if ($file_in_localhost) {
-		echo __LINE__ . PHP_EOL;
 		$auth               = new UserAndPassword($username, $password);
-		echo __LINE__ . PHP_EOL;
 		$commons_api        = new ActionApi('https://commons.wikimedia.org/w/api.php', $auth);
-
 		$local_file_url     = APP_HOME_URL . $uploadDir . $filename;
-
-		/////////////////////////
-		///// Only for testing hardcode. simply delete these lines afterwards.
-		$local_file_url     = 'https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/louisianarice653_oli2_2023034_lrg.jpg';
-		$filename           = 'louisianarice653_oli2_2023034_lrg.jpg';
-		/////////////////////////
-
-		$commons_error      = '';
 		$commons_file_url   = '';
 		$commons_upload_url = '';
 
@@ -166,26 +140,18 @@ if (isset($_FILES['image'])) {
 			if (isset($result['upload']['result']) && 'Success' === $result['upload']['result']) {
 				$commons_success = true;
 			} else {
-				throw new Exception('Error uploading image');
+				throw new Exception('Wiki Commons rechazó el archivo.');
 			}
 		} catch (Exception $e) {
 			$commons_error = $e->getMessage();
-			var_dump($commons_error);
 		}
 
-		echo __LINE__ . PHP_EOL;
-		if ($commons_success || $debugging ) {
-			var_dump($result);
-			// $commons_file_url   = $result['upload']['imageinfo']['descriptionurl'];
-			// $commons_upload_url = $result['upload']['imageinfo']['url'];
-			$commons_file_url   = 'https://commons.wikimedia.org/wiki/File:Louisianarice653_oli2_2023034_lrg.jpg';
-			$commons_upload_url = 'https://upload.wikimedia.org/wikipedia/commons/d/dd/Louisianarice653_oli2_2023034_lrg.jpg';
+		if ($commons_success) {
+			$commons_file_url   = $result['upload']['imageinfo']['descriptionurl'];
+			$commons_upload_url = $result['upload']['imageinfo']['url'];
 
 			$auth = new UserAndPassword($username, $password);
-			echo __LINE__ . PHP_EOL;
 			$api  = new ActionApi('https://www.wikidata.org/w/api.php', $auth);
-
-			echo __LINE__ . PHP_EOL;
 
 			$params = [
 				'action' => 'wbeditentity',
@@ -241,11 +207,8 @@ if (isset($_FILES['image'])) {
 		}
 	}
 } else {
-	echo __LINE__ . PHP_EOL;
 	$auth = new UserAndPassword($username, $password);
-	echo __LINE__ . PHP_EOL;
 	$api  = new ActionApi('https://www.wikidata.org/w/api.php', $auth);
-	echo __LINE__ . PHP_EOL;
 
 	$params = [
 		'action' => 'wbeditentity',
@@ -285,22 +248,63 @@ if (isset($_FILES['image'])) {
 	];
 }
 
-
 if ( ! empty($params )) {
 	$request = ActionRequest::simplePost('wbeditentity', $params);
 
 	try {
 		$data = $api->request($request);
-		var_dump($data);
+
+		if ($data['success'] === 1) {
+			$new_item_id = $data['entity']['id'];
+			echo 'Item added with ID: https://www.wikidata.org/wiki/' . $new_item_id;
+		} else {
+			$wikidata_error = 'Wikidata rechazó el item.';
+		}
 	} catch (Exception $e) {
-		$commons_error = $e->getMessage();
-		var_dump($commons_error);
+		$wikidata_error = $e->getMessage();
 	}
 }
 
-if ($data['success'] === 1) {
-	$item_id = $data['entity']['id'];
-	echo 'Item added with ID: https://www.wikidata.org/wiki/' . $item_id;
-} else {
-	echo "Failed to add item";
+$host     = APP_DB_HOST;
+$username = APP_DB_USER;
+$password = APP_DB_PASSWORD;
+$dbname   = APP_DB_NAME;
+
+// Create connection
+$mysqli = new mysqli( $host, $username, $password, $dbname );
+
+// Check connection
+if ( $mysqli->connect_errno ) {
+	exit();
 }
+
+$date = date('YYYY-mm-dd h:i:s');
+$sql = 'INSERT INTO users (name, commons_filename, wikidata_id, date, commons_error, wikidata_error) VALUES
+		("' . $mysqli->real_escape_string($filename) . '",
+		"' . $mysqli->real_escape_string($new_item_id) . '",
+		"' . $mysqli->real_escape_string($date) . '",
+		"' . $mysqli->real_escape_string($commons_error) . '",
+		"' . $mysqli->real_escape_string($wikidata_error) . '")';
+
+$insert = mysqli_query($mysqli, $sql);
+
+mysqli_close($mysqli);
+
+if ( empty( $new_item_id ) ) {
+	$message = 'Ha habido un error en el proceso. Por favor, verifique que ha completado todos los campos requeridos.';
+} else {
+	$message = 'Se ha cargado con éxito la entrada. El código de la misma es: ' . $new_item_id;
+}
+
+$body_class = 'submission-result';
+
+require_once 'header.php';
+?>
+<section class="message">
+    <h2><?php echo $message; ?></h2>
+
+	<a href="mapa.php">Volver al mapa</a>
+</section>
+
+<?php
+require_once 'footer.php';
