@@ -2,11 +2,11 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 require_once 'functions.php';
 
-$q_ids = array(
-	'qo' => array('Q1542227'),
-	'wi' => array('Q1284276', 'Q3027047'),
-	'mo' => array('Q3099764', 'Q3027906'),
-);
+	$q_ids = array(
+		'qo' => array('Q1542227'),
+		'wi' => array('Q1284276', 'Q3027047'),
+		'mo' => array('Q3099764', 'Q3027906'),
+	);
 
 $username = WIKI_USER;
 $password = WIKI_PASSWORD;
@@ -181,13 +181,28 @@ if (
 							'P172' => $p172,
 							// P2596 is the property for "culture"
 							'P2596' => $p2596,
+							'P195'  => array(
+								'mainsnak' => array(
+									'snaktype' => 'value',
+									'property' => 'P195',
+									'datavalue' => array(
+										'type' => 'wikibase-entityid',
+										'value' => array(
+											'entity-type' => 'item',
+											'id' => 'Q117554123', // Cartografías Abiertas
+										),
+									),
+								),
+								'type' => 'statement',
+								'rank' => 'normal',
+							),
 							'P18' => [
 								[
 									'mainsnak' => [
 										'snaktype' => 'value',
 										'property' => 'P18',
 										'datavalue' => [
-											'value' => $filename, // Image.jpg
+											'value' => $filename, // image.jpg || file.pdf
 											'type' => 'string',
 										],
 										'datatype' => 'commonsMedia',
@@ -238,6 +253,21 @@ if (
 					'P172' => $p172,
 					// P2596 is the property for "culture"
 					'P2596' => $p2596,
+					'P195'  => array(
+						'mainsnak' => array(
+							'snaktype' => 'value',
+							'property' => 'P195',
+							'datavalue' => array(
+								'type' => 'wikibase-entityid',
+								'value' => array(
+									'entity-type' => 'item',
+									'id' => 'Q117554123', // Cartografías Abiertas
+								),
+							),
+						),
+						'type' => 'statement',
+						'rank' => 'normal',
+					),
 				],
 			]),
 			'token' => $api->getToken(),

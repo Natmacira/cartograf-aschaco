@@ -29,7 +29,7 @@ var cartografiaschaco = {
 	colors: {
 		me: '#888888',
 		wikidata_image: '#2DC800',
-		wikidata_no_image: '#FF4848',
+		wikidata_no_image: '#2DC800',
 		no_image_copyright: '#9A03FE',
 		flickr: '#FF800D',
 		wikipedia: '#FFFFAA',
@@ -57,19 +57,20 @@ var cartografiaschaco = {
 		key2name: {
 			wikidata_image: 'Wikidata (with image, 3K max)',
 			wikidata_no_image: 'Wikidata (no image, 3K max)',
-			commons: 'Commons images (500 max)',
-			wikipedia: 'Wikipedia (500 max)',
-			mixnmatch: "Mix'n'match (5000 max)",
-			mnm_lc: "Mix'n'match large catalogs (5000 max)",
-			flickr: 'Flickr'
+			// commons: 'Commons images (500 max)',
+			// commons: 'Commons images (500 max)',
+			// wikipedia: 'Wikipedia (500 max)',
+			// mixnmatch: "Mix'n'match (5000 max)",
+			// mnm_lc: "Mix'n'match large catalogs (5000 max)",
+			// flickr: 'Flickr'
 		},
 		name2key: {}
 	},
 	layers: {
-		wikipedia: {},
-		wikidata_image: {},
-		wikidata_no_image: {},
-		commons: {}
+		// wikipedia: {},
+		// wikidata_image: {},
+		// wikidata_no_image: {},
+		// commons: {}
 	},
 
 	busy: 0,
