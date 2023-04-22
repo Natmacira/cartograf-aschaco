@@ -26,7 +26,7 @@ body.page-mapa {
 	#options {
 		display: none;
 	}
-	div.leaflet-control-container {
+	div.leaflet-control-container .leaflet-control-layers {
 		display: none !important;
 	}
 	#interface_language_wrapper {
@@ -105,5 +105,55 @@ body.page-mapa {
 		margin-top: 3px;
 		padding: 2px;
 		border-top: 1px solid #ddd;
+	}
+
+	div#search-filter-container {
+		position: absolute;
+		top: 120px;
+		z-index: 2;
+		right: 5px;
+		width: 80px;
+		text-align: center;
+		background: white;
+		padding: 0 5px;
+
+		button {
+			cursor: pointer;
+			width: 40px;
+			border: 0;
+			padding: 5px;
+			background: white;
+			outline: 0;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		label {
+			display: none;
+			text-align: left;
+			line-height: 1;
+			cursor: pointer;
+
+			input.search-filter {
+				margin-right: 4px;
+				padding: 20px;
+				float: left;
+				margin-top: 2px;
+			}
+		}
+	}
+
+	&.search-filter-opened {
+		div#search-filter-container {
+			button {
+				margin-bottom: 10px;
+			}
+
+			label {
+				display: block;
+			}
+		}
 	}
 }

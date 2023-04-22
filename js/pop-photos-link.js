@@ -3,25 +3,25 @@ document.addEventListener('DOMContentLoaded', function () {
     let imageNationArray = document.getElementsByClassName('nation-img');
     let closeBtnArray = document.getElementsByClassName('close-btn');
 
-  
+
 
     for (let index = 0; index < imageNationArray.length; index++) {
         const element = imageNationArray[index];
         element.addEventListener("click", function (e) {
-            containerArray[index].classList.add('oppenned');
+            containerArray[index].classList.add('opened');
             console.log('hola')
         });
-        
+
     }
 
     for (let index = 0; index < closeBtnArray.length; index++) {
         const element = closeBtnArray[index];
         element.addEventListener("click", function (e) {
-            containerArray[index].classList.remove('oppenned');
+            containerArray[index].classList.remove('opened');
             console.log('hola')
         });
-        
+
     }
 
-   
+
 });

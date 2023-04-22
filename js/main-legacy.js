@@ -1617,6 +1617,41 @@ var cartografiaschaco = {
 			$('#sparql_filter_dialog').modal('hide');
 			me.updateLayers();
 		});
+
+		let searchFilters = document.getElementsByClassName('search-filter');
+
+		for (let i = 0; i < searchFilters.length; i++) {
+			searchFilters[i].addEventListener('change', function () {
+				let filters = document.querySelectorAll('input.search-filter:checked');
+				console.log( filters );
+				me.sparql_filter = '';
+
+				for (let i = 0; i < filters.length; i++) {
+					if ( me.sparql_filter !== '' ) {
+						me.sparql_filter += ' UNION ';
+					}
+
+					if (filters[i] === 'moqoit') {
+						me.sparql_filter += '{?q p:P2596 ?statement0. ?statement0 (ps:P2596/(wdt:P279*)) wd:Q1284276. }';
+						me.sparql_filter += ' UNION ';
+						me.sparql_filter += '{?q p:P2596 ?statement0. ?statement0 (ps:P2596/(wdt:P279*)) wd:Q3027047. }';
+					}
+
+					if (filters[i] === 'qom') {
+						me.sparql_filter += '{?q p:P2596 ?statement0. ?statement0 (ps:P2596/(wdt:P279*)) wd:Q1542227. }';
+					}
+
+					if (filters[i] === 'wichi') {
+						me.sparql_filter += '{?q p:P2596 ?statement0. ?statement0 (ps:P2596/(wdt:P279*)) wd:Q3099764. }';
+						me.sparql_filter += ' UNION ';
+						me.sparql_filter += '{?q p:P2596 ?statement0. ?statement0 (ps:P2596/(wdt:P279*)) wd:Q3027906. }';
+					}
+
+					me.worldwide = true;
+					me.updateLayers();
+				}
+			});
+		}
 		$('#sparql_filter_clear').click(function () {
 			me.sparql_filter = $.trim('');
 			$('#sparql_filter_dialog').modal('hide');

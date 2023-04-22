@@ -95,8 +95,8 @@ body.index {
                 border: none;
                 font-weight: bold;
             }
-            &.oppenned {
-             @include link-to-wikimedia-opened; 
+            &.opened {
+             @include link-to-wikimedia-opened;
             }
         }
     }

@@ -185,7 +185,7 @@ body.home {
                             border: none;
                             font-weight: bold;
                         }
-                        &.oppenned {
+                        &.opened {
                             @include link-to-wikimedia-opened;
 
                             position: static;
@@ -257,7 +257,7 @@ body.home {
                             border: none;
                             font-weight: bold;
                         }
-                        &.oppenned {
+                        &.opened {
                             @include link-to-wikimedia-opened;
 
                             position: static;

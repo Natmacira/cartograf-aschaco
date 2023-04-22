@@ -3,10 +3,28 @@
 require_once 'functions.php';
 
 if ( ! chaco_check_user_cookie() ) {
-	header( 'Location: form.php' );
+	if ( $_SERVER['HTTP_REFERER'] ) {
+		$referer = parse_url( $_SERVER['HTTP_REFERER'] );
+		$referer_path = $referer['path'];
+		$referer_path = explode( '/', $referer_path );
+		$referer_path = end( $referer_path );
+
+		if ( $referer_path === 'home-Qom.php' ) {
+			header( 'Location: form-Qom.php' );
+		} elseif ( $referer_path === 'home-Wichi.php' ) {
+			header( 'Location: form-Wichi.php' );
+		} elseif ( $referer_path === 'home-Moqoit.php' ) {
+			header( 'Location: form-Moqoit.php' );
+		}
+		else {
+			header( 'Location: form.php' );
+		}
+	} else {
+		header( 'Location: form.php' );
+	}
+
 	exit();
 }
-
 
 ?>
 <!DOCTYPE HTML>
@@ -213,9 +231,22 @@ if ( ! chaco_check_user_cookie() ) {
 		</div>
 	</div>
 
+	<div id="search-filter-container">
+		<button id="search-filter-toggler"><img src="lib/leaflet/images/layers-2x.png" alt="Mostrar/ocultar filtros de búsqueda"></button>
+		<label>
+			<input class="search-filter" type="checkbox" name="search-filter[]" value="moqoit">Moqoit
+		</label>
+		<label>
+			<input class="search-filter" type="checkbox" name="search-filter[]" value="qom">Qom
+		</label>
+		<label>
+			<input class="search-filter" type="checkbox" name="search-filter[]" value="wichi">Wichí
+		</label>
+	</div>
+
 	<div id="add-item-form-container" style="display: none;">
 		<form id="add-item" action="add-item.php" method="post" enctype="multipart/form-data">
-			<button class="close-form" onclick="$(this).parent().parent().hide()">X</button>
+			<button class="close-form" type="button" onclick="$(this).parent().parent().hide()">X</button>
 			<input type="hidden" name="lat" id="new-item-lat">
 			<input type="hidden" name="long" id="new-item-lng">
 			<input type="hidden" name="lang" id="new-item-lang" value="es">
@@ -248,5 +279,13 @@ if ( ! chaco_check_user_cookie() ) {
 		</form>
 	</div>
 
-	<?php
-	require_once 'footer-Qom.php';
+	</main>
+<footer>
+    <a href="javascript:history.back()" class="go-back-link" data-translation-id="volver">< Volver</a>
+    <p class="footer-text">Powered by <br>
+        <a href="http://altcooperativa.com/" target="_blank">ALT - 2023</a></p>
+</footer>
+
+</body>
+
+</html>

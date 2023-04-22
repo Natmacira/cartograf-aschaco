@@ -2,7 +2,7 @@
 <footer>
     <a href="javascript:history.back()" class="go-back-link">< Qaiqoshaxan</a>
     <p class="footer-text">Powered by <br>
-        ALT - 2023</p>
+        <a href="http://altcooperativa.com/" target="_blank">ALT - 2023</a></p>
 </footer>
 
 </body>

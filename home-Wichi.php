@@ -5,9 +5,9 @@ require_once 'header-Wichi.php';
 
 <section class="map-section">
     <p class="highlighted-text">Che layahin plataformana law'enla mapa, tojha iwunlasey che am lathatsi mañhey tojh pajhchhehen, hotewuye , tokeyis, toka historias tojh wichi, Moqoit wit Qom kamayek.</p>
-    <embed src="https://wikishootme.toolforge.org/#lat=-27.451389658914252&lng=-58.98666858673096&zoom=16" type="">
+    <embed src="<?php echo APP_HOME_URL . 'mapa-embed.php'; ?>#lat=-27.451389658914252&lng=-58.98666858673096&zoom=16" type="">
     <div class="charge-items">
-        <a href="form-Wichi.php"><strong>+</strong>
+        <a href="mapa.php#lat=-27.451389658914252&lng=-58.98666858673096&zoom=16"><strong>+</strong>
             <p>Thattsi apeyak /apak / video</p>
         </a>
         <p class="highlighted-text">Yahin video ichefwena-am e&#39;p tiwuye tojh tithatsi mayek.</p>
@@ -63,7 +63,7 @@ require_once 'header-Wichi.php';
                 <figure>
                     <img src="img/mobile/Docentes_bilingües_qom.jpg" class="nation-img" alt="Docentes bilingües qom (Ashazam, 2019). CC BY SA 4.0 internacional.">
                     <figcaption>
-                        Tochefwenyawus Bilingües Qom (Ashazam, 2019). CC BY SA 4.0 internacional. 
+                        Tochefwenyawus Bilingües Qom (Ashazam, 2019). CC BY SA 4.0 internacional.
                     </figcaption>
                 </figure>
                 <div class="link-mega-container">

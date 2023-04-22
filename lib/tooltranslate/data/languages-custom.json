@@ -6,7 +6,8 @@
         "descripcion": "Descripción",
         "documentacion": "Información extra",
         "instructivo-movil":"Mantené presionada la pantalla del mapa para agregar contenido",
-        "instructivo-computadora":"Hacé click derecho en el mapa para agregar contenido"
+        "instructivo-computadora":"Hacé click derecho en el mapa para agregar contenido",
+		"volver":"< Volver"
     },
     "qom": {
         "coordenadas": "Nchiguiña-lma’",
@@ -15,7 +16,8 @@
         "descripcion": "Nachaxanataxanaxac",
         "documentacion": "Lmalatepi",
         "instructivo-movil":"apataxañe añe negaxaijte maye paʼayague na oic ỹaqto̕ ishet ra aqotnehuo ca rallaxaic arʼonatac.",
-        "instructivo-computadora":"Apataxañe añe negaxaijte maye paʼayague na oic ỹaqto̕ ishet ra aqotnehuo ca rallaxaic arʼonatac."
+        "instructivo-computadora":"Apataxañe añe negaxaijte maye paʼayague na oic ỹaqto̕ ishet ra aqotnehuo ca rallaxaic arʼonatac.",
+		"volver":"< ʼan ñe ʼeguelaxat"
     },
     "moqoit": {
         "coordenadas": "Laloqote>",
@@ -24,7 +26,8 @@
         "descripcion": "Nachaxanatec",
         "documentacion": "Nerqaipi naneresañi",
         "instructivo-movil":"Pataqaisañi nata> nachaxanatec >laua lomalate quiyim lecqajñiro ro>ueenachigui.",
-        "instructivo-computadora":"Ñitetegue click quena nimiitaxanaxac loicsec quena >laua lomalate quiyim lecqajñiro na>maq no>ueenatec hueetaugui."
+        "instructivo-computadora":"Ñitetegue click quena nimiitaxanaxac loicsec quena >laua lomalate quiyim lecqajñiro na>maq no>ueenatec hueetaugui.",
+		"volver":"< Qaiqoshaxan"
     },
     "wichi": {
         "coordenadas": "Om kalelhojh mak tojh lhenlhi",
@@ -33,6 +36,7 @@
         "descripcion": "wichi",
         "documentacion": "Achemet",
         "instructivo-movil":"Tshokpe mapa tojh ihi pantalla che lathek latathu ahanyajh",
-        "instructivo-computadora":"Che lathathu ahanyajh tojha watlok lhenlhi click tojh ihi afwumkat, tojha ihi mapa"
+        "instructivo-computadora":"Che lathathu ahanyajh tojha watlok lhenlhi click tojh ihi afwumkat, tojha ihi mapa",
+		"volver":"< Akhey"
     }
 }

@@ -34,11 +34,10 @@ body.page-mapa {
                 margin-left: 5px;
                 border: 2px solid #A40F2C;
                 background-color: white;
-                padding: 5px;
-                padding-left: 8px;
                 cursor: pointer;
+				padding: 0;
                 @media (min-width: 330px) {
-                    padding-right: 10px;
+                    // padding-right: 10px;
                 }
                 @media (min-width: 360px) {
                     font-size: 14px;
@@ -52,6 +51,7 @@ body.page-mapa {
                 label {
                     margin-bottom: 0;
                     cursor: pointer;
+					padding: 5px 10px;
                 }
                 input[type="radio"] {
                     visibility: hidden;

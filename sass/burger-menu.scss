@@ -95,7 +95,7 @@
     }
 }
 
-.oppenned {
+.opened {
     // .sub-menu {
     //     opacity: 1;
     //     height: 400px;
@@ -180,13 +180,13 @@
 body.burger-menu-opened {
     main {
         ::before {
-            display: none !important; 
+            display: none !important;
         }
     }
 }
 
 body.home {
-    .oppenned {
+    .opened {
         span:nth-child(2) {
             height: 100%;
         }

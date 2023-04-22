@@ -1,24 +1,8 @@
 <?php
-// COMENTADO PARA PODER MOSTRAR EL FRONT
-// $mysqli = new mysqli("localhost", "root", "", "cartografiaschaco.com");
-
-// Check connection
-// if ($mysqli->connect_errno) {
-// echo "Failed to connect to MySQL: " . $mysqli->connect_error;
-// exit();
-// } else {
-// echo "Hola que tal";
-// } 
-?>
-
-
-<?php
 $body_class = "form";
 require_once 'header-Moqoit.php';
 ?>
 
-
-<!-- <form action="validation-form.php"> -->
 <form action="">
     <p><strong>No>xataxachiriguilec na> leré </strong></p>
 
@@ -32,9 +16,9 @@ require_once 'header-Moqoit.php';
     <label for="otro" class="nation-option-label"><input type="radio" id="otro" name="nation" value="4">
         Liỹa:<input type="text" name="nation" class="other-nation-input" placeholder="naloqojnaxanaxat. Argentina">
     </label><br>
-    <label for="parcialidad">Ỹorigchi (da> vi>saqué): 
+    <label for="parcialidad">Ỹorigchi (da> vi>saqué):
         <input type="text" id="parcialidad" name="parcialidad" value="" placeholder="choxochi ca>chicqoraugui"> </label><br>
-    <label for="comunidad">Na>areaxahua (da> vi>saque): 
+    <label for="comunidad">Na>areaxahua (da> vi>saque):
         <input type="text" id="comunidad" name="comunidad" value="" placeholder="Choxochi na>maq ra>areaxahuai"> </label><br>
     <label for="institucion">No>om ca> no>ueenataxanaxaqui loqo>m paxaguinataxanaxaqui> ro’ueenataxanqa>chi, choxochi ca> leenaxat.<input type="text" id="institucion" name="institucion" value="" placeholder="leenaxat na> no>ueenataxanaxaqui"> </label><br>
     <label for="terminos" id="terms-label"><input type="checkbox" id="terminos" name="terminos" value="" required>Sacoñiguit na>maq <strong> <a href="terminos-Moqoit.php"> Términos chaqai nelaataxaset </a></strong></label><br>
@@ -42,7 +26,7 @@ require_once 'header-Moqoit.php';
 
 </form>
 <article class="show-after-submission">
-    <p>Qana>aachic dama 
+    <p>Qana>aachic dama
         <br>
         ro>taanaxanaxaqui
     </p>
@@ -61,4 +45,3 @@ require_once 'header-Moqoit.php';
 
 <?php
 require_once 'footer-Moqoit.php';
-?>

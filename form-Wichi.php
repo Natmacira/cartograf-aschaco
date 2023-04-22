@@ -1,24 +1,8 @@
 <?php
-// COMENTADO PARA PODER MOSTRAR EL FRONT
-// $mysqli = new mysqli("localhost", "root", "", "cartografiaschaco.com");
-
-// Check connection
-// if ($mysqli->connect_errno) {
-// echo "Failed to connect to MySQL: " . $mysqli->connect_error;
-// exit();
-// } else {
-// echo "Hola que tal";
-// } 
-?>
-
-
-<?php
 $body_class = "form";
 require_once 'header-Wichi.php';
 ?>
 
-
-<!-- <form action="validation-form.php"> -->
 <form action="">
     <p><strong>Thathu aka datos tolesainek- hina</strong></p>
 
@@ -57,4 +41,3 @@ require_once 'header-Wichi.php';
 
 <?php
 require_once 'footer-Wichi.php';
-?>
