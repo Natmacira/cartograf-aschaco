@@ -533,3 +533,40 @@ https://wikishootme.toolforge.org/#lat=-34.62381142602354&lng=-58.49631786346435
 
 -----------------------------
 https://wikishootme.toolforge.org/#lat=-21.77523374569887&lng=-129.09373283386233&zoom=3&layers=commons,wikidata_image,wikidata_no_image&sparql_filter=%7B%0A%20%20%20%20%3Fitem%20wdt%3AP172%20wd%3AQ1284276%20.%0A%20%20%7D%20UNION%20%7B%0A%20%20%20%20%3Fitem%20wdt%3AP172%20wd%3AQ3027047%20.%0A%20%20%7D&worldwide=1
+
+
+
+
+
+https://wikishootme.toolforge.org/#lat=-20.38178177095632&lng=-173.72680664062503&zoom=8&layers=commons,wikidata_image,wikidata_no_image&sparql_filter=%7B%0A%20%20%20%20%3Fitem%20wdt%3AP172%20wd%3AQ1284276%20.%0A%20%20%7D%20UNION%20%7B%0A%20%20%20%20%3Fitem%20wdt%3AP172%20wd%3AQ3027047%20.%0A%20%20%7D&worldwide=1
+
+
+
+
+
+
+
+
+-----------------
+
+<article class="show-after-submission">
+	<p>¡Muchas gracias
+		<br>
+		por tu aporte!
+	</p>
+</article>
+
+moqoit:
+<article class="show-after-submission">
+    <p>Qana>aachic dama
+        <br>
+        ro>taanaxanaxaqui
+    </p>
+</article>
+
+wichi:
+<article class="show-after-submission">
+    <p>Nkachiseshi-am         <br>
+            tojh latach'uta.
+    </p>
+</article>

@@ -3,7 +3,38 @@ $body_class = "form";
 
 require_once 'header.php';
 
-$form_result = '';
+$form_result    = '';
+$contact_result = '';
+
+if (isset($_POST['contact'])) {
+	$contact_name    = '';
+	$contact_email   = '';
+	$contact_message = '';
+
+	if (!empty($_POST['contact-name']) && is_string($_POST['contact-name'])) {
+		$contact_name = $_POST['contact-name'];
+	}
+
+	if (!empty($_POST['contact-email']) && is_string($_POST['contact-email'])) {
+		$contact_email = $_POST['contact-email'];
+	}
+
+	if (!empty($_POST['contact-message']) && is_string($_POST['contact-message'])) {
+		$contact_message = $_POST['contact-message'];
+	}
+
+	if (empty($contact_name) || empty($contact_email) || empty($contact_message)) {
+		$contact_result = 'Missing required fields';
+	} else {
+		$result = mail( 'cedeindigena@gmail.com', 'Mensaje de formulario de contacto de Cartografias Chaco', $contact_message, 'From: ' . $contact_email);
+
+		if ( $result ) {
+			$contact_result = 'Success';
+		} else {
+			$contact_result = 'Error';
+		}
+	}
+}
 
 if (isset($_POST['submit'])) {
 	$nombre       = '';
@@ -76,26 +107,27 @@ if (isset($_POST['submit'])) {
 	}
 }
 
+if ( $contact_result === 'Success' ) {
+	?>
+<section class="contact-us">
+	<article class="show-after-submission">
+		<p>Gracias por tu consulta, te responderemos a la brevedad</p>
+	</article>
+</section>
+	<?php
+}
 
 if ($form_result === 'Success') {
 	chaco_set_user_cookie();
 
 	header( 'Location: ' . APP_HOME_URL . 'mapa.php#lat=-27.451389658914252&lng=-58.98666858673096&zoom=16' );
 	exit;
-	?>
-	<article class="show-after-submission">
-		<p>¡Muchas gracias
-			<br>
-			por tu aporte!
-		</p>
-	</article>
-	<?php
 } else {
 	?>
 	<form action="" method="POST">
 		<?php if ($form_result === 'Error') { ?>
 		<article class="show-after-submission">
-			<p>Hubo un error en la carga del formulario, vuelva a intentarlo o escribinos a <a href="mailto:test@test.com"></p>
+			<p>Hubo un error en la carga del formulario, vuelva a intentarlo o escribinos a <a href="mailto:cedeindigena@gmail.com"></p>
 		</article>
 		<?php } ?>
 		<?php if ($form_result === 'Missing required fields') { ?>
@@ -131,23 +163,32 @@ if ($form_result === 'Success') {
 }
 ?>
 
+<?php
+if ( $contact_result !== 'Success' ) {
+	?>
 <section class="contact-us">
-    <h2>Si tenés dudas o sugerencias, escribinos</h2>
+	<h2>Si tenés dudas o sugerencias, escribinos</h2>
     <form method="post">
+	<?php if ($contact_result === 'Error') { ?>
+		<article class="show-after-submission">
+			<p>Hubo un error en la carga del formulario, vuelva a intentarlo o escribinos a <a href="mailto:cedeindigena@gmail.com"></p>
+		</article>
+		<?php } ?>
+		<?php if ($contact_result === 'Missing required fields') { ?>
+		<article class="show-after-submission">
+			<p>Por favor, completa todos los campos requeridos</p>
+		</article>
+		<?php } ?>
         <strong>Dejanos tu consulta</strong>
-        <label for="">Nombre <input type="text" placeholder="Escribí tu nombre"></label>
-        <label for="">Mail <input type="mail" placeholder="Escribí tu mail"></label>
-        <label for="">Consulta<textarea name="" id="" cols="30" rows="10" placeholder="Escribí tu consulta"></textarea></label>
+        <label>Nombre <input type="text" name="contact-name" placeholder="Escribí tu nombre"></label>
+        <label>Mail <input type="mail" name="contact-email" placeholder="Escribí tu mail"></label>
+        <label>Consulta<textarea name="contact-message" id="" cols="30" rows="10" placeholder="Escribí tu consulta"></textarea></label>
         <button>Enviar</button>
     </form>
-    <article class="show-after-submission">
-        <p>¡Muchas gracias
-            <br>
-            por tu aporte!
-        </p>
-    </article>
+	<?php
+}
+?>
 </section>
-
 <?php
 
 require_once 'footer.php';

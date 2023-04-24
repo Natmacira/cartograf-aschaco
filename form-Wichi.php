@@ -22,11 +22,7 @@ require_once 'header-Wichi.php';
 
 
 </form>
-<article class="show-after-submission">
-    <p>Nkachiseshi-am         <br>
-            tojh latach'uta.
-    </p>
-</article>
+
 
 <section class="contact-us">
     <h2>Che atha-amhu mañhey tojh hana wusey che lawu atshonhaya.</h2>
