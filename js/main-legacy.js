@@ -1631,25 +1631,34 @@ var cartografiaschaco = {
 						me.sparql_filter += ' UNION ';
 					}
 
-					if (filters[i] === 'moqoit') {
+					if (filters[i].value === 'moqoit') {
 						me.sparql_filter += '{?q p:P2596 ?statement0. ?statement0 (ps:P2596/(wdt:P279*)) wd:Q1284276. }';
 						me.sparql_filter += ' UNION ';
 						me.sparql_filter += '{?q p:P2596 ?statement0. ?statement0 (ps:P2596/(wdt:P279*)) wd:Q3027047. }';
 					}
 
-					if (filters[i] === 'qom') {
+					if (filters[i].value === 'qom') {
 						me.sparql_filter += '{?q p:P2596 ?statement0. ?statement0 (ps:P2596/(wdt:P279*)) wd:Q1542227. }';
 					}
 
-					if (filters[i] === 'wichi') {
+					if (filters[i].value === 'wichi') {
 						me.sparql_filter += '{?q p:P2596 ?statement0. ?statement0 (ps:P2596/(wdt:P279*)) wd:Q3099764. }';
 						me.sparql_filter += ' UNION ';
 						me.sparql_filter += '{?q p:P2596 ?statement0. ?statement0 (ps:P2596/(wdt:P279*)) wd:Q3027906. }';
 					}
 
-					me.worldwide = true;
-					me.updateLayers();
 				}
+
+				console.log( me.sparql_filter );
+
+				if ( me.sparql_filter === '') {
+					me.sparql_filter = $.trim('');
+					me.worldwide = false;
+				} else {
+					me.worldwide = true;
+				}
+
+				me.updateLayers();
 			});
 		}
 		$('#sparql_filter_clear').click(function () {
