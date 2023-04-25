@@ -5,9 +5,9 @@ require_once 'header-Moqoit.php';
 
 <section class="map-section">
     <p class="highlighted-text">Nataxare> plataforma ñachiita óna >laua lomalate quiyi >ishit ajñi, naqairishiguim chaqai dalaxachi> na>ma hueetaugui na>qaataxanaxac chaqai na>ma no>ueenataxac na> moqoit chaqai nahua liỹaripi quena> senqatalec Chaco: Qom, Wichi, Moqoit.</p>
-    <embed src="<?php echo APP_HOME_URL . 'mapa-embed.php'; ?>#lat=-27.451389658914252&lng=-58.98666858673096&zoom=16" type="">
+    <embed src="<?php echo APP_HOME_URL . 'mapa-embed.php'; ?>#lat=-27.451389658914252&lng=-58.98666858673096&zoom=15" type="">
     <div class="charge-items">
-        <a href="mapa.php#lat=-27.451389658914252&lng=-58.98666858673096&zoom=16"><strong>+</strong>
+        <a href="mapa.php#lat=-27.451389658914252&lng=-58.98666858673096&zoom=15"><strong>+</strong>
             <p>Naqairishiguim <br> rqui>i/>xaỹaxanaxac/na>ajhnec </p>
         </a>
         <p class="highlighted-text">Ajñi nataxare na>ajhnec da co>vinetegue da qai>naashiguim naua no’ueenatec</p>

@@ -16,7 +16,7 @@ var cartografiaschaco = {
 	files_in_main_commons_category: {},
 	thumb_size: 200,
 	sparql_filter: '',
-	language: 'en',
+	language: 'es',
 	max_items: 1000,
 	upload_mode: 'upload',
 	current_tile_layer: 'osm',
@@ -200,30 +200,23 @@ var cartografiaschaco = {
 	createPopup: function (entry) {
 		var me = this;
 		var h = '';
-		h += "<div>";
-		h += "<div style='text-align:center'>";
-		h += "<div><a href='" + escattr(entry.url) + "' target='_blank'><b>" + me.escapeHTML(entry.label) + "</b></a>";
-		if (typeof entry.mixnmatch != 'undefined' && entry.mixnmatch.ext_url != '') {
-			server = me.escapeHTML(entry.mixnmatch.ext_url.replace(/^[a-z]+?:\/\/(.+?)\/.*$/, '$1'));
-			h += " [<a href='" + me.escapeHTML(entry.mixnmatch.ext_url) + "' target='_blank'>" + server + "</a>]";
-		}
-		h += "</div>";
-		if (typeof entry.description != 'undefined') h += "<div>" + me.escapeHTML(entry.description) + "</div>";
-		if (typeof entry.note != 'undefined') h += "<div><i>" + me.escapeHTML(entry.note) + "</i></div>";
+
+		h += "<article class='wikidata-entry-container'>";
+		h += "<h5>" + me.escapeHTML(entry.label) + "</h5>";
+
+		if (typeof entry.description != 'undefined') h += "<p>" + me.escapeHTML(entry.description) + "</p>";
+		if (typeof entry.note != 'undefined') h += "<p><i>" + me.escapeHTML(entry.note) + "</i></p>";
 
 		if (typeof entry.street != 'undefined') {
-			h += "<div>&#127968; <i>" + me.escapeHTML(entry.street) + "</i></div>";
+			h += "<p>&#127968; <i>" + me.escapeHTML(entry.street) + "</i></p>";
 		}
 
-		if (typeof entry.mixnmatch != 'undefined') {
-			if (entry.mixnmatch.q != null) {
-				var q = entry.mixnmatch.q;
-				var qlink = "<a href='https://www.wikidata.org/wiki/Q" + q + "' target='_blank'>Q" + q + "</a>";
-				if (entry.mixnmatch.user == 0) h += "<div><i>Preliminarily</i> matched to " + qlink + "</div>";
-				else h += "<div>Matched to " + qlink + "</div>";
-			} else {
-				h += "<div><i>Not matched to Wikidata</i></div>";
-			}
+		if (typeof entry.url != 'undefined') {
+			h += "<a class='wikidata-link' href='" + escattr(entry.url) + "' target='_blank'>Ver en Wikidata</a>";
+		}
+
+		if (typeof entry.page != 'undefined') {
+			h += "<div class='entry-page'>ID: " + entry.page + "</div>";
 		}
 
 		if (entry.mode == 'flickr') {
@@ -249,50 +242,50 @@ var cartografiaschaco = {
 			if (entry.mode == 'commons') {
 				h += "<div class='popup_section'>";
 				h += "<a href='#' image='" + escattr(entry.image) + "' lat='" + entry.pos[0] + "' lng='" + entry.pos[1] + "' class='create_item_from_image' onclick='return cartografiaschaco.createItemFromImage($(this));return false'>" + me.tt.t('create_wd_from_image') + "</a>";
+				h += "<a class='wikidata-link' href='" + escattr(entry.url) + "' target='_blank'>Ver en Commons</a>";
 				h += "</div>";
 			}
 
 		} else if (entry.mode == 'wikidata') { // Wikidata, no image
 
-			h += "<div>" + entry.page + "</div>";
 
-			if (entry.no_image) {
-			} else if (wsm_comm.isLoggedIn()) {
-				var desc = "== {{int:filedesc}} ==\n{{Information\n|Description=[[d:" + entry.page + "|" + entry.label + "]]\n|Source={{own}}\n|Date=\n|Author=[[User:" + wsm_comm.userinfo.name + "|]]\n|Permission=\n|other_versions=\n}}\n";
-				desc += "{{Object location|" + entry.pos[0] + "|" + entry.pos[1] + "}}\n<!--LOC-->\n\n";
-				desc += "== {{int:license-header}} ==\n{{self|cc-by-sa-3.0}}";
+			// if (entry.no_image) {
+			// } else if (wsm_comm.isLoggedIn()) {
+			// 	var desc = "== {{int:filedesc}} ==\n{{Information\n|Description=[[d:" + entry.page + "|" + entry.label + "]]\n|Source={{own}}\n|Date=\n|Author=[[User:" + wsm_comm.userinfo.name + "|]]\n|Permission=\n|other_versions=\n}}\n";
+			// 	desc += "{{Object location|" + entry.pos[0] + "|" + entry.pos[1] + "}}\n<!--LOC-->\n\n";
+			// 	desc += "== {{int:license-header}} ==\n{{self|cc-by-sa-3.0}}";
 
-				h += "<div style='margin-top:15px'>";
-				h += "<form method='post' enctype='multipart/form-data' action='" + wsm_comm.api + "' class='form form-inline' target='_blank'>";
-				h += '<label class="btn btn-primary btn-file">' + me.tt.t('upload_file') + ' <input name="file" type="file" accept="image/*;capture=camera" onchange="cartografiaschaco.uploadFileHandler(this)" style="display: none;"></label>';
-				h += "<input type='hidden' name='action' value='" + me.upload_mode + "' />";
-				h += "<input type='hidden' name='q' value='" + entry.page + "' />";
-				h += "<input type='hidden' name='wpDestFile' value='" + escattr(entry.label) + ".jpg' />";
-				h += "<input type='hidden' name='wpUploadDescription' value='" + escattr(desc) + "' />";
-				h += "<input type='submit' style='display:none' name='wpUpload' value='" + me.tt.t('upload_file') + "' />";
-				h += "</form>";
-				h += "</div>";
+				// h += "<div style='margin-top:15px'>";
+				// h += "<form method='post' enctype='multipart/form-data' action='" + wsm_comm.api + "' class='form form-inline' target='_blank'>";
+				// h += '<label class="btn btn-primary btn-file">' + me.tt.t('upload_file') + ' <input name="file" type="file" accept="image/*;capture=camera" onchange="cartografiaschaco.uploadFileHandler(this)" style="display: none;"></label>';
+				// h += "<input type='hidden' name='action' value='" + me.upload_mode + "' />";
+				// h += "<input type='hidden' name='q' value='" + entry.page + "' />";
+				// h += "<input type='hidden' name='wpDestFile' value='" + escattr(entry.label) + ".jpg' />";
+				// h += "<input type='hidden' name='wpUploadDescription' value='" + escattr(desc) + "' />";
+				// h += "<input type='submit' style='display:none' name='wpUpload' value='" + me.tt.t('upload_file') + "' />";
+				// h += "</form>";
+				// h += "</div>";
 
-				h += "<div class='add_image2item'>";
-				h += "<form class='form form-inline' onSubmit='return cartografiaschaco.addImageToItemHandler($(this))'>";
-				h += "<input type='hidden' name='q' value='" + escattr(entry.page) + "' />";
-				h += "<input type='text' name='filename' placeholder='" + escattr(me.tt.t('commons_file_name')) + "' />";
-				h += "<input type='submit' value='" + escattr(me.tt.t('add2item')) + "' />";
-				h += "</div>";
+				// h += "<div class='add_image2item'>";
+				// h += "<form class='form form-inline' onSubmit='return cartografiaschaco.addImageToItemHandler($(this))'>";
+				// h += "<input type='hidden' name='q' value='" + escattr(entry.page) + "' />";
+				// h += "<input type='text' name='filename' placeholder='" + escattr(me.tt.t('commons_file_name')) + "' />";
+				// h += "<input type='submit' value='" + escattr(me.tt.t('add2item')) + "' />";
+				// h += "</div>";
 
-			} else {
+			// } else {
 
-				if (wsm_comm.is_app) {
-					h += "<div><button class='btn btn-primary' onclick='wsm_comm.appLogin();return false'>Log in!</button></div>";
-				} else {
-					h += "<div>";
-					h += "<form method='post' action='" + wsm_comm.api + "'>";
-					h += "<input type='hidden' name='action' value='authorize' />";
-					h += "<input type='submit' class='btn btn-primary' value='" + me.tt.t('authorize_upload') + "' />";
-					h += "</form>";
-					h += "</div>";
-				}
-			}
+			// 	if (wsm_comm.is_app) {
+			// 		h += "<div><button class='btn btn-primary' onclick='wsm_comm.appLogin();return false'>Log in!</button></div>";
+			// 	} else {
+			// 		h += "<div>";
+			// 		h += "<form method='post' action='" + wsm_comm.api + "'>";
+			// 		h += "<input type='hidden' name='action' value='authorize' />";
+			// 		h += "<input type='submit' class='btn btn-primary' value='" + me.tt.t('authorize_upload') + "' />";
+			// 		h += "</form>";
+			// 		h += "</div>";
+			// 	}
+			// }
 
 		} else if (entry.mode == 'wikipedia' && typeof entry.server != 'undefined') {
 
@@ -300,35 +293,34 @@ var cartografiaschaco = {
 
 		}
 
-		if (typeof entry.commonscat != 'undefined') {
-			h += "<div class='popup_section'>";
-			h += "<a href='//commons.wikimedia.org/wiki/Category:" + escattr(encodeURIComponent(entry.commonscat.replace(/ /g, '_'))) + "' target='_blank' title='" + escattr('' + me.tt.t('commons_category')) + "'>" + me.escapeHTML(entry.commonscat) + "</a>";
-			h += " | ";
-			//if ( entry.commonscat == me.main_commons_category ) {
-			// THIS DOESN"T WORK CORRECTLY
-			//	h += "<a href='#' onclick='cartografiaschaco.clear_commons_main_category()'>"+me.tt.t('remove_image_highlight')+"</a>" ;
-			//} else {
-			h += "<a href='#' onclick='cartografiaschaco.set_commons_main_category(\"" + escattr(entry.commonscat) + "\")'>" + me.tt.t('highlight_images_from_category') + "</a>";
-			//}
-			h += "</div>";
-		}
+		// if (typeof entry.commonscat != 'undefined') {
+		// 	h += "<div class='popup_section'>";
+		// 	h += "<a href='//commons.wikimedia.org/wiki/Category:" + escattr(encodeURIComponent(entry.commonscat.replace(/ /g, '_'))) + "' target='_blank' title='" + escattr('' + me.tt.t('commons_category')) + "'>" + me.escapeHTML(entry.commonscat) + "</a>";
+		// 	h += " | ";
+		// 	//if ( entry.commonscat == me.main_commons_category ) {
+		// 	// THIS DOESN"T WORK CORRECTLY
+		// 	//	h += "<a href='#' onclick='cartografiaschaco.clear_commons_main_category()'>"+me.tt.t('remove_image_highlight')+"</a>" ;
+		// 	//} else {
+		// 	h += "<a href='#' onclick='cartografiaschaco.set_commons_main_category(\"" + escattr(entry.commonscat) + "\")'>" + me.tt.t('highlight_images_from_category') + "</a>";
+		// 	//}
+		// 	h += "</div>";
+		// }
 
-		h += "<div class='popup_coords'><span class='coordinates'>" + entry.pos[0] + ", " + entry.pos[1] + "</span>";
-		h += " <a style='user-select:none' href='http://www.instantstreetview.com/@" + entry.pos[0] + "," + entry.pos[1] + ",0h,0p,1z' tt_title='streetview' target='_blank'>&#127968;</a>";
-		if (wsm_comm.isLoggedIn() && typeof entry.mixnmatch == 'undefined') {
-			h += " [<a href='#' style='user-select:none' onclick='cartografiaschaco.editCoordinates(this,\"" + entry.page + "\"," + entry.pos[0] + "," + entry.pos[1] + ");return false' title='edit coordinates'>e</a>]";
-		}
-		h += "</div>";
+		// h += "<div class='popup_coords'><span class='coordinates'>" + entry.pos[0] + ", " + entry.pos[1] + "</span>";
+		// h += " <a style='user-select:none' href='http://www.instantstreetview.com/@" + entry.pos[0] + "," + entry.pos[1] + ",0h,0p,1z' tt_title='streetview' target='_blank'>&#127968;</a>";
+		// if (wsm_comm.isLoggedIn() && typeof entry.mixnmatch == 'undefined') {
+		// 	h += " [<a href='#' style='user-select:none' onclick='cartografiaschaco.editCoordinates(this,\"" + entry.page + "\"," + entry.pos[0] + "," + entry.pos[1] + ");return false' title='edit coordinates'>e</a>]";
+		// }
+		// h += "</div>";
 
-		if (typeof me.marker_me != 'undefined') {
-			var pos = me.marker_me.getLatLng();
-			h += "<div style='font-size:10pt'>";
-			h += "<a target='_blank' href='https://maps.google.co.uk/maps?dirflg=w&saddr=" + pos.lat + "," + pos.lng + "&daddr=" + entry.pos[0] + "," + entry.pos[1] + "'>" + me.tt.t('route') + "</a>";
-			h += "</div>";
-		}
+		// if (typeof me.marker_me != 'undefined') {
+		// 	var pos = me.marker_me.getLatLng();
+		// 	h += "<div style='font-size:10pt'>";
+		// 	h += "<a target='_blank' href='https://maps.google.co.uk/maps?dirflg=w&saddr=" + pos.lat + "," + pos.lng + "&daddr=" + entry.pos[0] + "," + entry.pos[1] + "'>" + me.tt.t('route') + "</a>";
+		// 	h += "</div>";
+		// }
 
-		h += "</div>"; // center
-		h += "</div>";
+		h += "</article>";
 
 		var ret = L.popup().setContent(h);
 		return ret;

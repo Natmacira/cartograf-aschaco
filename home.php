@@ -6,9 +6,9 @@ require_once 'header.php';
 <section class="map-section">
     <p class="highlighted-text">En esta plataforma encontrarás un mapa que permite visualizar, cargar y editar contenido relativo a la historia y cultura de los pueblos indígenas del Chaco:
         Qom, Wichi y Moqoit.</p>
-    <embed src="<?php echo APP_HOME_URL . 'mapa-embed.php'; ?>#lat=-27.451389658914252&lng=-58.98666858673096&zoom=16" type="">
+    <embed src="<?php echo APP_HOME_URL . 'mapa-embed.php'; ?>#lat=-27.451389658914252&lng=-58.98666858673096&zoom=15" type="">
     <div class="charge-items">
-        <a href="mapa.php#lat=-27.451389658914252&lng=-58.98666858673096&zoom=16"><strong>+</strong>
+        <a href="mapa.php#lat=-27.451389658914252&lng=-58.98666858673096&zoom=15"><strong>+</strong>
             <p>Subí tu foto / audio / video</p>
         </a>
         <p class="highlighted-text">Mirá el video para aprender cómo subir contenido</p>

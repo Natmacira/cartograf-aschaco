@@ -5,9 +5,9 @@ require_once 'header-Wichi.php';
 
 <section class="map-section">
     <p class="highlighted-text">Che layahin plataformana law'enla mapa, tojha iwunlasey che am lathatsi mañhey tojh pajhchhehen, hotewuye , tokeyis, toka historias tojh wichi, Moqoit wit Qom kamayek.</p>
-    <embed src="<?php echo APP_HOME_URL . 'mapa-embed.php'; ?>#lat=-27.451389658914252&lng=-58.98666858673096&zoom=16" type="">
+    <embed src="<?php echo APP_HOME_URL . 'mapa-embed.php'; ?>#lat=-27.451389658914252&lng=-58.98666858673096&zoom=15" type="">
     <div class="charge-items">
-        <a href="mapa.php#lat=-27.451389658914252&lng=-58.98666858673096&zoom=16"><strong>+</strong>
+        <a href="mapa.php#lat=-27.451389658914252&lng=-58.98666858673096&zoom=15"><strong>+</strong>
             <p>Thattsi apeyak /apak / video</p>
         </a>
         <p class="highlighted-text">Yahin video ichefwena-am e&#39;p tiwuye tojh tithatsi mayek.</p>
