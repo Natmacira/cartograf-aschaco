@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Athe makpahope cartografías abiertas</title>
-    <link rel="stylesheet" href="style.min.css">
+    <link rel="stylesheet" href="style.min.css?v=1">
     <!-- <script src="js/main-legacy.js"></script>
     <script src="js/sm_comm.js"></script> -->
     <script src="js/burger-menu.js"></script>

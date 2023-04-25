@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 19, 2023 at 08:23 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Servidor: localhost:3306
+-- Tiempo de generación: 25-04-2023 a las 09:58:55
+-- Versión del servidor: 10.3.38-MariaDB
+-- Versión de PHP: 8.1.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,24 +18,49 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `cartografiaschaco.com`
+-- Base de datos: `josieshu_cartografias_chaco`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `nations`
+-- Estructura de tabla para la tabla `entries`
+--
+
+CREATE TABLE `entries` (
+  `id` int(255) NOT NULL,
+  `commons_filename` varchar(255) NOT NULL,
+  `wikidata_id` varchar(255) NOT NULL,
+  `date` datetime NOT NULL,
+  `commons_error` varchar(255) NOT NULL,
+  `wikidata_error` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `nations`
 --
 
 CREATE TABLE `nations` (
   `id` int(255) NOT NULL,
   `name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `nations`
+--
+
+INSERT INTO `nations` (`id`, `name`) VALUES
+(1, 'Qom'),
+(2, 'Wichí'),
+(3, 'Moqoit'),
+(4, 'Otro');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Estructura de tabla para la tabla `users`
 --
 
 CREATE TABLE `users` (
@@ -46,64 +71,52 @@ CREATE TABLE `users` (
   `parcialidades` varchar(255) NOT NULL,
   `community` varchar(255) NOT NULL,
   `institution` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Table structure for table `entries`
---
-
-CREATE TABLE `entries` (
-  `id` int(255) NOT NULL,
-  `commons_filename` varchar(255) NOT NULL,
-  `wikidata_id` varchar(255) NOT NULL,
-  `date` DATETIME NOT NULL,
-  `commons_error` varchar(255) NOT NULL,
-  `wikidata_error` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-
---
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `nations`
---
-ALTER TABLE `nations`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `entries`
+-- Indices de la tabla `entries`
 --
 ALTER TABLE `entries`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for table `nations`
+-- Indices de la tabla `nations`
 --
 ALTER TABLE `nations`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+  ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for table `users`
+-- Indices de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+  ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for table `entries`
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `entries`
 --
 ALTER TABLE `entries`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
 
+--
+-- AUTO_INCREMENT de la tabla `nations`
+--
+ALTER TABLE `nations`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

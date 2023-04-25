@@ -1,6 +1,13 @@
 <?php
 $body_class = "form";
 
+if ($form_result === 'Success') {
+	chaco_set_user_cookie();
+
+	header( 'Location: ' . APP_HOME_URL . 'mapa.php#lat=-27.451389658914252&lng=-58.98666858673096&zoom=15' );
+	exit;
+}
+
 require_once 'header-Wichi.php';
 
 $form_result    = '';
@@ -106,12 +113,7 @@ if (isset($_POST['contact'])) {
 		}
 	}
 
-	if ($form_result === 'Success') {
-		chaco_set_user_cookie();
-
-		header( 'Location: ' . APP_HOME_URL . 'mapa.php#lat=-27.451389658914252&lng=-58.98666858673096&zoom=15' );
-		exit;
-	} else {
+	if ($form_result !== 'Success') {
 		?>
 		<form action="" method="POST">
 			<?php if ($form_result === 'Error') { ?>

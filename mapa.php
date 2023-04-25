@@ -39,7 +39,7 @@ if ( ! chaco_check_user_cookie() ) {
 	<link rel="stylesheet" href="<?php echo APP_HOME_URL; ?>lib/leaflet/leaflet.css">
 	<link rel="stylesheet" href="<?php echo APP_HOME_URL; ?>lib/leaflet/leaflet.contextmenu.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="style.min.css">
+	<link rel="stylesheet" href="style.min.css?v=1">
 	<title>Cartografías Abiertas</title>
 	<script src='<?php echo APP_HOME_URL; ?>lib/jquery/jquery.min.js'></script>
 	<script src='<?php echo APP_HOME_URL; ?>lib/tether/tether.min.js'></script>
@@ -66,7 +66,7 @@ if ( ! chaco_check_user_cookie() ) {
 
 </head>
 
-<body class="page-mapa <?php if ( ! $is_user_registered ) { echo 'unregistered-user'; } ?>">
+<body class="page-mapa">
 	<header>
 		<img src="img/mobile/Banner_of_the_Qulla_Suyu.png" alt="">
 		<p class="header-text"><a href="index.php"> Cartografías abiertas

@@ -15,7 +15,7 @@ require_once 'functions.php';
 	<link rel="stylesheet" href="<?php echo APP_HOME_URL; ?>lib/leaflet/leaflet.css">
 	<link rel="stylesheet" href="<?php echo APP_HOME_URL; ?>lib/leaflet/leaflet.contextmenu.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="style.min.css">
+	<link rel="stylesheet" href="style.min.css?v=1">
 	<title>Cartografías Abiertas</title>
 	<script src='<?php echo APP_HOME_URL; ?>lib/jquery/jquery.min.js'></script>
 	<script src='<?php echo APP_HOME_URL; ?>lib/tether/tether.min.js'></script>
