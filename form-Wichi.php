@@ -1,7 +1,7 @@
 <?php
 $body_class = "form";
 
-require_once 'header.php';
+require_once 'header-Wichi.php';
 
 $form_result    = '';
 $contact_result = '';
@@ -188,4 +188,4 @@ if ( $contact_result === 'Success' ) {
 </section>
 <?php
 
-require_once 'footer.php';
+require_once 'footer-Wichi.php';
