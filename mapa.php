@@ -51,7 +51,7 @@ if ( ! chaco_check_user_cookie() ) {
 	<script src="<?php echo APP_HOME_URL; ?>lib/magnustools/wikidata.js"></script>
 	<script src="<?php echo APP_HOME_URL; ?>lib/tooltranslate/tt.js"></script>
 	<script>
-		var cartografiasTranslations = <?php echo file_get_contents( 'lib\tooltranslate\data\languages-custom.json'); ?>;
+		var cartografiasTranslations = <?php echo file_get_contents( 'lib/tooltranslate/data/languages-custom.json'); ?>;
 		var homeUrl = '<?php echo APP_HOME_URL; ?>';
 	</script>
 	<script src="js/main-legacy.js"></script>

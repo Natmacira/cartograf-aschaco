@@ -1,15 +1,6 @@
 <?php
 $body_class = "form";
 
-if ($form_result === 'Success') {
-	chaco_set_user_cookie();
-
-	header( 'Location: ' . APP_HOME_URL . 'mapa.php#lat=-27.451389658914252&lng=-58.98666858673096&zoom=15' );
-	exit;
-}
-
-require_once 'header-Moqoit.php';
-
 $form_result    = '';
 $contact_result = '';
 
@@ -113,7 +104,13 @@ if (isset($_POST['contact'])) {
 		}
 	}
 
-	if ($form_result !== 'Success') {
+	if ($form_result === 'Success') {
+		chaco_set_user_cookie();
+
+		header( 'Location: ' . APP_HOME_URL . 'mapa.php#lat=-27.451389658914252&lng=-58.98666858673096&zoom=15' );
+		exit;
+	} else {
+		require_once 'header-Moqoit.php';
 		?>
 		<form action="" method="POST">
 			<?php if ($form_result === 'Error') { ?>
@@ -152,6 +149,8 @@ if (isset($_POST['contact'])) {
 		<?php
 	}
 }
+
+require_once 'header-Moqoit.php';
 
 if ( $contact_result === 'Success' ) {
 	?>
