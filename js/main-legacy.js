@@ -21,7 +21,7 @@ var cartografiaschaco = {
 	upload_mode: 'upload',
 	current_tile_layer: 'osm',
 	tile_layers: {
-		osm: { name: 'OSM (WMF)', url: 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' },
+		osm: { name: 'OSM (WMF)', url: 'https://cartografiaschaco.altcooperativa.com/image-proxy/?z={z}&x={x}&y={y}.png', attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' },
 		esri_wm: { name: 'ESRI WorldMap', url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community' },
 		esri_topo: { name: 'ESRI TopoMap', url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community' },
 		stamen_terrain: { name: 'Stamen Terrain', url: 'https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.png', subdomains: 'abcd', attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' },

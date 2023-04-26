@@ -1,6 +1,8 @@
 <?php
-$body_class = "form";
 
+require_once 'functions.php';
+
+$body_class     = "form";
 $form_result    = '';
 $contact_result = '';
 
@@ -24,7 +26,7 @@ if (isset($_POST['contact'])) {
 	if (empty($contact_name) || empty($contact_email) || empty($contact_message)) {
 		$contact_result = 'Missing required fields';
 	} else {
-		$result = mail( 'cedeindigena@gmail.com', 'Mensaje de formulario de contacto de Cartografias Chaco', $contact_message, 'From: ' . $contact_email);
+		$result = mail( 'natimciraolodigena@gmail.com', 'Mensaje de formulario de contacto de Cartografias Chaco', $contact_message, 'From: ' . $contact_email);
 
 		if ( $result ) {
 			$contact_result = 'Success';
@@ -115,7 +117,7 @@ if (isset($_POST['contact'])) {
 		<form action="" method="POST">
 			<?php if ($form_result === 'Error') { ?>
 			<article class="show-after-submission">
-				<p>Hubo un error en la carga del formulario, vuelva a intentarlo o escribinos a <a href="mailto:cedeindigena@gmail.com">cedeindigena@gmail.com</a></p>
+				<p>Hubo un error en la carga del formulario, vuelva a intentarlo o escribinos a <a href="mailto:natimciraolodigena@gmail.com">natimciraolodigena@gmail.com</a></p>
 			</article>
 			<?php } ?>
 			<?php if ($form_result === 'Missing required fields') { ?>
@@ -169,7 +171,7 @@ if ( $contact_result === 'Success' ) {
 		<input type="hidden" name="contact" value="1">
 	<?php if ($contact_result === 'Error') { ?>
 		<article class="show-after-submission">
-			<p>Hubo un error en la carga del formulario, volvé a intentarlo o escribinos a <a href="mailto:cedeindigena@gmail.com">cedeindigena@gmail.com</a></p>
+			<p>Hubo un error en la carga del formulario, volvé a intentarlo o escribinos a <a href="mailto:natimciraolodigena@gmail.com">natimciraolodigena@gmail.com</a></p>
 		</article>
 		<?php } ?>
 		<?php if ($contact_result === 'Missing required fields') { ?>

@@ -15,8 +15,7 @@ if ( ! chaco_check_user_cookie() ) {
 			header( 'Location: form-Wichi.php' );
 		} elseif ( $referer_path === 'home-Moqoit.php' ) {
 			header( 'Location: form-Moqoit.php' );
-		}
-		else {
+		} else {
 			header( 'Location: form.php' );
 		}
 	} else {
@@ -250,15 +249,16 @@ if ( ! chaco_check_user_cookie() ) {
 			<input type="hidden" name="lat" id="new-item-lat">
 			<input type="hidden" name="long" id="new-item-lng">
 			<input type="hidden" name="lang" id="new-item-lang" value="es">
-			<label>Título *
+			<label>
+				<span data-translation-id="titulo">Título</span> *
 				<input type="text" name="title" id="new-item-titulo" placeholder="Título" required>
 			</label>
 			<label>
-				Descripción *
+				<span data-translation-id="descripcion">Descripción</span> *
 				<input type="text" name="description" id="new-item-description" placeholder="Descripción" required>
 			</label>
 			<p>
-				Pueblo Nación *
+				<span data-translation-id="nation">Pueblo Nación</span> *
 				<label>
 					<input type="checkbox" name="nation[]" class="new-item-nation" value="qo"> Qom
 				</label>
@@ -271,11 +271,11 @@ if ( ! chaco_check_user_cookie() ) {
 
 			</p>
 			<label>
-				Agrega una foto (opcional)
+				<span data-translation-id="archivo">Carga la imagen / Documentación</span> *
 				<input type="file" name="image" id="new-item-image" placeholder="Foto">
 			</label>
 
-			<button class="submit-form">Agregar</button>
+			<button class="submit-form" data-translation-id="enviar">Enviar</button>
 		</form>
 	</div>
 
