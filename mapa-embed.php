@@ -68,12 +68,12 @@ require_once 'functions.php';
 				</li>
 			</ul>
 
-			<ul class="language-ul">
+			<!-- <ul class="language-ul">
 				<li><label><input type="radio" class="language-switch" name="language-switch" value="qom">Qom</label></li>
 				<li><label><input type="radio" class="language-switch" name="language-switch" value="wichi">Wichí</label></li>
 				<li><label><input type="radio" class="language-switch" name="language-switch" value="moqoit">Moqoit</label></li>
 				<li><label><input type="radio" class="language-switch" name="language-switch" value="es" checked>Español</label></li>
-			</ul>
+			</ul> -->
 
 			<article class="sign-in-map">
 				<p class="mobile-version" data-translation-id="instructivo-movil">Mantené presionada la pantalla del <br> mapa para agregar contenido</p>

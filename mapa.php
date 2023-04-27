@@ -123,12 +123,12 @@ if ( ! chaco_check_user_cookie() ) {
 			</ul>
 
 			<article class="sign-in-map">
-				<p class="mobile-version" data-translation-id="instructivo-movil">Mantené presionada la pantalla del <br> mapa para agregar contenido
+				<p class="mobile-version"><span data-translation-id="instructivo-movil">Mantené presionada la pantalla del <br> mapa para agregar contenido</span>
 					<button onclick="$(this).parent().hide()" style="position: absolute; top: 0; right: 0; border: 0; background: transparent;">X</button>
 				</p>
 			</article>
 			<article class="sign-in-map">
-				<p class="desktop-version" data-translation-id="instructivo-computadora">Hacé click derecho en el mapa para <br> agregar contenido
+				<p class="desktop-version"><span data-translation-id="instructivo-computadora">Hacé click derecho en el mapa para <br> agregar contenido</span>
 					<button onclick="$(this).parent().hide()" style="position: absolute; top: 0; right: 0; border: 0; background: transparent;">X</button>
 				</p>
 			</article>

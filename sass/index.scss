@@ -18,13 +18,16 @@ body.index {
                 padding-bottom: 30px;
             }
             figure {
-                width: 166px;
+                width: 130px;
                 height: 203px;
                 border: solid 1px;
                 border-color: $theme-light-gray;
                 margin: 3px;
                 border-radius: 4px;
                 position: relative;
+                @media (min-width: 345px) {
+                    width: 166px;
+                }
                 @media (min-width: 980px) {
                     width: 207px;
                     height: 414px;
