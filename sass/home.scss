@@ -15,11 +15,13 @@ body.home {
 
     embed {
         width: 75%;
-        height: 433px;
+        height: 300px;
+        margin-top: -52px;
         @media (min-width: 980px) {
             width: 59%;
             display: inline;
             height: 433px;
+            margin-top: 0;
         }
     }
     div#top.language-ul {
@@ -72,6 +74,8 @@ body.home {
             &.highlighted-text {
                 font-weight: bold;
                 margin: 8px 10px;
+                z-index: 3;
+                position: relative;
                 &:nth-child(1) {
                     margin: 24px 10px;
                     @media (min-width: 980px) {
@@ -215,6 +219,8 @@ body.home {
         article.who-participates {
             h2 {
                 margin-bottom: 24px;
+                margin-left: 20px;
+                margin-right: 20px;
                 @media (min-width: 980px) {
                     margin-bottom: 25px;
                 }
@@ -288,7 +294,7 @@ body.home {
 
         article.collaborators {
             p {
-                width: 340px;
+                max-width: 340px;
                 text-align: center;
                 display: block;
                 margin: 0 auto;

@@ -43,13 +43,14 @@ require_once 'functions.php';
 		}
 		#top {
 			top: 0 !important;
+			display: none;
 		}
 	</style>
 </head>
 
 <body class="page-mapa unregistered-user">
 	<div id='top'>
-		<nav class="navbar navbar-light bg-faded">
+		<nav class="navbar navbar-light bg-faded" style="display:none">
 			<ul class="nav navbar-nav">
 				<li class="nav-item"><button id='center_on_me' class='btn btn-secondary' tt_title='go_to_my_position'><i class="fa fa-compass" style='font-size:24pt' aria-hidden="true"></i></button></li>
 				<li class='nav-item' style='display:none' id='li_authorize'>

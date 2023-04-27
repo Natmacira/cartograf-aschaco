@@ -116,10 +116,14 @@ if ( ! chaco_check_user_cookie() ) {
 			</ul>
 
 			<ul class="language-ul">
-				<li><label><input type="radio" class="language-switch" name="language-switch" value="qom">Qom</label></li>
-				<li><label><input type="radio" class="language-switch" name="language-switch" value="wichi">Wichí</label></li>
-				<li><label><input type="radio" class="language-switch" name="language-switch" value="moqoit">Moqoit</label></li>
-				<li><label><input type="radio" class="language-switch" name="language-switch" value="es" checked>Español</label></li>
+				<li><input type="radio" class="language-switch" name="language-switch" value="qom" id="qom-input">
+				<label for="qom-input">Qom</label></li>
+				<li><input type="radio" class="language-switch" name="language-switch" value="wichi" id="wichi-input">
+				<label for="wichi-input">Wichí</label></li>
+				<li><input type="radio" class="language-switch" name="language-switch" value="moqoit" id="moqoit-input">
+				<label for="moqoit-input">Moqoit</label></li>
+				<li><input type="radio" class="language-switch" name="language-switch" value="es" checked id="es-input">
+				<label for="es-input">Español</label></li>
 			</ul>
 
 			<article class="sign-in-map">

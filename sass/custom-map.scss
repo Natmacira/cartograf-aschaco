@@ -62,7 +62,10 @@ body.page-mapa {
                     height: 0;
                     position: absolute;
                     left: -500000px;
-
+                    &:checked + label {
+                        background-color: #A40F2C;
+                        color: white;
+                    }
                 }
             }
         }

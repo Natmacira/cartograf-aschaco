@@ -40,6 +40,17 @@ body {
 		background-color: $theme-purple;
 		padding: 4px;
 	}*/
+
+	&.home {
+		main {
+			form {
+				margin: 0 10px;
+				@media (min-width: 980px) {
+					margin: 0 auto;
+				}
+			}
+		}
+	}
 	main {
 		form {
 			margin: 0 auto;
