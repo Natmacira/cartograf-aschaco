@@ -183,21 +183,21 @@ if (
 							'P172' => $p172,
 							// P2596 is the property for "culture"
 							'P2596' => $p2596,
-							'P195'  => array(
-								'mainsnak' => array(
-									'snaktype' => 'value',
-									'property' => 'P195',
-									'datavalue' => array(
-										'type' => 'wikibase-entityid',
-										'value' => array(
-											'entity-type' => 'item',
-											'id' => 'Q117554123', // Cartografías Abiertas
-										),
-									),
-								),
-								'type' => 'statement',
-								'rank' => 'normal',
-							),
+							// 'P195'  => array(
+							// 	'mainsnak' => array(
+							// 		'snaktype' => 'value',
+							// 		'property' => 'P195',
+							// 		'datavalue' => array(
+							// 			'type' => 'wikibase-entityid',
+							// 			'value' => array(
+							// 				'entity-type' => 'item',
+							// 				'id' => 'Q117554123', // Cartografías Abiertas
+							// 			),
+							// 		),
+							// 	),
+							// 	'type' => 'statement',
+							// 	'rank' => 'normal',
+							// ),
 							'P18' => [
 								[
 									'mainsnak' => [
@@ -220,7 +220,9 @@ if (
 				];
 			}
 		}
-	} else {
+	}
+
+	if ( ! isset( $_FILES['image'] ) || empty( $commons_success ) ) {
 		$auth = new UserAndPassword($username, $password);
 		$api  = new ActionApi('https://www.wikidata.org/w/api.php', $auth);
 
@@ -255,21 +257,21 @@ if (
 					'P172' => $p172,
 					// P2596 is the property for "culture"
 					'P2596' => $p2596,
-					'P195'  => array(
-						'mainsnak' => array(
-							'snaktype' => 'value',
-							'property' => 'P195',
-							'datavalue' => array(
-								'type' => 'wikibase-entityid',
-								'value' => array(
-									'entity-type' => 'item',
-									'id' => 'Q117554123', // Cartografías Abiertas
-								),
-							),
-						),
-						'type' => 'statement',
-						'rank' => 'normal',
-					),
+					// 'P195'  => array(
+					// 	'mainsnak' => array(
+					// 		'snaktype' => 'value',
+					// 		'property' => 'P195',
+					// 		'datavalue' => array(
+					// 			'type' => 'wikibase-entityid',
+					// 			'value' => array(
+					// 				'entity-type' => 'item',
+					// 				'id' => 'Q117554123', // Cartografías Abiertas
+					// 			),
+					// 		),
+					// 	),
+					// 	'type' => 'statement',
+					// 	'rank' => 'normal',
+					// ),
 				],
 			]),
 			'token' => $api->getToken(),
@@ -305,7 +307,7 @@ if (
 		exit();
 	}
 
-	$date = date('YYYY-mm-dd h:i:s');
+	$date = date('Y-m-d h:i:s');
 
 	$sql = 'INSERT INTO entries (commons_filename, wikidata_id, date, commons_error, wikidata_error) VALUES
 		("' . $mysqli->real_escape_string($filename) . '",
@@ -323,6 +325,9 @@ if (empty($new_item_id)) {
 	$message = 'Ha habido un error en el proceso. Por favor, verifique que ha completado todos los campos requeridos.';
 } else {
 	$message = 'Se ha cargado con éxito la entrada. El código de la misma es: ' . $new_item_id;
+	if ( ! empty( $commons_error ) ) {
+		$message .= '<br>Se ha producido un error al subir el archivo a Wikimedia Commons. El dominio no está en la lista de dominios permitidos.';
+	}
 }
 
 $body_class = 'submission-result';
