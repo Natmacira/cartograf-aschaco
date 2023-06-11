@@ -1047,6 +1047,7 @@ var cartografiaschaco = {
 	},
 
 	addMarkerMe: function () {
+		return; // In order not to use geolocation to set the current position of the map.
 		var me = this;
 		if (navigator.geolocation) {
 			me.updateMarkerMe(me.pos);
@@ -1205,7 +1206,7 @@ var cartografiaschaco = {
 		me.map.on('overlayadd', function (e) { me.onOverlayAdd(e) });
 		me.map.on('overlayremove', function (e) { me.onOverlayRemove(e) });
 
-		me.addMarkerMe();
+		// me.addMarkerMe();
 		return true;
 	},
 
@@ -1575,7 +1576,7 @@ var cartografiaschaco = {
 				me.pos.lat = params.lat * 1;
 				me.pos.lng = params.lng * 1;
 				me.setMap();
-				me.addMarkerMe();
+				// me.addMarkerMe();
 			} else if (typeof params.q != 'undefined' && params.q.match(/^Q\d+$/)) { // Set location from item parameter
 				var q = params.q;
 				me.setPositionFromQ(q);
