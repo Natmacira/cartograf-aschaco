@@ -237,13 +237,13 @@ if ( ! chaco_check_user_cookie() ) {
 	<div id="search-filter-container">
 		<button id="search-filter-toggler"><img src="lib/leaflet/images/layers-2x.png" alt="Mostrar/ocultar filtros de búsqueda"></button>
 		<label>
-			<input class="search-filter" type="checkbox" name="search-filter[]" value="moqoit">Moqoit
+			<input class="search-filter" type="checkbox" name="search-filter[]" value="moqoit" checked>Moqoit
 		</label>
 		<label>
-			<input class="search-filter" type="checkbox" name="search-filter[]" value="qom">Qom
+			<input class="search-filter" type="checkbox" name="search-filter[]" value="qom" checked>Qom
 		</label>
 		<label>
-			<input class="search-filter" type="checkbox" name="search-filter[]" value="wichi">Wichí
+			<input class="search-filter" type="checkbox" name="search-filter[]" value="wichi" checked>Wichí
 		</label>
 	</div>
 

@@ -24,7 +24,8 @@ var cartografiaschaco = {
 	main_commons_category: '',
 	files_in_main_commons_category: {},
 	thumb_size: 200,
-	sparql_filter: '%7B%3Fq%20p%3AP2596%20%3Fstatement0.%20%3Fstatement0%20(ps%3AP2596%2F(wdt%3AP279*))%20wd%3AQ1284276.%20%7D%20UNION%20%7B%3Fq%20p%3AP2596%20%3Fstatement0.%20%3Fstatement0%20(ps%3AP2596%2F(wdt%3AP279*))%20wd%3AQ3027047.%20%7D%20UNION%20%7B%3Fq%20p%3AP2596%20%3Fstatement0.%20%3Fstatement0%20(ps%3AP2596%2F(wdt%3AP279*))%20wd%3AQ1542227.%20%7D%20UNION%20%7B%3Fq%20p%3AP2596%20%3Fstatement0.%20%3Fstatement0%20(ps%3AP2596%2F(wdt%3AP279*))%20wd%3AQ3099764.%20%7D%20UNION%20%7B%3Fq%20p%3AP2596%20%3Fstatement0.%20%3Fstatement0%20(ps%3AP2596%2F(wdt%3AP279*))%20wd%3AQ3027906.%20%7D',
+	default_sparql_filter: '{?q p:P2596 ?statement0. ?statement0 (ps:P2596/(wdt:P279*)) wd:Q1284276. } UNION {?q p:P2596 ?statement0. ?statement0 (ps:P2596/(wdt:P279*)) wd:Q3027047. } UNION {?q p:P2596 ?statement0. ?statement0 (ps:P2596/(wdt:P279*)) wd:Q1542227. } UNION {?q p:P2596 ?statement0. ?statement0 (ps:P2596/(wdt:P279*)) wd:Q3099764. } UNION {?q p:P2596 ?statement0. ?statement0 (ps:P2596/(wdt:P279*)) wd:Q3027906. }',
+	sparql_filter: '{?q p:P2596 ?statement0. ?statement0 (ps:P2596/(wdt:P279*)) wd:Q1284276. } UNION {?q p:P2596 ?statement0. ?statement0 (ps:P2596/(wdt:P279*)) wd:Q3027047. } UNION {?q p:P2596 ?statement0. ?statement0 (ps:P2596/(wdt:P279*)) wd:Q1542227. } UNION {?q p:P2596 ?statement0. ?statement0 (ps:P2596/(wdt:P279*)) wd:Q3099764. } UNION {?q p:P2596 ?statement0. ?statement0 (ps:P2596/(wdt:P279*)) wd:Q3027906. }',
 	language: 'es',
 	max_items: 1000,
 	upload_mode: 'upload',
@@ -112,6 +113,10 @@ var cartografiaschaco = {
 
 		var layers = me.show_layers.join(',');
 		if (layers != me.full_layers) h.push('layers=' + layers);
+
+		if (me.sparql_filter == '') {
+			me.sparql_filter = me.default_sparql_filter;
+		}
 
 		if (me.sparql_filter == '') {
 			$('#is_using_filter').hide();
