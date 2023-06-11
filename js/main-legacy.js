@@ -1,7 +1,16 @@
 var cartografiaschaco = {
 	sparql_url: 'https://query.wikidata.org/bigdata/namespace/wdq/sparql',
 	check_reason_no_image: false,
-	zoom_level: 15,
+	default_location: {
+		accuracy: 13231.706320370291,
+		altitude: null,
+		altitudeAccuracy: null,
+		heading: null,
+		latitude: -26.415557179343296,
+		longitude: -60.20459532737732,
+		speed: null
+	},
+	zoom_level: 7,
 	opacity: 0.5,
 	marker_radius: {
 		wikidata: 10,
@@ -15,7 +24,7 @@ var cartografiaschaco = {
 	main_commons_category: '',
 	files_in_main_commons_category: {},
 	thumb_size: 200,
-	sparql_filter: '',
+	sparql_filter: '%7B%3Fq%20p%3AP2596%20%3Fstatement0.%20%3Fstatement0%20(ps%3AP2596%2F(wdt%3AP279*))%20wd%3AQ1284276.%20%7D%20UNION%20%7B%3Fq%20p%3AP2596%20%3Fstatement0.%20%3Fstatement0%20(ps%3AP2596%2F(wdt%3AP279*))%20wd%3AQ3027047.%20%7D%20UNION%20%7B%3Fq%20p%3AP2596%20%3Fstatement0.%20%3Fstatement0%20(ps%3AP2596%2F(wdt%3AP279*))%20wd%3AQ1542227.%20%7D%20UNION%20%7B%3Fq%20p%3AP2596%20%3Fstatement0.%20%3Fstatement0%20(ps%3AP2596%2F(wdt%3AP279*))%20wd%3AQ3099764.%20%7D%20UNION%20%7B%3Fq%20p%3AP2596%20%3Fstatement0.%20%3Fstatement0%20(ps%3AP2596%2F(wdt%3AP279*))%20wd%3AQ3027906.%20%7D',
 	language: 'es',
 	max_items: 1000,
 	upload_mode: 'upload',
@@ -1296,8 +1305,15 @@ var cartografiaschaco = {
 
 	setPositionFromCurrentLocation: function () {
 		var me = this;
+		me.pos = me.gps2leaflet( me.default_location );
+		me.setMap();
+		return;
+
+
 		if (navigator.geolocation) {
+			console.log('1');
 			navigator.geolocation.getCurrentPosition(function (p) {
+				console.log( p.coords );
 				me.pos = me.gps2leaflet(p.coords);
 				me.setMap();
 			}, function (error) {
@@ -1319,6 +1335,7 @@ var cartografiaschaco = {
 				$('#geo_error').text(msg);
 			});
 		} else {
+			console.log('2');
 			me.setMap();
 		}
 	},

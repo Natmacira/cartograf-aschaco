@@ -8,9 +8,9 @@ require_once 'header-Qom.php';
         huotaique ahuaỹaten na lataxac qataq na lamoxoñe maye chexoqta̕ague na QOM, LQAXAIC qataq
         MOQOIT, taqaen ram huo̕o ca ahuaỹaten ra ñaq saxanaxa ra huetalec 'ana qaroʼonata ishet ra
         anehuo chaq-ne̕esa ishet ra qaỹo'oxolec 'ana qaroʼonata. </p>
-		<embed src="<?php echo APP_HOME_URL . 'mapa-embed.php'; ?>#lat=-27.451389658914252&lng=-58.98666858673096&zoom=15" type="">
+		<embed src="<?php echo APP_HOME_URL . 'mapa-embed.php'; ?>#lat=-26.415557179343296&lng=-60.20459532737732&zoom=7" type="">
     <div class="charge-items">
-        <a href="mapa.php#lat=-27.451389658914252&lng=-58.98666858673096&zoom=15"><strong>+</strong>
+        <a href="mapa.php#lat=-26.415557179343296&lng=-60.20459532737732&zoom=7"><strong>+</strong>
             <p>ishet ra ahuasaxashiguem nam ʼarmejnec nqui ʼi/ ʼangravan ʼarʼaqtac / qataq ishet ra ʼahuo ʼot ra am qaỹallihuigui.</p>
         </a>
         <p class="highlighted-text">Ameten na n-meenec nache ishet ra ahuaỹaten ra huo'o na ahuamaxasheguem.</p>

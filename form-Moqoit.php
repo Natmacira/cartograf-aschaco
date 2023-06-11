@@ -109,7 +109,7 @@ if (isset($_POST['contact'])) {
 	if ($form_result === 'Success') {
 		chaco_set_user_cookie();
 
-		header( 'Location: ' . APP_HOME_URL . 'mapa.php#lat=-27.451389658914252&lng=-58.98666858673096&zoom=15' );
+		header( 'Location: ' . APP_HOME_URL . 'mapa.php#lat=-26.415557179343296&lng=-60.20459532737732&zoom=7' );
 		exit;
 	} else {
 		require_once 'header-Moqoit.php';
