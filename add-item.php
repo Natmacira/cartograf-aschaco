@@ -40,25 +40,6 @@ if (
 	!empty($label) &&
 	!empty($description)
 ) {
-	$p172 = array();
-
-	foreach ($nation_q_ids as $nation_q_id) {
-		$p172[] = array(
-			'mainsnak' => array(
-				'snaktype' => 'value',
-				'property' => 'P172',
-				'datavalue' => array(
-					'type' => 'wikibase-entityid',
-					'value' => array(
-						'entity-type' => 'item',
-						'id' => $nation_q_id,
-					),
-				),
-			),
-			'type' => 'statement',
-			'rank' => 'normal',
-		);
-	}
 
 	$p2596 = array();
 
@@ -179,8 +160,6 @@ if (
 									'rank' => 'normal',
 								],
 							],
-							// P172 statement to specify that the item belongs to an indigenous group
-							'P172' => $p172,
 							// P2596 is the property for "culture"
 							'P2596' => $p2596,
 							// 'P195'  => array(
@@ -253,8 +232,6 @@ if (
 							'rank' => 'normal',
 						],
 					],
-					// P172 statement to specify that the item belongs to an indigenous group
-					'P172' => $p172,
 					// P2596 is the property for "culture"
 					'P2596' => $p2596,
 					// 'P195'  => array(
