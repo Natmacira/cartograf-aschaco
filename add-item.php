@@ -180,21 +180,23 @@ if (
 							],
 							// P2596 is the property for "culture"
 							'P2596' => $p2596,
-							// 'P195'  => array(
-							// 	'mainsnak' => array(
-							// 		'snaktype' => 'value',
-							// 		'property' => 'P195',
-							// 		'datavalue' => array(
-							// 			'type' => 'wikibase-entityid',
-							// 			'value' => array(
-							// 				'entity-type' => 'item',
-							// 				'id' => 'Q117554123', // Cartografías Abiertas
-							// 			),
-							// 		),
-							// 	),
-							// 	'type' => 'statement',
-							// 	'rank' => 'normal',
-							// ),
+							'P195' => [
+								[
+									'mainsnak' => [
+										'snaktype' => 'value',
+										'property' => 'P195',
+										'datavalue' => [
+											'value' => [
+												'entity-type' => 'item',
+												'id' => 'Q117554123', // Cartografías Abiertas
+											],
+											'type' => 'wikibase-entityid',
+										],
+									],
+									'type' => 'statement',
+									'rank' => 'normal',
+								],
+							],
 							'P18' => [
 								[
 									'mainsnak' => [
@@ -252,21 +254,23 @@ if (
 					],
 					// P2596 is the property for "culture"
 					'P2596' => $p2596,
-					// 'P195'  => array(
-					// 	'mainsnak' => array(
-					// 		'snaktype' => 'value',
-					// 		'property' => 'P195',
-					// 		'datavalue' => array(
-					// 			'type' => 'wikibase-entityid',
-					// 			'value' => array(
-					// 				'entity-type' => 'item',
-					// 				'id' => 'Q117554123', // Cartografías Abiertas
-					// 			),
-					// 		),
-					// 	),
-					// 	'type' => 'statement',
-					// 	'rank' => 'normal',
-					// ),
+					'P195' => [
+						[
+							'mainsnak' => [
+								'snaktype' => 'value',
+								'property' => 'P195',
+								'datavalue' => [
+									'value' => [
+										'entity-type' => 'item',
+										'id' => 'Q117554123', // Cartografías Abiertas
+									],
+									'type' => 'wikibase-entityid',
+								],
+							],
+							'type' => 'statement',
+							'rank' => 'normal',
+						],
+					],
 				],
 			]),
 			'token' => $api->getToken(),
