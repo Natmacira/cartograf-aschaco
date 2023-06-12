@@ -72,7 +72,25 @@ if (
 			$filename  = chaco_sanitize_title($label) . '.' . $extension;
 
 			$uploadDir          = 'uploads/';
-			$allowed_file_types = ['image/jpeg', 'image/png', 'image/gif', 'application/pdf', 'image/webp'];
+			$allowed_file_types = [
+				'image/jpeg',
+				'image/png',
+				'image/gif',
+				'image/webp',
+				'application/pdf',
+				'audio/mpeg',
+				'audio/wav',
+				'audio/ogg',
+				'video/mp4',
+				'video/mpeg',
+				'video/webm',
+				'image/svg+xml',
+				'image/tiff',
+				'video/ogg',
+				'video/webm',
+				'video/mpeg',
+				'video/avi',
+			];
 
 			if (in_array($file_type, $allowed_file_types)) {
 				// Check if the file size is within the allowed limit

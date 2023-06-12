@@ -276,7 +276,7 @@ if ( ! chaco_check_user_cookie() ) {
 			</p>
 			<label>
 				<span data-translation-id="archivo">Carga la imagen / Documentación</span> *
-				<input type="file" name="image" id="new-item-image" placeholder="Foto">
+				<input type="file" name="image" id="new-item-image" accept=".jpg, .jpeg, .png, .gif, .svg, .webp, .tiff, .tif, .pdf, .oga, .ogg, .mp3, .wav, .ogv, .webm, .mpg, .mpeg, .avi" placeholder="Archivo">
 			</label>
 
 			<button class="submit-form" data-translation-id="enviar">Enviar</button>
