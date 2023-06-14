@@ -1316,9 +1316,7 @@ var cartografiaschaco = {
 
 
 		if (navigator.geolocation) {
-			console.log('1');
 			navigator.geolocation.getCurrentPosition(function (p) {
-				console.log( p.coords );
 				me.pos = me.gps2leaflet(p.coords);
 				me.setMap();
 			}, function (error) {
@@ -1340,7 +1338,6 @@ var cartografiaschaco = {
 				$('#geo_error').text(msg);
 			});
 		} else {
-			console.log('2');
 			me.setMap();
 		}
 	},
