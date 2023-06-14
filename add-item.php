@@ -73,23 +73,21 @@ if (
 
 			$uploadDir          = 'uploads/';
 			$allowed_file_types = [
-				'image/jpeg',
-				'image/png',
-				'image/gif',
-				'image/webp',
 				'application/pdf',
 				'audio/mpeg',
-				'audio/wav',
 				'audio/ogg',
-				'video/mp4',
-				'video/mpeg',
-				'video/webm',
+				'audio/wav',
+				'image/gif',
+				'image/jpeg',
+				'image/png',
 				'image/svg+xml',
 				'image/tiff',
+				'image/webp',
+				'video/avi',
+				'video/mp4',
+				'video/mpeg',
 				'video/ogg',
 				'video/webm',
-				'video/mpeg',
-				'video/avi',
 			];
 
 			if (in_array($file_type, $allowed_file_types)) {
@@ -151,6 +149,35 @@ if (
 				$auth = new UserAndPassword($username, $password);
 				$api  = new ActionApi('https://www.wikidata.org/w/api.php', $auth);
 
+				$p31 = ''; // P31: instance of
+
+				if (
+					$file_type === 'audio/mpeg' ||
+					$file_type === 'audio/ogg' ||
+					$file_type === 'audio/wav'
+				) {
+					$p31 = 'Q3302947'; // Grabación sonora (https://www.wikidata.org/wiki/Q3302947)
+				} elseif (
+					$file_type === 'image/gif' ||
+					$file_type === 'image/jpeg' ||
+					$file_type === 'image/png' ||
+					$file_type === 'image/svg+xml' ||
+					$file_type === 'image/tiff' ||
+					$file_type === 'image/webp'
+				) {
+					$p31 = 'Q11633'; // Fotografía (https://www.wikidata.org/wiki/Q11633)
+				} elseif (
+					$file_type === 'video/avi' ||
+					$file_type === 'video/mp4' ||
+					$file_type === 'video/mpeg' ||
+					$file_type === 'video/ogg' ||
+					$file_type === 'video/webm'
+				) {
+					$p31 = 'Q34508'; // Video (https://www.wikidata.org/wiki/Q34508)
+				} else {
+					$p31 = 'Q694975'; // Documento electrónico (https://www.wikidata.org/wiki/Q694975)
+				}
+
 				$params = [
 					'action' => 'wbeditentity',
 					'new' => 'item',
@@ -207,6 +234,23 @@ if (
 											'type' => 'string',
 										],
 										'datatype' => 'commonsMedia',
+									],
+									'type' => 'statement',
+									'rank' => 'normal',
+								],
+							],
+							'P31' => [
+								[
+									'mainsnak' => [
+										'snaktype' => 'value',
+										'property' => 'P31',
+										'datavalue' => [
+											'value' => [
+												'entity-type' => 'item',
+												'id' => $p31,
+											],
+											'type' => 'wikibase-entityid',
+										],
 									],
 									'type' => 'statement',
 									'rank' => 'normal',
