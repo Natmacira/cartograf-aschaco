@@ -1,9 +1,0 @@
-Presentación 
-
-- Navegar todo el FRONT
-- Mostrar formulario con la base de datos (explicar como va a funcionar)
-- Navegar el front del mapa 
-- Contar avances conexion mapa, se demoro mas de lo estimado porque el código es una maraña absoluta y no tuve ayuda de los developers.
-
-
-- ver con lu porque se me modifica tanto la ubicación del cartelito en el front del mapa, el instructivo
