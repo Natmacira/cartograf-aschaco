@@ -254,13 +254,44 @@ if ( ! chaco_check_user_cookie() ) {
 			<input type="hidden" name="long" id="new-item-lng">
 			<input type="hidden" name="lang" id="new-item-lang" value="es">
 			<label>
+				<span data-translation-id="contenido">¿De qué trata el contenido? *</span>
+				<select name="item-content-type" id="item-content-type" required>
+					<option value="Q5" data-translation-id="contenido-persona">Persona</option>
+					<option value="Q877729" data-translation-id="contenido-artesania">Artesanía</option>
+					<option value="Q11639" data-translation-id="contenido-danza">Danza</option>
+					<option value="Q82821" data-translation-id="contenido-tradicion">Tradición</option>
+					<option value="Q132241" data-translation-id="contenido-festival">Festival</option>
+					<option value="Q3305213" data-translation-id="contenido-pintura">Pintura</option>
+					<option value="Q219423" data-translation-id="contenido-mural">Mural</option>
+					<option value="Q93184" data-translation-id="contenido-dibujo">Dibujo</option>
+					<option value="Q756" data-translation-id="contenido-planta">Planta/s</option>
+					<option value="Q178706" data-translation-id="contenido-institucion">Institución</option>
+					<option value="Q43229" data-translation-id="contenido-organizacion">Organización</option>
+					<option value="Q16334295" data-translation-id="contenido-personas">Grupo de personas</option>
+					<option value="Q11755880" data-translation-id="contenido-vivienda">Vivienda</option>
+					<option value="Q860861" data-translation-id="contenido-escultura">Escultura</option>
+					<option value="Q22075301" data-translation-id="contenido-tejido">Tejido</option>
+					<option value="Q11410" data-translation-id="contenido-juegos">Juegos</option>
+					<option value="Q756820" data-translation-id="contenido-culto">Culto</option>
+					<option value="Q638" data-translation-id="contenido-musica">Música</option>
+					<option value="Q2221906" data-translation-id="contenido-lugar">Sitio o lugar</option>
+					<option value="Q1286517" data-translation-id="contenido-espacio">Espacio natural</option>
+					<option value="Q42240" data-translation-id="contenido-investigacion">Investigación científica</option>
+					<option value="Q9030487" data-translation-id="contenido-material-didactico">Material didáctico</option>
+					<option value="Q729" data-translation-id="contenido-animal">Animal/es</option>
+				</select>
+			</label>
+
+			<label>
 				<span data-translation-id="titulo">Título</span> *
 				<input type="text" name="title" id="new-item-titulo" placeholder="Título" required>
 			</label>
+
 			<label>
 				<span data-translation-id="descripcion">Descripción</span> *
 				<input type="text" name="description" id="new-item-description" placeholder="Descripción" required>
 			</label>
+
 			<p>
 				<span data-translation-id="nation">Pueblo Nación</span> *
 				<label>
@@ -272,10 +303,10 @@ if ( ! chaco_check_user_cookie() ) {
 				<label>
 					<input type="checkbox" name="nation[]" class="new-item-nation" value="mo"> Moqoit
 				</label>
-
 			</p>
+
 			<label>
-				<span data-translation-id="archivo">Carga la imagen / Documentación</span> *
+				<span data-translation-id="archivo">Carga la imagen / Documentación (opcional)</span>
 				<input type="file" name="image" id="new-item-image" accept=".jpg, .jpeg, .png, .gif, .svg, .webp, .tiff, .tif, .pdf, .oga, .ogg, .mp3, .wav, .ogv, .webm, .mpg, .mpeg, .avi" placeholder="Archivo">
 			</label>
 
