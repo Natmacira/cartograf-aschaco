@@ -116,13 +116,13 @@ if ( ! chaco_check_user_cookie() ) {
 			</ul>
 
 			<ul class="language-ul">
-				<li><input type="radio" class="language-switch" name="language-switch" value="qom" id="qom-input">
+				<li><input type="radio" class="language-switch" name="language-switch" value="qom" id="qom-input" <?php if ( chaco_get_language_cookie() === 'qo' ) { echo 'checked'; }; ?>>
 				<label for="qom-input">Qom</label></li>
-				<li><input type="radio" class="language-switch" name="language-switch" value="wichi" id="wichi-input">
+				<li><input type="radio" class="language-switch" name="language-switch" value="wichi" id="wichi-input" <?php if ( chaco_get_language_cookie() === 'wi' ) { echo 'checked'; }; ?>>
 				<label for="wichi-input">Wichí</label></li>
-				<li><input type="radio" class="language-switch" name="language-switch" value="moqoit" id="moqoit-input">
+				<li><input type="radio" class="language-switch" name="language-switch" value="moqoit" id="moqoit-input" <?php if ( chaco_get_language_cookie() === 'mo' ) { echo 'checked'; }; ?>>
 				<label for="moqoit-input">Moqoit</label></li>
-				<li><input type="radio" class="language-switch" name="language-switch" value="es" checked id="es-input">
+				<li><input type="radio" class="language-switch" name="language-switch" value="es" id="es-input" <?php if ( chaco_get_language_cookie() === 'es' ) { echo 'checked'; }; ?>>
 				<label for="es-input">Español</label></li>
 			</ul>
 

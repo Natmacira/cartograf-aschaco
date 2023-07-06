@@ -1,4 +1,6 @@
-<?php require_once 'functions.php'; ?>
+<?php require_once 'functions.php';
+chaco_set_language_cookie('wi');
+?>
 <!DOCTYPE html>
 <html lang="es">
 

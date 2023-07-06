@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
 	for (let i = 0; i < languageSwitch.length; i++) {
 		languageSwitch[i].addEventListener('change', loadTranslation);
 	}
+
+	if ( languageSwitch ) {
+		loadTranslation();
+	}
 });
 
 function loadTranslation() {

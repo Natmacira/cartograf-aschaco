@@ -29,3 +29,12 @@ function chaco_sanitize_title( $title ) {
 
     return $title;
 }
+
+function chaco_set_language_cookie( $language ) {
+	setcookie( 'userLanguage', $language, time() + 60 * 60 * 24 * 30, '/' );
+}
+
+function chaco_get_language_cookie() {
+	$language = ! empty( $_COOKIE['userLanguage'] ) ? $_COOKIE['userLanguage'] : 'es';
+	return $language;
+}
