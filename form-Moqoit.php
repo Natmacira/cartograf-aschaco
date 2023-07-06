@@ -26,7 +26,7 @@ if (isset($_POST['contact'])) {
 	if (empty($contact_name) || empty($contact_email) || empty($contact_message)) {
 		$contact_result = 'Missing required fields';
 	} else {
-		$result = mail( 'natimciraolodigena@gmail.com', 'Mensaje de formulario de contacto de Cartografias Chaco', $contact_message, 'From: ' . $contact_email);
+		$result = mail( 'cedeindigena@gmail.com', 'Mensaje de formulario de contacto de Cartografias Chaco', $contact_message, 'From: ' . $contact_email);
 
 		if ( $result ) {
 			$contact_result = 'Success';
@@ -117,7 +117,7 @@ if (isset($_POST['contact'])) {
 		<form action="" method="POST">
 			<?php if ($form_result === 'Error') { ?>
 			<article class="show-after-submission">
-				<p>Hubo un error en la carga del formulario, vuelva a intentarlo o escribinos a <a href="mailto:natimciraolodigena@gmail.com">natimciraolodigena@gmail.com</a></p>
+				<p>Hubo un error en la carga del formulario, vuelva a intentarlo o escribinos a <a href="mailto:cedeindigena@gmail.com">cedeindigena@gmail.com</a></p>
 			</article>
 			<?php } ?>
 			<?php if ($form_result === 'Missing required fields') { ?>
@@ -144,7 +144,7 @@ if (isset($_POST['contact'])) {
 
 		<label for="institucion">No>om ca> no>ueenataxanaxaqui loqo>m paxaguinataxanaxaqui> ro’ueenataxanqa>chi, choxochi ca> leenaxat.<input type="text" id="institucion" name="institucion" value="" placeholder="leenaxat na> no>ueenataxanaxaqui"> </label><br>
 
-		<label for="terminos" id="terms-label"><input type="checkbox" id="terminos" name="terminos" value="" required>Sacoñiguit na>maq <strong> <a href="terminos-Moqoit.php"> Términos chaqai nelaataxaset </a></strong></label><br>
+		<label for="terminos" id="terms-label"><input type="checkbox" id="terminos" name="terminos" value="" required>Sacoñiguit na>maq <strong> <a target="_blank" href="terminos-Moqoit.php"> Términos chaqai nelaataxaset </a></strong></label><br>
 
 		<button>>neetasa></button>
 
@@ -171,7 +171,7 @@ if ( $contact_result === 'Success' ) {
 		<input type="hidden" name="contact" value="1">
 	<?php if ($contact_result === 'Error') { ?>
 		<article class="show-after-submission">
-			<p>Hubo un error en la carga del formulario, volvé a intentarlo o escribinos a <a href="mailto:natimciraolodigena@gmail.com">natimciraolodigena@gmail.com</a></p>
+			<p>Hubo un error en la carga del formulario, volvé a intentarlo o escribinos a <a href="mailto:cedeindigena@gmail.com">cedeindigena@gmail.com</a></p>
 		</article>
 		<?php } ?>
 		<?php if ($contact_result === 'Missing required fields') { ?>
