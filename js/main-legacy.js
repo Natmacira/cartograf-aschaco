@@ -1,3 +1,8 @@
+function openMediaFileForm(wikidataItemId){
+	$('#wikidata_item_id').val( wikidataItemId );
+	$('#edit-item-form-container').show();
+}
+
 var cartografiaschaco = {
 	sparql_url: 'https://query.wikidata.org/bigdata/namespace/wdq/sparql',
 	check_reason_no_image: false,
@@ -231,6 +236,10 @@ var cartografiaschaco = {
 
 		if (typeof entry.page != 'undefined') {
 			h += "<div class='entry-page'>ID: " + entry.page + "</div>";
+		}
+
+		if (typeof entry.image === 'undefined' && typeof entry.page != 'undefined') {
+			h += "<div class='entry-page'><button class='edit-form-button' onClick='openMediaFileForm(\""+ entry.page +"\")'>Agregar archivo a este item</button></div>";
 		}
 
 		if (entry.mode == 'flickr') {

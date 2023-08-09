@@ -314,6 +314,21 @@ if ( ! chaco_check_user_cookie() ) {
 		</form>
 	</div>
 
+
+	<div id="edit-item-form-container" style="display: none;">
+		<form id="edit-item" action="edit-item.php" method="post" enctype="multipart/form-data">
+			<button class="close-form" type="button" onclick="$(this).parent().parent().hide()">X</button>
+			<input type="hidden" name="wikidata_item_id" id="wikidata_item_id">
+
+			<label>
+				<span data-translation-id="archivo">Carga la imagen / Documentación (opcional)</span>
+				<input type="file" name="image" id="new-edit-item-image" accept=".jpg, .jpeg, .png, .gif, .svg, .webp, .tiff, .tif, .pdf, .oga, .ogg, .mp3, .wav, .ogv, .webm, .mpg, .mpeg, .avi" placeholder="Archivo">
+			</label>
+
+			<button class="submit-form" data-translation-id="enviar">Enviar</button>
+		</form>
+	</div>
+
 	</main>
 <footer>
     <a href="javascript:history.back()" class="go-back-link" data-translation-id="volver">< Volver</a>
